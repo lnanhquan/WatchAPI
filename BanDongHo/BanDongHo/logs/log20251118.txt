@@ -217,3 +217,15 @@ System.InvalidOperationException: Watch with name 'test1' already exists.
 2025-11-18 10:46:09.612 +07:00 [INF] Retrieving all watches
 2025-11-18 10:46:21.016 +07:00 [INF] Deleted watch with ID "47693181-fb83-4392-9639-aceb93a7ff96"
 2025-11-18 10:46:26.576 +07:00 [INF] Retrieving all watches
+2025-11-18 13:28:47.571 +07:00 [ERR] An error occurred during registration for lnaq@gmail.com
+System.InvalidOperationException: Role USER does not exist.
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.AddToRoleAsync(TUser user, String normalizedRoleName, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.AddToRoleAsync(TUser user, String role)
+   at BanDongHo.Controllers.AuthController.Register(RegisterDTO dto) in C:\Users\Admin\Documents\GitHub\BanDongHo\BanDongHo\BanDongHo\Controllers\AuthController.cs:line 51
+2025-11-18 13:44:45.360 +07:00 [WRN] Registration failed: lnaq@gmail.com already exists
+2025-11-18 13:46:56.637 +07:00 [INF] User lnaq registered successfully: lnaq@gmail.com
+2025-11-18 13:47:26.034 +07:00 [INF] User lnaq logged in successfully: lnaq@gmail.com
+2025-11-18 13:52:17.779 +07:00 [INF] Retrieving all watches
+2025-11-18 13:52:33.503 +07:00 [INF] Created new watch 1 with ID "1e3b76ce-a5b4-4bf3-bee1-a5dec9e67850"
+2025-11-18 13:59:33.534 +07:00 [INF] User lnaq logged in successfully: lnaq@gmail.com
+2025-11-18 14:00:07.480 +07:00 [INF] Retrieving all watches

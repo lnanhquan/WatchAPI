@@ -117,6 +117,11 @@ using (var scope = app.Services.CreateScope())
         await roleManager.CreateAsync(new IdentityRole("Admin"));
     }
 
+    if (!await roleManager.RoleExistsAsync("User"))
+    {
+        await roleManager.CreateAsync(new IdentityRole("User"));
+    }
+
     var adminUser = await userManager.FindByNameAsync("admin");
     if (adminUser == null)
     {

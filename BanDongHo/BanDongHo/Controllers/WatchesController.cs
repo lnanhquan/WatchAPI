@@ -1,6 +1,7 @@
 ﻿using BanDongHo.DTOs;
 using BanDongHo.Models;
 using BanDongHo.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,7 @@ namespace BanDongHo.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class WatchesController : ControllerBase
     {
         private readonly IWatchService _service;
@@ -54,6 +56,7 @@ namespace BanDongHo.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([FromBody] WatchDTO watchDto)
         {
             if (!ModelState.IsValid)
@@ -80,6 +83,7 @@ namespace BanDongHo.Controllers
         }
 
         [HttpPut("{id:guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(Guid id, [FromBody] WatchDTO watchDto)
         {
             if (!ModelState.IsValid)
@@ -101,6 +105,7 @@ namespace BanDongHo.Controllers
         }
 
         [HttpDelete("{id:guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(Guid id)
         {
             var deleted = await _service.DeleteAsync(id);
