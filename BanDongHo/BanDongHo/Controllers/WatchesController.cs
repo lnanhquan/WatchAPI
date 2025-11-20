@@ -13,12 +13,10 @@ namespace BanDongHo.Controllers
     public class WatchesController : ControllerBase
     {
         private readonly IWatchService _service;
-        private readonly ILogger<WatchesController> _logger;
 
-        public WatchesController(IWatchService service, ILogger<WatchesController> logger)
+        public WatchesController(IWatchService service)
         {
             _service = service;
-            _logger = logger;
         }
 
         [HttpGet]

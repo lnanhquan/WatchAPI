@@ -1,7 +1,7 @@
 function renderHeader() 
 {
     const headerHTML = `
-    <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
         <div class="container-fluid">
 
             <a class="navbar-brand">Watches</a>
@@ -41,8 +41,10 @@ function renderHeader()
     document.getElementById("btnLogin").addEventListener("click", openLoginModal);
     document.getElementById("btnLogout").addEventListener("click", logout);
 
-    const token = localStorage.getItem("token");
-    updateUIAfterLogin(!!token);
+    const user = JSON.parse(localStorage.getItem("user"));
+    updateUIAfterLogin(!!user);
+
+    document.body.style.paddingTop = "70px";
 }
 
 document.addEventListener("DOMContentLoaded", renderHeader);

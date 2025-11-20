@@ -8,10 +8,11 @@ async function loadWatches() {
         watchList.innerHTML = "";
 
         watches.forEach(w => {
+            const imageUrl = getFullImageUrl(w.imageUrl);
             watchList.innerHTML += `
                 <div class="col-md-3 mb-4">
                     <div class="card shadow-lg">
-                        <img src="${w.imageUrl}" class="card-img-top" alt="${w.name}" style="object-fit: cover;">
+                        <img src="${imageUrl}" class="card-img-top" alt="${w.name}" style="object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title text-center">${w.name}</h5>
                             <p class="card-text text-danger fs-6 fw-bold text-center">${w.price.toLocaleString()} VND</p>
@@ -33,7 +34,7 @@ function updateUIAfterLogin(isLoggedIn) {
     const btnLogin = document.getElementById("btnLogin");
     const btnLogout = document.getElementById("btnLogout");
     const managementDropdown = document.getElementById("managementDropdown");
-    const roles = JSON.parse(localStorage.getItem("roles")) || [];
+    const user = JSON.parse(localStorage.getItem("user"));
 
     if (isLoggedIn) {
         btnLogin.classList.add("d-none");
@@ -44,7 +45,7 @@ function updateUIAfterLogin(isLoggedIn) {
         btnLogout.classList.add("d-none");
     }
 
-    if (roles.includes("Admin"))
+    if (user && user.roles && user.roles.includes("Admin"))
     {
         managementDropdown.classList.remove("d-none");
     }
@@ -61,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loginModal = new bootstrap.Modal(document.getElementById("loginModal"));
         registerModal = new bootstrap.Modal(document.getElementById("registerModal"));
     }
-    const token = localStorage.getItem("token");
-    updateUIAfterLogin(!!token);
+    const user = JSON.parse(localStorage.getItem("user"));
+    updateUIAfterLogin(!!user);
 });
 

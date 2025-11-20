@@ -15,65 +15,96 @@ let watchPrice = document.getElementById("watchPrice");
 let ImageFile = document.getElementById("ImageFile");
 let saveBtn = document.getElementById("saveBtn");
 let isEditing = false;
+let currentPage = 1;
+let rowsPerPage = 3; 
+let watchesData = []; 
 
 async function getTable() {
     try {
         const response = await watchAPI.getAll();
-        const table = response.data;
+        watchesData = response.data;
 
-        watchTable.innerHTML = "";
-
-        if (table.length === 0) 
-        {
-            watchTable.innerHTML = '<tr><td colspan="4">No watches found</td></tr>';
-        } 
-        else 
-        {
-            table.forEach(w => {
-                const tr = document.createElement("tr");
-
-                const tdImage = document.createElement("td");
-                const img = document.createElement("img"); // hoặc port của API
-                img.src = w.imageUrl;
-                img.alt = w.name;
-                img.style.width = "200px";
-                img.style.height = "200px";
-                tdImage.appendChild(img);
-
-                const tdName = document.createElement("td");
-                tdName.textContent = w.name;
-
-                const tdPrice = document.createElement("td");
-                tdPrice.textContent = w.price;
-
-                const tdActions = document.createElement("td");
-
-                const btnEdit = document.createElement("button");
-                btnEdit.className = "btn btn-success me-2";
-                btnEdit.innerHTML = `<i class="bi bi-pencil"></i> Edit`;
-                btnEdit.addEventListener("click", () => openEditModal(w.id, w.name, w.price));
-
-                const btnDelete = document.createElement("button");
-                btnDelete.className = "btn btn-danger";
-                btnDelete.innerHTML = `<i class="bi bi-trash"></i> Delete`;
-                btnDelete.addEventListener("click", () => deleteWatch(w.id, btnDelete));
-
-                tdActions.appendChild(btnEdit);
-                tdActions.appendChild(btnDelete);
-
-                tr.appendChild(tdImage);
-                tr.appendChild(tdName);
-                tr.appendChild(tdPrice);
-                tr.appendChild(tdActions);
-
-                watchTable.appendChild(tr);
-            });
-        }
+        renderTablePage(currentPage);
+        renderPagination();
     } 
     catch (error) 
     {
         watchTable.innerHTML = `<tr><td colspan="4">${error.message}</td></tr>`;
         console.error(error);
+    }
+}
+
+function renderTablePage(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+    const pageData = watchesData.slice(start, end);
+
+    watchTable.innerHTML = "";
+
+    if (pageData.length === 0) {
+        watchTable.innerHTML = '<tr><td colspan="4">No watches found</td></tr>';
+    } else {
+        pageData.forEach(w => {
+            const tr = document.createElement("tr");
+
+            const tdImage = document.createElement("td");
+            const img = document.createElement("img"); 
+            img.src = getFullImageUrl(w.imageUrl);
+            img.alt = w.name;
+            img.style.width = "200px";
+            img.style.height = "200px";
+            tdImage.appendChild(img);
+
+            const tdName = document.createElement("td");
+            tdName.textContent = w.name;
+
+            const tdPrice = document.createElement("td");
+            tdPrice.textContent = w.price.toLocaleString() + " VND";
+
+            const tdActions = document.createElement("td");
+
+            const btnEdit = document.createElement("button");
+            btnEdit.className = "btn btn-success me-2";
+            btnEdit.innerHTML = `<i class="bi bi-pencil"></i> Edit`;
+            btnEdit.addEventListener("click", () => openEditModal(w.id, w.name, w.price));
+
+            const btnDelete = document.createElement("button");
+            btnDelete.className = "btn btn-danger";
+            btnDelete.innerHTML = `<i class="bi bi-trash"></i> Delete`;
+            btnDelete.addEventListener("click", () => deleteWatch(w.id, btnDelete));
+
+            tdActions.appendChild(btnEdit);
+            tdActions.appendChild(btnDelete);
+
+            tr.appendChild(tdImage);
+            tr.appendChild(tdName);
+            tr.appendChild(tdPrice);
+            tr.appendChild(tdActions);
+
+            watchTable.appendChild(tr);
+        });
+    }
+}
+
+function renderPagination() {
+    const pagination = document.getElementById("pagination");
+    pagination.innerHTML = "";
+
+    const pageCount = Math.ceil(watchesData.length / rowsPerPage);
+
+    for (let i = 1; i <= pageCount; i++) {
+        const btn = document.createElement("button");
+        btn.textContent = i;
+        btn.className = "btn btn-outline-primary me-1";
+        if (i === currentPage) btn.classList.add("active");
+
+        btn.addEventListener("click", () => {
+            currentPage = i;
+            renderTablePage(currentPage);
+            renderPagination();
+        });
+
+        pagination.appendChild(btn);
     }
 }
 

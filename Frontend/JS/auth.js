@@ -144,10 +144,7 @@ async function login() {
         }
 
         const response = await authAPI.login({ email, password });
-        const token = response.data.token;
-        const roles = response.data.roles;
-        localStorage.setItem("token", token);
-        localStorage.setItem("roles", JSON.stringify(roles));
+        localStorage.setItem("user", JSON.stringify(response.data));
         updateUIAfterLogin(true);
         loginModal.hide();
         loadWatches();
@@ -193,8 +190,7 @@ async function logout() {
 
     if (result.isConfirmed)
     {
-        localStorage.removeItem("token");
-        localStorage.removeItem("roles");
+        localStorage.removeItem("user");
         updateUIAfterLogin(false);
         window.location.href = "home.html";
     }

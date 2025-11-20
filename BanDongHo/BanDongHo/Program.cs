@@ -34,6 +34,8 @@ builder.Services.AddControllers();
 // Dependency Injection
 builder.Services.AddScoped<IWatchRepository, WatchRepository>();
 builder.Services.AddScoped<IWatchService, WatchService>();
+builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+builder.Services.AddScoped<IInvoiceService, InvoiceService>();
 
 // Cấu hình Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
