@@ -32,8 +32,8 @@ async function loadWatchDetail() {
                         <h2 class="fw-bold mb-2">${watch.name}</h2>
 
                         <div class="d-flex align-items-center gap-3 mb-3">
-                            <span class="badge bg-secondary px-3 py-2">Brand</span>
-                            <span class="badge bg-secondary px-3 py-2">Category</span>
+                            <span class="badge bg-dark px-3 py-2">${watch.brand}</span>
+                            <span class="badge bg-info px-3 py-2">${watch.category}</span>
                             <span class="badge bg-success px-3 py-2">In Stock</span>
                         </div>
 
@@ -55,7 +55,7 @@ async function loadWatchDetail() {
 
                         <div class="mb-4">
                             <h5 class="fw-semibold">Description</h5>
-                            <p class="text-muted">
+                            <p class="text-muted" style="text-align: justify;">
                                 ${watch.description ?? "No description available."}
                             </p>
                         </div>

@@ -462,6 +462,8 @@
             "multipart/form-data": {
               "schema": {
                 "required": [
+                  "Brand",
+                  "Category",
                   "Name",
                   "Price"
                 ],
@@ -481,6 +483,18 @@
                     "type": "integer",
                     "format": "int32"
                   },
+                  "Category": {
+                    "maxLength": 50,
+                    "type": "string"
+                  },
+                  "Brand": {
+                    "maxLength": 50,
+                    "type": "string"
+                  },
+                  "Description": {
+                    "maxLength": 500,
+                    "type": "string"
+                  },
                   "ImageUrl": {
                     "type": "string"
                   },
@@ -498,6 +512,15 @@
                   "style": "form"
                 },
                 "Price": {
+                  "style": "form"
+                },
+                "Category": {
+                  "style": "form"
+                },
+                "Brand": {
+                  "style": "form"
+                },
+                "Description": {
                   "style": "form"
                 },
                 "ImageUrl": {
@@ -559,6 +582,8 @@
             "multipart/form-data": {
               "schema": {
                 "required": [
+                  "Brand",
+                  "Category",
                   "Name",
                   "Price"
                 ],
@@ -578,6 +603,18 @@
                     "type": "integer",
                     "format": "int32"
                   },
+                  "Category": {
+                    "maxLength": 50,
+                    "type": "string"
+                  },
+                  "Brand": {
+                    "maxLength": 50,
+                    "type": "string"
+                  },
+                  "Description": {
+                    "maxLength": 500,
+                    "type": "string"
+                  },
                   "ImageUrl": {
                     "type": "string"
                   },
@@ -595,6 +632,15 @@
                   "style": "form"
                 },
                 "Price": {
+                  "style": "form"
+                },
+                "Category": {
+                  "style": "form"
+                },
+                "Brand": {
+                  "style": "form"
+                },
+                "Description": {
                   "style": "form"
                 },
                 "ImageUrl": {

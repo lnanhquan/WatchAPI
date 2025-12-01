@@ -29,6 +29,9 @@ namespace BanDongHo.Controllers
                 Id = w.Id,
                 Name = w.Name,
                 Price = w.Price,
+                Category = w.Category,
+                Brand = w.Brand,
+                Description = w.Description,
                 ImageUrl = w.ImageUrl
             });
 
@@ -48,6 +51,9 @@ namespace BanDongHo.Controllers
                 Id = watch.Id,
                 Name = watch.Name,
                 Price = watch.Price,
+                Category = watch.Category,
+                Brand = watch.Brand,
+                Description = watch.Description,
                 ImageUrl = watch.ImageUrl
             };
             return Ok(dto);
@@ -69,6 +75,9 @@ namespace BanDongHo.Controllers
                 Id = watch.Id,
                 Name = watch.Name,
                 Price = watch.Price,
+                Category = watch.Category,
+                Brand = watch.Brand,
+                Description = watch.Description,
                 ImageUrl = watch.ImageUrl,
                 ImageFile = null
             };
@@ -119,6 +128,9 @@ namespace BanDongHo.Controllers
                 Id = watch.Id,
                 Name = watch.Name,
                 Price = watch.Price,
+                Category = watch.Category,
+                Brand = watch.Brand,
+                Description = watch.Description,
                 ImageUrl = watch.ImageUrl
             };
             return Ok(dto);

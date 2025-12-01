@@ -85,6 +85,9 @@ namespace BanDongHo.Services
                 {
                     Name = dto.Name,
                     Price = dto.Price,
+                    Category = dto.Category,
+                    Brand = dto.Brand,
+                    Description = dto.Description,
                     ImageUrl = imageUrl
                 };
 
@@ -140,6 +143,9 @@ namespace BanDongHo.Services
 
                 existingWatch.Name = dto.Name;
                 existingWatch.Price = dto.Price;
+                existingWatch.Category = dto.Category;
+                existingWatch.Brand = dto.Brand;
+                existingWatch.Description = dto.Description;
                 existingWatch.ImageUrl = imageUrl;
 
                 await _repo.UpdateAsync(existingWatch);

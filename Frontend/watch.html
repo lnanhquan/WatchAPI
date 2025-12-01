@@ -24,7 +24,8 @@
                     <div class="col-md-6 d-flex">
                         <input type="text" id="searchManagementWatch" class="form-control mr-2"
                             placeholder="Search watch by name..." style="width: 330px; margin-right: 10px;">
-                        <a role="button" id="btnSearchManagementWatch" class="btn btn-dark p-2" onclick="searchManagementWatch()">
+                        <a role="button" id="btnSearchManagementWatch" class="btn btn-dark p-2"
+                            onclick="searchManagementWatch()">
                             <i class="bi bi-search"></i> Search
                         </a>
                     </div>
@@ -33,18 +34,20 @@
                                 class="bi bi-plus-circle"></i> Create new watch</a>
                     </div>
                 </div>
-                <table class="table table-bordered shadow-lg ">
+                <table class="table table-bordered shadow-lg table-hover">
                     <thead class="text-center align-middle fs-5 fw-bold">
                         <tr>
                             <th>Image</th>
                             <th>Watch name <i class="fas fa-sort sort-icon" data-sort="watchName"></i></th>
-                            <th>Price <i class="fas fa-sort sort-icon" data-sort="price"></i></th>
+                            <th style="width: 150px;">Price <i class="fas fa-sort sort-icon" data-sort="price"></i></th>
+                            <th style="width: 120px;">Category <i class="fas fa-sort sort-icon" data-sort="category"></i></th>
+                            <th style="width: 120px;">Brand <i class="fas fa-sort sort-icon" data-sort="brand"></i></th>
                             <th style="width: 200px;"></th>
                         </tr>
                     </thead>
                     <tbody id="watchTable" class="text-center align-middle">
                         <tr>
-                            <td colspan="4">Loading...</td>
+                            <td colspan="6">Loading...</td>
                         </tr>
                     </tbody>
                 </table>
@@ -59,31 +62,56 @@
         </div>
     </footer>
 
-    <!-- Pop up thêm và sửa -->
     <div class="modal fade" id="watchModal" tabindex="-1" aria-labelledby="watchModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content shadow-lg rounded-3">
+
                 <div class="modal-header">
-                    <h5 class="modal-title" id="watchModalLabel"></h5>
+                    <h5 class="modal-title fw-bold" id="watchModalLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">
                     <form id="watchForm">
                         <input type="hidden" id="watchId"></input>
+
                         <div class="mb-3">
                             <label for="watchName" class="form-label">Name</label>
                             <input type="text" class="form-control" id="watchName" name="Name" required></input>
                         </div>
+
                         <div class="mb-3">
                             <label for="watchPrice" class="form-label">Price</label>
                             <input type="number" class="form-control" id="watchPrice" name="Price" required></input>
                         </div>
+
+                        <div class="mb-3">
+                            <label for="watchCategory" class="form-label">Category</label>
+                            <select class="form-select" id="watchCategory" name="Category" required>
+                                <option value="" selected disabled>-- Select Category --</option>
+                                <option value="Men">Men</option>
+                                <option value="Women">Women</option>
+                                <option value="Couple">Couple</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="watchBrand" class="form-label">Brand</label>
+                            <input type="text" class="form-control" id="watchBrand" name="Brand" required></input>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="watchDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="watchDescription" name="Description" rows="3"></textarea>
+                        </div>
+
                         <div class="mb-3">
                             <label for="ImageFile" class="form-label">Image</label>
-                            <input type="file" class="form-control" name="ImageFile" id="ImageFile" accept="image/*">
+                            <input type="file" class="form-control" name="ImageFile" id="ImageFile" accept="image/*"></input>
                         </div>
                     </form>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn" id="saveBtn"></button>
                 </div>
@@ -91,12 +119,11 @@
         </div>
     </div>
 
+    <script src="./JS/header.js"></script>
     <script src="./JS/helper.js"></script>
     <script src="./JS/api.js"></script>
-    <script src="./JS/watch.js"></script>
-    <script src="./JS/header.js"></script>
-    <script src="./JS/home.js"></script>
     <script src="./JS/auth.js"></script>
+    <script src="./JS/watch.js"></script>
 </body>
 
 </html>

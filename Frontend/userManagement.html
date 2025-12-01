@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="container">
+                <div class="row pt-4 pb-3">
+                    <div class="col-md-6 d-flex">
+                        <input type="text" id="searchManagementUser" class="form-control mr-2"
+                            placeholder="Search user by ID..." style="width: 330px; margin-right: 10px;">
+                        <a role="button" id="btnSearchManagementUser" class="btn btn-dark p-2"
+                            onclick="searchManagementUser()">
+                            <i class="bi bi-search"></i> Search
+                        </a>
+                    </div>
+                    <div class="text-end col-md-6">
+                        <a role="button" id="btnCreate" class="btn-primary btn p-2" onclick="openCreateModal()"><i
+                                class="bi bi-plus-circle"></i> Create new user</a>
+                    </div>
+                </div>
+                <table class="table table-bordered shadow-lg table-hover">
+                    <thead class="text-center align-middle fs-5 fw-bold">
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th style="width: 200px;"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="managementUserTable" class="text-center align-middle">
+                        <tr>
+                            <td colspan="5">Loading...</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="paginationManagementUser" class="mt-3"></div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="text-center">
+            &copy; 2025 - Lê Ngọc Anh Quân
+        </div>
+    </footer>
+
+    <div class="modal fade" id="managementUserModal" tabindex="-1" aria-labelledby="managementUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content shadow-lg rounded-3">
+
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="managementUserModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="managementUserForm">
+                        <input type="hidden" id="UserId"></input>
+
+                        <div class="mb-3">
+                            <label for="userEmail" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="userEmail" name="Email" required></input>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="Username" required></input>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="userRole" class="form-label">Role</label>
+                            <select class="form-select" id="userRole" name="Role" required>
+                                <option value="" selected disabled>-- Select Role --</option>
+                                <option value="Admin">Admin</option>
+                                <option value="User">User</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn" id="saveBtn"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./JS/header.js"></script>
+    <script src="./JS/helper.js"></script>
+    <script src="./JS/api.js"></script>
+    <script src="./JS/auth.js"></script>
+    <script src="./JS/userManagement.js"></script>
+</body>
+
+</html>

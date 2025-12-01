@@ -13,6 +13,9 @@ let watchModalLabel = document.getElementById("watchModalLabel");
 let watchId = document.getElementById("watchId");
 let watchName = document.getElementById("watchName");
 let watchPrice = document.getElementById("watchPrice");
+let watchCategory = document.getElementById("watchCategory");
+let watchBrand = document.getElementById("watchBrand");
+let watchDescription = document.getElementById("watchDescription");
 let ImageFile = document.getElementById("ImageFile");
 let saveBtn = document.getElementById("saveBtn");
 let isEditing = false;
@@ -45,7 +48,7 @@ function renderWatchPage(page) {
     watchTable.innerHTML = "";
 
     if (pageData.length === 0) {
-        watchTable.innerHTML = '<tr><td colspan="4">No watches found</td></tr>';
+        watchTable.innerHTML = '<tr><td colspan="6">No watches found</td></tr>';
     } else {
         pageData.forEach(w => {
             const tr = document.createElement("tr");
@@ -64,12 +67,18 @@ function renderWatchPage(page) {
             const tdPrice = document.createElement("td");
             tdPrice.textContent = w.price.toLocaleString() + " VND";
 
+            const tdCategory = document.createElement("td");
+            tdCategory.textContent = w.category;
+
+            const tdBrand = document.createElement("td");
+            tdBrand.textContent = w.brand;
+
             const tdActions = document.createElement("td");
 
             const btnEdit = document.createElement("button");
             btnEdit.className = "btn btn-success me-2";
             btnEdit.innerHTML = `<i class="bi bi-pencil"></i> Edit`;
-            btnEdit.addEventListener("click", () => openEditModal(w.id, w.name, w.price));
+            btnEdit.addEventListener("click", () => openEditModal(w));
 
             const btnDelete = document.createElement("button");
             btnDelete.className = "btn btn-danger";
@@ -82,6 +91,8 @@ function renderWatchPage(page) {
             tr.appendChild(tdImage);
             tr.appendChild(tdName);
             tr.appendChild(tdPrice);
+            tr.appendChild(tdCategory);
+            tr.appendChild(tdBrand);
             tr.appendChild(tdActions);
 
             watchTable.appendChild(tr);
@@ -103,38 +114,52 @@ function renderWatchPage(page) {
 function openCreateModal() {
     isEditing = false;
     saveBtn.classList.remove("btn-primary", "btn-success");
-    saveBtn.classList.add(isEditing ? "btn-success" : "btn-primary");
-    document.getElementById("watchModalLabel").textContent = "Create new watch";
+    saveBtn.classList.add("btn-primary");
+    watchModalLabel.textContent = "Create new watch";
     saveBtn.textContent = "Create";
+
+    watchId.value = "";
     watchName.value = "";
     watchPrice.value = "";
+    watchCategory.value = "";
+    watchBrand.value = "";
+    watchDescription.value = "";
     ImageFile.value = "";
-    watchId.value = "";
+
     watchModal.show();
 }
 
-function openEditModal(id, name, price) {
+function openEditModal(watch) {
     isEditing = true;
     saveBtn.classList.remove("btn-primary", "btn-success");
-    saveBtn.classList.add(isEditing ? "btn-success" : "btn-primary");
-    document.getElementById("watchModalLabel").textContent = "Edit watch";
+    saveBtn.classList.add("btn-success");
+    watchModalLabel.textContent = "Edit watch";
     saveBtn.textContent = "Edit";
-    watchName.value = name;
-    watchPrice.value = price;
-    watchId.value = id;
+
+    watchId.value = watch.id;
+    watchName.value = watch.name;
+    watchPrice.value = watch.price;
+    watchCategory.value = watch.category;
+    watchBrand.value = watch.brand;
+    watchDescription.value = watch.description || "";
+    ImageFile.value = "";
+
     watchModal.show();
 }
 
 async function handleSaveWatch() {
     const name = watchName.value.trim();
     const price = watchPrice.value.trim();
+    const category = watchCategory.value.trim();
+    const brand = watchBrand.value.trim();
+    const description = watchDescription.value.trim();
     const id = watchId.value;
 
-    if (!name || !price) 
-    {
-        Swal.fire('Error', 'Watch name and price are required.', 'error');
+    if (!name || !price || !category || !brand) {
+        Swal.fire('Error', 'Please fill in all fields.', 'error');
         return;
     }
+
     else if (name.length > 100)
     {
         Swal.fire({
@@ -181,15 +206,28 @@ async function handleSaveWatch() {
         return;
     }
 
-    saveBtn.disabled = true;
+    if (!isEditing) {
+        if (!ImageFile.files || ImageFile.files.length === 0) {
+            Swal.fire('Error', 'Image is required when creating.', 'error');
+            return;
+        }
+    }
 
     const formData = new FormData();
     formData.append("Name", name);
     formData.append("Price", priceNum);
-    if (ImageFile.files && ImageFile.files.length > 0) 
-    {
+    formData.append("Category", category);
+    formData.append("Brand", brand);
+    formData.append("Description", description);
+
+    if (ImageFile.files && ImageFile.files.length > 0) {
         formData.append("ImageFile", ImageFile.files[0]);
     }
+
+    for (let [key, value] of formData.entries()) {
+        console.log(key, value);
+    }
+    saveBtn.disabled = true;
 
     try {
         if (!isEditing) {

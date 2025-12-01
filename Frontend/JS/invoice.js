@@ -240,7 +240,7 @@ function openDetailInvoiceModal(invoice) {
             </tbody>
         </table>
 
-        <h5 class="text-end">Total amount: ${invoice.details.reduce((sum,d) => sum + d.quantity*d.price, 0).toLocaleString()} VND</h5>
+        <h5 class="text-end fw-bold">Total amount: ${invoice.details.reduce((sum,d) => sum + d.quantity*d.price, 0).toLocaleString()} VND</h5>
     `;
 
     viewInvoiceModal.show();

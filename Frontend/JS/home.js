@@ -14,8 +14,29 @@ const categoryTitle = {
     couple: "Couple Watches"
 };
 
+function showSkeleton() {
+    const watchList = document.getElementById("watchList");
+
+    let skeletonHTML = "";
+    for (let i = 0; i < homeRowsPerPage; i++) {
+        skeletonHTML += `
+            <div class="col-md-3 mb-4">
+                <div class="skeleton-card">
+                    <div class="skeleton skeleton-img"></div>
+                    <div class="skeleton skeleton-title"></div>
+                    <div class="skeleton skeleton-price"></div>
+                </div>
+            </div>
+        `;
+    }
+
+    watchList.innerHTML = skeletonHTML;
+}
+
 async function loadWatches() {
     try {
+        showSkeleton();
+
         const response = await api.get("/Watches");
         homeData = response.data;
 
@@ -96,10 +117,25 @@ function renderSearchResults(query, page = 1) {
         w.name.toLowerCase().includes(query.toLowerCase())
     );
 
-    // Render giống renderHomePage nhưng dùng filteredData
     const watchList = document.getElementById("watchList");
     watchList.innerHTML = "";
 
+    if (filteredData.length === 0) {
+        watchList.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <h5 class="text-muted">No results found for "<strong>${query}</strong>"</h5>
+                <p class="text-muted">Try checking your spelling or using different keywords.</p>
+            </div>
+        `;
+
+        if (titleElement) {
+            titleElement.textContent = ``;
+        }
+
+        document.getElementById("paginationHome").innerHTML = "";
+        return;
+    }
+    
     const start = (page - 1) * homeRowsPerPage;
     const end = start + homeRowsPerPage;
     const pageData = filteredData.slice(start, end);
@@ -145,7 +181,7 @@ function renderSearchResults(query, page = 1) {
         titleElement.textContent = `Search results for "${query}"`;
     }
 
-    homeCurrentPage = page; // cập nhật trang hiện tại
+    homeCurrentPage = page; 
     createPagination({
         totalItems: filteredData.length,
         pageSize: homeRowsPerPage,
@@ -154,7 +190,7 @@ function renderSearchResults(query, page = 1) {
         onPageClick: (newPage) => {
             renderSearchResults(query, newPage);
         }
-});
+    });
 }
 
 document.addEventListener("DOMContentLoaded", () => {

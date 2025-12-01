@@ -122,7 +122,7 @@ function openDetailOrderModal(order) {
             </tbody>
         </table>
 
-        <h5 class="text-end">Total amount: ${order.details.reduce((sum,d) => sum + d.quantity*d.price, 0).toLocaleString()} VND</h5>
+        <h5 class="text-end fw-bold">Total amount: ${order.details.reduce((sum,d) => sum + d.quantity*d.price, 0).toLocaleString()} VND</h5>
     `;
 
     viewOrderModal.show();
