@@ -21,16 +21,12 @@
             <div class="container">
                 <div class="row pt-4 pb-3">
                     <div class="col-md-6 d-flex">
-                        <input type="text" id="searchManagementUser" class="form-control mr-2"
+                        <input type="text" id="searchUserManagement" class="form-control mr-2"
                             placeholder="Search user by ID..." style="width: 330px; margin-right: 10px;">
-                        <a role="button" id="btnSearchManagementUser" class="btn btn-dark p-2"
-                            onclick="searchManagementUser()">
+                        <a role="button" id="searchUserManagemenBtn" class="btn btn-dark p-2"
+                            onclick="searchUserManagement()">
                             <i class="bi bi-search"></i> Search
                         </a>
-                    </div>
-                    <div class="text-end col-md-6">
-                        <a role="button" id="btnCreate" class="btn-primary btn p-2" onclick="openCreateModal()"><i
-                                class="bi bi-plus-circle"></i> Create new user</a>
                     </div>
                 </div>
                 <table class="table table-bordered shadow-lg table-hover">
@@ -40,16 +36,16 @@
                             <th>Email</th>
                             <th>Username</th>
                             <th>Role</th>
-                            <th style="width: 200px;"></th>
+                            <th style="width: 300px;"></th>
                         </tr>
                     </thead>
-                    <tbody id="managementUserTable" class="text-center align-middle">
+                    <tbody id="userManagementTable" class="text-center align-middle">
                         <tr>
                             <td colspan="5">Loading...</td>
                         </tr>
                     </tbody>
                 </table>
-                <div id="paginationManagementUser" class="mt-3"></div>
+                <div id="paginationUserManagement" class="mt-3"></div>
             </div>
         </main>
     </div>
@@ -60,17 +56,17 @@
         </div>
     </footer>
 
-    <div class="modal fade" id="managementUserModal" tabindex="-1" aria-labelledby="managementUserModalLabel" aria-hidden="true">
+    <div class="modal fade" id="userManagementModal" tabindex="-1" aria-labelledby="userManagementModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content shadow-lg rounded-3">
 
                 <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="managementUserModalLabel"></h5>
+                    <h5 class="modal-title fw-bold" id="userManagementModalLabel">Update</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <div class="modal-body">
-                    <form id="managementUserForm">
+                    <form id="userManagementForm">
                         <input type="hidden" id="UserId"></input>
 
                         <div class="mb-3">
@@ -79,8 +75,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" name="Username" required></input>
+                            <label for="userName" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="userName" name="Username" required></input>
                         </div>
 
                         <div class="mb-3">
@@ -95,8 +91,26 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn" id="saveBtn"></button>
+                    <button type="button" class="btn btn-success" id="updateBtn">Edit</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="viewUserManagementModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content shadow-lg">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="viewUserManagementModalLabel">User Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div id="viewUserManagementContainer">
+                        <div>Loading...</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

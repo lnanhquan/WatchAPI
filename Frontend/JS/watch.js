@@ -358,6 +358,16 @@ function sortWatchBy(field)
                 x = a.price;
                 y = b.price;
                 break;
+
+            case "brand":
+                x = a.brand.toLowerCase();
+                y = b.brand.toLowerCase();
+                break;
+
+            case "category":
+                x = a.category.toLowerCase();
+                y = b.category.toLowerCase();
+                break;
         }
 
         if (x < y) return direction === "asc" ? -1 : 1;

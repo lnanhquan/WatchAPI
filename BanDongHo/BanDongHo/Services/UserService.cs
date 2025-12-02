@@ -1,0 +1,160 @@
+﻿using BanDongHo.DTOs;
+using BanDongHo.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
+namespace BanDongHo.Services
+{
+    public class UserService : IUserService
+    {
+        private readonly UserManager<User> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly ILogger<UserService> _logger;
+
+        public UserService(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, ILogger<UserService> logger)
+        {
+            _userManager = userManager;
+            _roleManager = roleManager;
+            _logger = logger;
+        }
+
+        public async Task<List<UserDTO>> GetAllUsersAsync()
+        {
+            try
+            {
+                _logger.LogInformation("Retrieving all users");
+                var users = await _userManager.Users.ToListAsync();
+                var result = new List<UserDTO>();
+
+                foreach (var user in users)
+                {
+                    var role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "";
+                    result.Add(new UserDTO
+                    {
+                        Id = user.Id,
+                        Email = user.Email!,
+                        Username = user.UserName!,
+                        Role = role
+                    });
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("{ExceptionType} - {Message}", ex.GetType().Name, ex.Message);
+                throw;
+            }
+        }
+
+        public async Task<UserDTO?> GetByIdAsync(string id)
+        {
+            try
+            {
+                _logger.LogInformation("Fetching user by id {id}", id);
+                var user = await _userManager.FindByIdAsync(id);
+
+                if (user == null)
+                {
+                    _logger.LogWarning("User with id {id} not found", id);
+                    return null;
+                }
+
+                var role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "";
+
+                _logger.LogInformation("Found user {username} with id {id}", user.UserName, id);
+
+                return new UserDTO
+                {
+                    Id = user.Id,
+                    Email = user.Email!,
+                    Username = user.UserName!,
+                    Role = role
+                };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("{ExceptionType} - {Message}", ex.GetType().Name, ex.Message);
+                throw;
+            }
+        }
+
+        public async Task<bool> UpdateUserAsync(string id, UserDTO dto)
+        {
+            try
+            {
+                _logger.LogInformation("Updating user {id}", id);
+                var user = await _userManager.FindByIdAsync(id);
+                if (user == null)
+                {
+                    _logger.LogWarning("Cannot update user {id}: not found", id);
+                    return false;
+                }
+
+                user.Email = dto.Email;
+                user.UserName = dto.Username;
+
+                var updateResult = await _userManager.UpdateAsync(user);
+                if (!updateResult.Succeeded)
+                {
+                    _logger.LogError("Failed to update user {id}. Errors: {errors}",
+                        id,
+                        string.Join(", ", updateResult.Errors.Select(e => e.Description)));
+                    return false;
+                }
+
+                var currentRoles = await _userManager.GetRolesAsync(user);
+                if (currentRoles.Any())
+                {
+                    await _userManager.RemoveFromRolesAsync(user, currentRoles);
+                }
+
+                if (!await _roleManager.RoleExistsAsync(dto.Role))
+                {
+                    _logger.LogInformation("Role {role} does not exist. Creating...", dto.Role);
+                    await _roleManager.CreateAsync(new IdentityRole(dto.Role));
+                }
+
+                await _userManager.AddToRoleAsync(user, dto.Role);
+
+                _logger.LogInformation("User {id} updated successfully", id);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("{ExceptionType} - {Message}", ex.GetType().Name, ex.Message);
+                throw;
+            }
+        }
+
+        public async Task<bool> DeleteUserAsync(string id)
+        {
+            try
+            {
+                _logger.LogInformation("Deleting user {id}", id);
+                var user = await _userManager.FindByIdAsync(id);
+                if (user == null)
+                {
+                    _logger.LogWarning("Cannot delete user {id}: not found", id);
+                    return false;
+                }
+
+                var result = await _userManager.DeleteAsync(user);
+                if (!result.Succeeded)
+                {
+                    _logger.LogError("Failed to delete user {id}. Errors: {errors}",
+                        id,
+                        string.Join(", ", result.Errors.Select(e => e.Description)));
+                    return false;
+                }
+
+                _logger.LogInformation("User {id} deleted successfully", id);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("{ExceptionType} - {Message}", ex.GetType().Name, ex.Message);
+                throw;
+            }
+        }
+    }
+}
