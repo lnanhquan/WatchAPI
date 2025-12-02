@@ -10,5 +10,8 @@ namespace BanDongHo.Models
 
         // Navigation property: 1 User có nhiều sản phẩm trong giỏ hàng
         public ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
+
+        public string? RefreshToken { get; set; }
+        public DateTime? RefreshTokenExpiryTime { get; set; }
     }
 }

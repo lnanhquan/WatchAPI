@@ -1,7 +1,9 @@
 const authAPI = {
     register: (data) => {return api.post("/Auth/register", data);},
     login: (data) => {return api.post("/Auth/login", data);},
-    checkEmail: (email) => {return api.get("/Auth/check-email", { params: { email } });}
+    logout: () => {return api.post("/Auth/logout");},
+    checkEmail: (email) => {return api.get("/Auth/check-email", { params: { email } });},
+    refreshToken: (data) => {return api.post("/Auth/refresh-token", data);}
 };
 
 function openLoginModal() {
@@ -132,6 +134,7 @@ async function login() {
             Swal.fire('Error', 'Please enter both email and password!', 'error');
             return;
         }
+
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) 
         {
@@ -147,6 +150,7 @@ async function login() {
         localStorage.setItem("user", JSON.stringify(response.data));
         updateUIAfterLogin(true);
         loginModal.hide();
+
         Swal.fire({
             icon: "success",
             title: "Logged in successfully!",
@@ -187,8 +191,12 @@ async function logout() {
         cancelButtonColor: "#3085d6"
     });
 
-    if (result.isConfirmed)
-    {
+    if (result.isConfirmed) {
+        const user = JSON.parse(localStorage.getItem("user") || "{}");
+        if (user?.refreshToken) {
+            try { await authAPI.logout(); } catch {}
+        }
+
         localStorage.removeItem("user");
         updateUIAfterLogin(false);
         removeSidebar();

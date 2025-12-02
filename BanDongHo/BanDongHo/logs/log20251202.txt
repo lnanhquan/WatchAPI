@@ -226,3 +226,34 @@
 2025-12-02 10:42:05.825 +07:00 [INF] Retrieving all watches
 2025-12-02 10:42:06.198 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
 2025-12-02 10:42:06.200 +07:00 [INF] Retrieving all users
+2025-12-02 13:31:29.630 +07:00 [INF] Retrieving all watches
+2025-12-02 13:31:38.549 +07:00 [INF] Retrieving all watches
+2025-12-02 13:31:52.681 +07:00 [INF] Retrieving all watches
+2025-12-02 13:32:00.719 +07:00 [INF] User admin logged in successfully
+2025-12-02 13:36:55.431 +07:00 [INF] Retrieving all watches
+2025-12-02 13:40:52.805 +07:00 [INF] Retrieving all watches
+2025-12-02 13:41:05.868 +07:00 [INF] Retrieving all watches
+2025-12-02 13:41:32.211 +07:00 [INF] Retrieving all watches
+2025-12-02 13:41:44.201 +07:00 [INF] Retrieving all watches
+2025-12-02 13:41:57.784 +07:00 [INF] Retrieving all watches
+2025-12-02 13:41:57.822 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-02 13:43:14.270 +07:00 [INF] Retrieving all watches
+2025-12-02 13:43:14.276 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-02 13:47:18.320 +07:00 [INF] Retrieving all watches
+2025-12-02 13:47:18.321 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-02 13:47:24.041 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-02 13:47:24.042 +07:00 [INF] Retrieving all watches
+2025-12-02 13:48:39.469 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-02 13:48:39.533 +07:00 [INF] Retrieved all invoices.
+2025-12-02 13:48:39.899 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-02 13:48:39.905 +07:00 [INF] Retrieving all users
+2025-12-02 13:48:40.324 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-02 13:48:40.327 +07:00 [INF] Retrieving all watches
+2025-12-02 13:48:40.825 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-02 13:48:40.826 +07:00 [INF] Retrieved all invoices.
+2025-12-02 13:48:41.884 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-02 13:48:41.886 +07:00 [INF] Retrieving all watches
+2025-12-02 13:48:42.353 +07:00 [INF] Retrieving all watches
+2025-12-02 13:48:42.353 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-02 13:48:42.779 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-02 13:48:42.780 +07:00 [INF] Retrieving all watches

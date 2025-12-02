@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace BanDongHo.Controllers
@@ -25,6 +26,81 @@ namespace BanDongHo.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
             _config = config;
+        }
+
+        // Sinh refresh token
+        private string GenerateRefreshToken()
+        {
+            var randomNumber = new byte[64];
+            using var rng = RandomNumberGenerator.Create();
+            rng.GetBytes(randomNumber);
+            return Convert.ToBase64String(randomNumber);
+        }
+
+        private string HashToken(string token)
+        {
+            using var sha = SHA256.Create();
+            var bytes = Encoding.UTF8.GetBytes(token);
+            var hash = sha.ComputeHash(bytes);
+            return Convert.ToBase64String(hash);
+        }
+
+        // Lấy thông tin từ token cũ 
+        private ClaimsPrincipal? GetPrincipalFromExpiredToken(string token)
+        {
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateAudience = false,
+                ValidateIssuer = false,
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"])),
+                ValidateLifetime = false 
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            try
+            {
+                var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
+                if (securityToken is JwtSecurityToken jwt &&
+                    jwt.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return principal;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+            return null;
+        }
+
+        // Sinh token mới
+        private (string accessToken, string refreshToken) GenerateTokens(User user, IList<string> roles)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.Email, user.Email)
+            };
+            claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
+
+            var key = Encoding.ASCII.GetBytes(_config["Jwt:Key"]);
+            var tokenHandler = new JwtSecurityTokenHandler();
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddMinutes(double.Parse(_config["Jwt:ExpireMinutes"])),
+                Issuer = _config["Jwt:Issuer"],
+                Audience = _config["Jwt:Audience"],
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var accessToken = tokenHandler.WriteToken(tokenHandler.CreateToken(tokenDescriptor));
+            var refreshToken = GenerateRefreshToken();
+
+            return (accessToken, refreshToken);
         }
 
         [HttpPost("register")]
@@ -84,34 +160,14 @@ namespace BanDongHo.Controllers
                 }
 
                 var roles = await _userManager.GetRolesAsync(user);
+                var (accessToken, refreshToken) = GenerateTokens(user, roles);
 
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.ASCII.GetBytes(_config["Jwt:Key"]);
+                // Lưu refresh token 
+                user.RefreshToken = HashToken(refreshToken);
+                user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(int.Parse(_config["Jwt:RefreshTokenExpiryDays"]));
+                await _userManager.UpdateAsync(user);
 
-                var claims = new List<Claim>
-                {
-                    new Claim(JwtRegisteredClaimNames.Sub, user.Id),
-                    new Claim(ClaimTypes.Name, user.UserName),
-                    new Claim(ClaimTypes.Email, user.Email)
-                };
-                claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
-
-                var tokenDescriptor = new SecurityTokenDescriptor
-                {
-                    Subject = new ClaimsIdentity(claims),
-                    Expires = DateTime.UtcNow.AddMinutes(Convert.ToDouble(_config["Jwt:ExpireMinutes"])),
-                    Issuer = _config["Jwt:Issuer"],
-                    Audience = _config["Jwt:Audience"],
-                    SigningCredentials = new SigningCredentials(
-                        new SymmetricSecurityKey(key),
-                        SecurityAlgorithms.HmacSha256Signature
-                    )
-                };
-
-                var token = tokenHandler.CreateToken(tokenDescriptor);
-                var jwt = tokenHandler.WriteToken(token);
-
-                Log.Information("User {Username} logged in successfully: {Email}", user.UserName, dto.Email);
+                Log.Information("User {Username} logged in successfully", user.UserName);
 
                 return Ok(new AuthResponseDTO
                 {
@@ -119,7 +175,8 @@ namespace BanDongHo.Controllers
                     Username = user.UserName,
                     Email = user.Email,
                     Roles = roles,
-                    Token = jwt
+                    AccessToken = accessToken,
+                    RefreshToken = refreshToken
                 });
             }
             catch (Exception ex)
@@ -134,6 +191,57 @@ namespace BanDongHo.Controllers
         {
             var user = await _userManager.FindByEmailAsync(email);
             return Ok(user != null);
+        }
+
+        // API khi cần refresh token
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenDTO dto)
+        {
+            var principal = GetPrincipalFromExpiredToken(dto.AccessToken);
+            if (principal == null)
+                return BadRequest("Invalid access token");
+
+            var userId = principal.FindFirstValue(JwtRegisteredClaimNames.Sub);
+            var user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null ||
+                user.RefreshToken != HashToken(dto.RefreshToken) ||
+                user.RefreshTokenExpiryTime <= DateTime.UtcNow)
+            {
+                return Unauthorized("Invalid refresh token");
+            }
+
+            var roles = await _userManager.GetRolesAsync(user);
+            var (newAccessToken, newRefreshToken) = GenerateTokens(user, roles);
+
+            user.RefreshToken = HashToken(newRefreshToken);
+            user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(int.Parse(_config["Jwt:RefreshTokenExpiryDays"]));
+            await _userManager.UpdateAsync(user);
+
+            Log.Information("Refresh token issued for user {Username}", user.UserName);
+
+            return Ok(new
+            {
+                AccessToken = newAccessToken,
+                RefreshToken = newRefreshToken
+            });
+        }
+
+        // Xóa refresh token đi sau khi log out
+        [Authorize]
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Unauthorized();
+
+            user.RefreshToken = null;
+            user.RefreshTokenExpiryTime = null;
+            await _userManager.UpdateAsync(user);
+
+            Log.Information("User {Username} logged out", user.UserName);
+
+            return Ok("Logged out");
         }
     }
 }
