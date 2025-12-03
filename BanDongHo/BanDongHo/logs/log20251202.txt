@@ -257,3 +257,35 @@
 2025-12-02 13:48:42.353 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
 2025-12-02 13:48:42.779 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
 2025-12-02 13:48:42.780 +07:00 [INF] Retrieving all watches
+2025-12-02 15:05:57.964 +07:00 [INF] Retrieving all watches
+2025-12-02 15:06:09.020 +07:00 [INF] GetById: Found watch SRWATCH SG88806.1205AT with ID "0a389b58-efc0-4211-a120-0fffff8a4acb"
+2025-12-02 15:06:14.417 +07:00 [INF] Retrieving all watches
+2025-12-02 15:06:18.792 +07:00 [INF] GetById: Found watch SRWATCH SL7004.1202 with ID "3f070cb9-2ccc-4bbd-8be2-268c8076e752"
+2025-12-02 15:07:06.127 +07:00 [INF] User user logged in successfully
+2025-12-02 15:07:15.401 +07:00 [INF] Retrieving all watches
+2025-12-02 15:07:15.452 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-02 15:07:24.861 +07:00 [INF] Retrieving all watches
+2025-12-02 15:07:24.868 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-02 15:07:26.359 +07:00 [INF] Retrieving all watches
+2025-12-02 15:07:26.363 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-02 15:07:29.753 +07:00 [INF] Retrieving all watches
+2025-12-02 15:07:29.767 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-02 15:07:31.805 +07:00 [INF] GetById: Found watch SRWATCH SG88806.1205AT with ID "0a389b58-efc0-4211-a120-0fffff8a4acb"
+2025-12-02 15:07:31.805 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-02 15:07:38.422 +07:00 [INF] Added new cart item for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de, watch "0a389b58-efc0-4211-a120-0fffff8a4acb"
+2025-12-02 15:07:38.448 +07:00 [INF] Saved changes for cart operations.
+2025-12-02 15:07:38.466 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-02 15:07:44.244 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-02 15:07:44.254 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-02 15:07:54.361 +07:00 [INF] Updated cart item for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de, watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd"
+2025-12-02 15:07:54.369 +07:00 [INF] Saved changes for cart operations.
+2025-12-02 15:07:59.983 +07:00 [INF] Created invoice "2f2349a2-28b6-46bc-bd62-22038f2b0012" for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-02 15:08:00.025 +07:00 [INF] Deleted cart item for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de, watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd"
+2025-12-02 15:08:00.039 +07:00 [INF] Saved changes for cart operations.
+2025-12-02 15:08:00.062 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-02 15:08:04.247 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-02 15:08:04.306 +07:00 [INF] Retrieved all invoices.
+2025-12-02 15:08:14.836 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-02 15:08:14.843 +07:00 [INF] Retrieving all watches
+2025-12-02 15:11:40.862 +07:00 [INF] User user logged out
+2025-12-02 15:11:40.934 +07:00 [INF] Retrieving all watches

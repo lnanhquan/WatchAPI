@@ -1,4 +1,4 @@
-﻿using BanDongHo.Models;
+﻿using WatchAPI.Models.Entities;
 
 namespace BanDongHo.Repositories
 {

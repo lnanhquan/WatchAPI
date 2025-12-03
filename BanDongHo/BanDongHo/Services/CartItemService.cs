@@ -1,6 +1,7 @@
 ﻿using BanDongHo.DTOs;
-using BanDongHo.Models;
 using BanDongHo.Repositories;
+using WatchAPI.Models.Entities;
+using WatchAPI.Services;
 
 namespace BanDongHo.Services
 {
@@ -59,7 +60,7 @@ namespace BanDongHo.Services
 
                 var newItem = new CartItem
                 {
-                    Id = Guid.NewGuid(),
+                    //Id = Guid.NewGuid(),
                     UserId = userId,
                     WatchId = dto.WatchId,
                     Quantity = dto.Quantity

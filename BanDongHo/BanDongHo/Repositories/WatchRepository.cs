@@ -1,6 +1,6 @@
-﻿using BanDongHo.Data;
-using BanDongHo.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using WatchAPI.Data;
+using WatchAPI.Models.Entities;
 
 namespace BanDongHo.Repositories
 {
@@ -14,7 +14,7 @@ namespace BanDongHo.Repositories
 
         public async Task CreateAsync(Watch watch)
         {
-            watch.Id = Guid.NewGuid(); 
+            //watch.Id = Guid.NewGuid(); 
             await _db.Watches.AddAsync(watch);
             await _db.SaveChangesAsync();
         }

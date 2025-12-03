@@ -1,6 +1,4 @@
-﻿using BanDongHo.Data;
-using BanDongHo.Models;
-using BanDongHo.Repositories;
+﻿using BanDongHo.Repositories;
 using BanDongHo.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -10,6 +8,9 @@ using Serilog;
 using Serilog.Events;
 using System.Security.Claims;
 using System.Text;
+using WatchAPI.Data;
+using WatchAPI.Models.Entities;
+using WatchAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,8 +1,8 @@
 ﻿using BanDongHo.DTOs;
-using BanDongHo.Models;
 using BanDongHo.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
+using WatchAPI.Models.Entities;
 
 namespace BanDongHo.Services
 {

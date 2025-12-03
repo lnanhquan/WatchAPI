@@ -1,7 +1,7 @@
 ﻿using BanDongHo.DTOs;
-using BanDongHo.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using WatchAPI.Models.Entities;
 
 namespace BanDongHo.Services
 {

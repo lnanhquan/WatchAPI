@@ -1,6 +1,7 @@
 ﻿using BanDongHo.DTOs;
-using BanDongHo.Models;
 using BanDongHo.Repositories;
+using WatchAPI.Models.Entities;
+using WatchAPI.Services;
 
 namespace BanDongHo.Services
 {
@@ -61,7 +62,7 @@ namespace BanDongHo.Services
                 var invoice = new Invoice
                 {
                     UserId = dto.UserId,
-                    CreatedAt = DateTime.UtcNow
+                    //CreatedAt = DateTime.UtcNow
                 };
 
                 invoice.InvoiceDetails = new List<InvoiceDetail>();

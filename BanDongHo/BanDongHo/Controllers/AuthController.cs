@@ -1,5 +1,4 @@
 ﻿using BanDongHo.DTOs;
-using BanDongHo.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -10,6 +9,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using WatchAPI.Models.Entities;
 
 namespace BanDongHo.Controllers
 {

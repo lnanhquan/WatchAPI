@@ -1,6 +1,6 @@
-﻿using BanDongHo.Data;
-using BanDongHo.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using WatchAPI.Data;
+using WatchAPI.Models.Entities;
 
 namespace BanDongHo.Repositories
 {

@@ -1,7 +1,6 @@
 ﻿using BanDongHo.DTOs;
-using BanDongHo.Models;
 
-namespace BanDongHo.Services
+namespace WatchAPI.Services
 {
     public interface IInvoiceService
     {

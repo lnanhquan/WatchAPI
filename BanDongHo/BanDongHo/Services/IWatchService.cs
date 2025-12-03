@@ -1,5 +1,5 @@
 ﻿using BanDongHo.DTOs;
-using BanDongHo.Models;
+using WatchAPI.Models.Entities;
 
 namespace BanDongHo.Services
 {
