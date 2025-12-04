@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using WatchAPI.Models.Base;
+﻿using WatchAPI.Models.Base;
 
 namespace WatchAPI.Models.Entities
 {

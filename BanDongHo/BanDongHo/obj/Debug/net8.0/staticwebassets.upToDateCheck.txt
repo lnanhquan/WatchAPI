@@ -18,3 +18,4 @@ wwwroot\Images\Watches\bfc2658e-0f48-4057-a520-ebd0bf5edcfd.jpg
 wwwroot\Images\Watches\c5bca0a7-ed47-448e-b8d8-211cca5d5ce3.webp
 wwwroot\Images\Watches\e22edd91-20da-4c5f-8b88-9feeb768a4be.jpg
 wwwroot\Images\Watches\f88dda15-069d-4de1-92d5-92726298cc90.jpg
+wwwroot\Images\Watches\5dfdd807-a756-4d3d-a9e2-b473fce3f6ef.webp

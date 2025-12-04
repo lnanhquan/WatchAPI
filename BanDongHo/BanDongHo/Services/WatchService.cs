@@ -1,227 +1,171 @@
-﻿using BanDongHo.DTOs;
-using BanDongHo.Repositories;
-using Microsoft.AspNetCore.Mvc;
-using Serilog;
+﻿using AutoMapper;
+using WatchAPI.DTOs.Watch;
 using WatchAPI.Models.Entities;
+using WatchAPI.Repositories;
 
-namespace BanDongHo.Services
+namespace WatchAPI.Services
 {
     public class WatchService : IWatchService
     {
-        private readonly IWatchRepository _repo;
+        private readonly IUnitOfWork _uow;
+        private readonly IMapper _mapper;
         private readonly ILogger<WatchService> _logger;
 
-        public WatchService(IWatchRepository repo, ILogger<WatchService> logger)
+        public WatchService(IUnitOfWork uow, IMapper mapper, ILogger<WatchService> logger)
         {
-            _repo = repo;
+            _uow = uow;
+            _mapper = mapper;
             _logger = logger;
         }
 
-        public async Task<IEnumerable<Watch>> GetAllAsync()
+        public async Task<IEnumerable<WatchUserDTO>> GetAllAsync()
         {
-            try
-            {
-                var watches = await _repo.GetAllAsync();
-                _logger.LogInformation("Retrieving all watches");
-                return watches;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("{ExceptionType} - {Message}", ex.GetType().Name, ex.Message);
-                throw;
-            }
+            _logger.LogInformation("User requested all watches");
+            var watches = await _uow.Watches.GetAllAsync();
+            _logger.LogInformation("Returned {Count} watches", watches.Count());
+            return _mapper.Map<IEnumerable<WatchUserDTO>>(watches);
         }
 
-        public async Task<Watch?> GetByIdAsync(Guid id)
+        public async Task<WatchUserDTO?> GetByIdAsync(Guid id)
         {
-            try
+            _logger.LogInformation("User requested watch by ID: {WatchId}", id);
+            var watch = await _uow.Watches.GetByIdAsync(id);
+            if (watch == null)
             {
-                var watch = await _repo.GetByIdAsync(id);
-
-                if (watch == null)
-                {
-                    _logger.LogWarning("GetById: Watch with ID {Id} not found", id);
-                }
-                else
-                {
-                    _logger.LogInformation("GetById: Found watch {Name} with ID {Id}", watch.Name, watch.Id);
-                }
-                return watch;
+                _logger.LogWarning("Watch with ID {WatchId} not found", id);
+                return null;
             }
-            catch (Exception ex)
+            else
             {
-                _logger.LogError("{ExceptionType} - {Message}", ex.GetType().Name, ex.Message);
-                throw;
-            }
-        }
-
-        public async Task<Watch> CreateAsync(WatchDTO dto)
-        {
-            try
-            {
-                var exists = await _repo.GetByNameAsync(dto.Name);
-                if (exists != null)
-                {
-                    _logger.LogWarning("Create: Watch with name {Name} already exists", dto.Name);
-                    throw new InvalidOperationException($"Watch with name '{dto.Name}' already exists.");
-                }
-
-                string imageUrl = null;
-
-                if (dto.ImageFile != null && dto.ImageFile.Length > 0)
-                {
-                    var fileName = $"{Guid.NewGuid()}{Path.GetExtension(dto.ImageFile.FileName)}";
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "Watches", fileName);
-
-                    using (var stream = new FileStream(filePath, FileMode.Create))
-                    {
-                        await dto.ImageFile.CopyToAsync(stream);
-                    }
-
-                    imageUrl = $"/Images/Watches/{fileName}";
-                }
-
-                var watch = new Watch
-                {
-                    Name = dto.Name,
-                    Price = dto.Price,
-                    Category = dto.Category,
-                    Brand = dto.Brand,
-                    Description = dto.Description,
-                    ImageUrl = imageUrl
-                };
-
-                await _repo.CreateAsync(watch);
-                _logger.LogInformation("Created new watch {Name} with ID {Id}", watch.Name, watch.Id);
-                return watch;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("{ExceptionType} - {Message}", ex.GetType().Name, ex.Message);
-                throw;
-            }
-        }
-
-        public async Task<bool> UpdateAsync(Guid id, WatchDTO dto)
-        {
-            try
-            {
-                var existingWatch = await _repo.GetByIdAsync(id);
-                if (existingWatch == null)
-                {
-                    _logger.LogWarning("Update: Watch with ID {Id} not found", id);
-                    return false;
-                }
-                var otherWatch = await _repo.GetByNameAsync(dto.Name);
-                if (otherWatch != null && otherWatch.Id != id)
-                {
-                    _logger.LogWarning("Update: Watch with name {Name} already exists", dto.Name);
-                    throw new InvalidOperationException($"Watch with name '{dto.Name}' already exists.");
-                }
-
-                string imageUrl = existingWatch.ImageUrl;
-
-                if (dto.ImageFile != null && dto.ImageFile.Length > 0)
-                {
-                    if (!string.IsNullOrEmpty(existingWatch.ImageUrl))
-                    {
-                        var oldFilePath = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot", "Images", "Watches", Path.GetFileName(existingWatch.ImageUrl));
-                        if (System.IO.File.Exists(oldFilePath))
-                            System.IO.File.Delete(oldFilePath);
-                    }
-
-                    var fileName = $"{Guid.NewGuid()}{Path.GetExtension(dto.ImageFile.FileName)}";
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "Watches", fileName);
-
-                    using (var stream = new FileStream(filePath, FileMode.Create))
-                    {
-                        await dto.ImageFile.CopyToAsync(stream);
-                    }
-
-                    imageUrl = $"/Images/Watches/{fileName}";
-                }
-
-                existingWatch.Name = dto.Name;
-                existingWatch.Price = dto.Price;
-                existingWatch.Category = dto.Category;
-                existingWatch.Brand = dto.Brand;
-                existingWatch.Description = dto.Description;
-                existingWatch.ImageUrl = imageUrl;
-
-                await _repo.UpdateAsync(existingWatch);
-                _logger.LogInformation("Updated watch {Name} with ID {Id}", existingWatch.Name, existingWatch.Id);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("{ExceptionType} - {Message}", ex.GetType().Name, ex.Message);
-                throw;
-            }
-        }
-
-        public async Task<bool> DeleteAsync(Guid id)
-        {
-            try
-            {
-                var existingWatch = await _repo.GetByIdAsync(id);
-                if (existingWatch == null)
-                {
-                    _logger.LogWarning("Delete: Watch with ID {Id} not found", id);
-                    return false;
-                }
-
-                if (!string.IsNullOrEmpty(existingWatch.ImageUrl))
-                {
-                    var fileName = Path.GetFileName(existingWatch.ImageUrl);
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "Watches", fileName);
-
-                    if (System.IO.File.Exists(filePath))
-                    {
-                        try
-                        {
-                            System.IO.File.Delete(filePath);
-                            _logger.LogInformation("Deleted image file: {FilePath}", filePath);
-                        }
-                        catch (Exception ex)
-                        {
-                            _logger.LogWarning(ex, "Failed to delete image file: {FilePath}", filePath);
-                        }
-                    }
-                }
-
-                await _repo.DeleteAsync(id);
-                _logger.LogInformation("Deleted watch with ID {Id}", id);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("{ExceptionType} - {Message}", ex.GetType().Name, ex.Message);
-                throw;
-            }
+                _logger.LogInformation("Returned watch {WatchName}", watch.Name);
+                return _mapper.Map<WatchUserDTO?>(watch);
+            } 
         }
 
         public async Task<Watch?> GetByNameAsync(string name)
         {
-            try
+            _logger.LogInformation("User requested watch by Name: {WatchName}", name);
+            var watch = await _uow.Watches.GetByNameAsync(name);
+            if (watch == null)
             {
-                var watch = await _repo.GetByNameAsync(name);
-
-                if (watch == null)
-                {
-                    _logger.LogWarning("GetById: Watch with name {Name} not found", name);
-                }
-                else
-                {
-                    _logger.LogInformation("GetById: Found watch with name {Name}", name);
-                }
-                return watch;
+                _logger.LogWarning("Watch with name {WatchName} not found", name);
+                return null;
             }
-            catch (Exception ex)
+            else
             {
-                _logger.LogError("{ExceptionType} - {Message}", ex.GetType().Name, ex.Message);
-                throw;
+                _logger.LogInformation("Found watch {WatchId} with name {WatchName}", watch.Id, watch.Name);
+                return watch;
             }
         }
 
+        public async Task<IEnumerable<WatchAdminDTO>> GetAllAdminAsync()
+        {
+            _logger.LogInformation("Admin requested all watches");
+            var watches = await _uow.Watches.GetAllAdminAsync();
+            _logger.LogInformation("Returned {Count} watches for admin", watches.Count());
+            return _mapper.Map<IEnumerable<WatchAdminDTO>>(watches);
+        }
+
+        public async Task<WatchAdminDTO?> GetAdminByIdAsync(Guid id)
+        {
+            _logger.LogInformation("Admin requested watch by ID: {WatchId}", id);
+            var watch = await _uow.Watches.GetByIdAsync(id);
+            if (watch == null)
+            { 
+                _logger.LogWarning("Watch with Id {WatchId} not found for admin", id);
+                return null;
+            }
+            else
+            {
+                _logger.LogInformation("Returned watch {WatchName} for admin", watch.Name);
+                return _mapper.Map<WatchAdminDTO?>(watch);
+            }
+        }
+
+        public async Task<Watch> CreateAsync(WatchCreateDTO dto, string? user = null)
+        {
+            ValidateWatchCreate(dto);
+
+            var exists = await _uow.Watches.GetByNameAsync(dto.Name);
+            if (exists != null)
+                throw new ArgumentException($"Watch name '{dto.Name}' already exists");
+
+            var watch = _mapper.Map<Watch>(dto);
+            watch.SetCreated(user);
+
+            await _uow.Watches.CreateAsync(watch, user);
+            await _uow.SaveChangesAsync();
+
+            _logger.LogInformation("Created watch {Name} by user {User}", watch.Name, user);
+            return watch;
+        }
+
+        public async Task<bool> UpdateAsync(Guid id, WatchUpdateDTO dto, string? user = null)
+        {
+            ValidateWatchUpdate(dto);
+
+            var sameNameWatch = await _uow.Watches.GetByNameAsync(dto.Name);
+            if (sameNameWatch != null && sameNameWatch.Id != id)
+                throw new ArgumentException($"Another watch with name '{dto.Name}' already exists");
+
+            var watch = await _uow.Watches.GetByIdAsync(id);
+            if (watch == null)
+                return false;
+
+            _mapper.Map(dto, watch);
+            if (!string.IsNullOrWhiteSpace(dto.ImageUrl))
+            {
+                watch.ImageUrl = dto.ImageUrl;
+            }
+            watch.SetUpdated(user);
+
+            _uow.Watches.Update(watch, user);
+            await _uow.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<bool> DeleteAsync(Guid id, string? user = null)
+        {
+            var watch = await _uow.Watches.GetByIdAsync(id);
+            if (watch == null)
+            {
+                _logger.LogWarning("Watch with ID {WatchId} not found for deletion", id);
+                return false;
+            }
+
+            await _uow.Watches.DeleteAsync(id, user);
+            await _uow.SaveChangesAsync();
+
+            _logger.LogInformation("Soft deleted watch {WatchId} by user {User}", id, user);
+
+            return true;
+        }
+
+        private static void ValidateWatchCreate(WatchCreateDTO dto)
+        {
+            if (string.IsNullOrWhiteSpace(dto.Name))
+                throw new ArgumentException("Name is required");
+            if (dto.Price <= 0)
+                throw new ArgumentException("Price must be positive");
+            if (string.IsNullOrWhiteSpace(dto.Category))
+                throw new ArgumentException("Category is required");
+            if (string.IsNullOrWhiteSpace(dto.Brand))
+                throw new ArgumentException("Brand is required");
+            if (string.IsNullOrWhiteSpace(dto.ImageUrl))
+                throw new ArgumentException("Image is required for creation");
+        }
+
+        private static void ValidateWatchUpdate(WatchUpdateDTO dto)
+        {
+            if (string.IsNullOrWhiteSpace(dto.Name))
+                throw new ArgumentException("Name is required");
+            if (dto.Price <= 0)
+                throw new ArgumentException("Price must be positive");
+            if (string.IsNullOrWhiteSpace(dto.Category))
+                throw new ArgumentException("Category is required");
+            if (string.IsNullOrWhiteSpace(dto.Brand))
+                throw new ArgumentException("Brand is required");
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using WatchAPI.Models.Entities;
 
-namespace BanDongHo.Repositories
+namespace WatchAPI.Repositories
 {
     public interface ICartItemRepository
     {

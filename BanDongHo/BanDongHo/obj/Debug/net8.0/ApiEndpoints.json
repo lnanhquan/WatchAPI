@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "BanDongHo.Controllers.AuthController",
+    "ContainingType": "WatchAPI.Controllers.AuthController",
     "Method": "CheckEmail",
     "RelativePath": "api/Auth/check-email",
     "HttpMethod": "GET",
@@ -16,7 +16,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.AuthController",
+    "ContainingType": "WatchAPI.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
@@ -25,14 +25,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "BanDongHo.DTOs.LoginDTO",
+        "Type": "WatchAPI.DTOs.LoginDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.AuthController",
+    "ContainingType": "WatchAPI.Controllers.AuthController",
     "Method": "Logout",
     "RelativePath": "api/Auth/logout",
     "HttpMethod": "POST",
@@ -42,7 +42,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.AuthController",
+    "ContainingType": "WatchAPI.Controllers.AuthController",
     "Method": "RefreshToken",
     "RelativePath": "api/Auth/refresh-token",
     "HttpMethod": "POST",
@@ -51,14 +51,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "BanDongHo.DTOs.RefreshTokenDTO",
+        "Type": "WatchAPI.DTOs.RefreshTokenDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.AuthController",
+    "ContainingType": "WatchAPI.Controllers.AuthController",
     "Method": "Register",
     "RelativePath": "api/Auth/register",
     "HttpMethod": "POST",
@@ -67,14 +67,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "BanDongHo.DTOs.RegisterDTO",
+        "Type": "WatchAPI.DTOs.RegisterDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.CartItemsController",
+    "ContainingType": "WatchAPI.Controllers.CartItemsController",
     "Method": "GetCart",
     "RelativePath": "api/CartItems",
     "HttpMethod": "GET",
@@ -83,7 +83,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[BanDongHo.DTOs.CartItemDTO, BanDongHo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[WatchAPI.DTOs.CartItemDTO, WatchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -94,7 +94,7 @@
     ]
   },
   {
-    "ContainingType": "BanDongHo.Controllers.CartItemsController",
+    "ContainingType": "WatchAPI.Controllers.CartItemsController",
     "Method": "AddToCart",
     "RelativePath": "api/CartItems",
     "HttpMethod": "POST",
@@ -103,14 +103,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "BanDongHo.DTOs.CartItemDTO",
+        "Type": "WatchAPI.DTOs.CartItemDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.CartItemsController",
+    "ContainingType": "WatchAPI.Controllers.CartItemsController",
     "Method": "UpdateCartItem",
     "RelativePath": "api/CartItems",
     "HttpMethod": "PUT",
@@ -119,14 +119,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "BanDongHo.DTOs.CartItemDTO",
+        "Type": "WatchAPI.DTOs.CartItemDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.CartItemsController",
+    "ContainingType": "WatchAPI.Controllers.CartItemsController",
     "Method": "DeleteCartItem",
     "RelativePath": "api/CartItems/{watchId}",
     "HttpMethod": "DELETE",
@@ -142,7 +142,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.CartItemsController",
+    "ContainingType": "WatchAPI.Controllers.CartItemsController",
     "Method": "ClearCart",
     "RelativePath": "api/CartItems/clear",
     "HttpMethod": "DELETE",
@@ -152,7 +152,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.InvoicesController",
+    "ContainingType": "WatchAPI.Controllers.InvoicesController",
     "Method": "GetAll",
     "RelativePath": "api/Invoices",
     "HttpMethod": "GET",
@@ -161,7 +161,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BanDongHo.DTOs.InvoiceDTO, BanDongHo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WatchAPI.DTOs.InvoiceDTO, WatchAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -172,7 +172,7 @@
     ]
   },
   {
-    "ContainingType": "BanDongHo.Controllers.InvoicesController",
+    "ContainingType": "WatchAPI.Controllers.InvoicesController",
     "Method": "Create",
     "RelativePath": "api/Invoices",
     "HttpMethod": "POST",
@@ -181,13 +181,13 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "BanDongHo.DTOs.InvoiceDTO",
+        "Type": "WatchAPI.DTOs.InvoiceDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "BanDongHo.DTOs.InvoiceDTO",
+        "Type": "WatchAPI.DTOs.InvoiceDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -198,7 +198,7 @@
     ]
   },
   {
-    "ContainingType": "BanDongHo.Controllers.InvoicesController",
+    "ContainingType": "WatchAPI.Controllers.InvoicesController",
     "Method": "GetById",
     "RelativePath": "api/Invoices/{id}",
     "HttpMethod": "GET",
@@ -213,7 +213,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "BanDongHo.DTOs.InvoiceDTO",
+        "Type": "WatchAPI.DTOs.InvoiceDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "ContainingType": "BanDongHo.Controllers.InvoicesController",
+    "ContainingType": "WatchAPI.Controllers.InvoicesController",
     "Method": "Update",
     "RelativePath": "api/Invoices/{id}",
     "HttpMethod": "PUT",
@@ -238,14 +238,14 @@
       },
       {
         "Name": "dto",
-        "Type": "BanDongHo.DTOs.InvoiceDTO",
+        "Type": "WatchAPI.DTOs.InvoiceDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.InvoicesController",
+    "ContainingType": "WatchAPI.Controllers.InvoicesController",
     "Method": "Delete",
     "RelativePath": "api/Invoices/{id}",
     "HttpMethod": "DELETE",
@@ -261,7 +261,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.UsersController",
+    "ContainingType": "WatchAPI.Controllers.UsersController",
     "Method": "GetAll",
     "RelativePath": "api/Users",
     "HttpMethod": "GET",
@@ -271,7 +271,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.UsersController",
+    "ContainingType": "WatchAPI.Controllers.UsersController",
     "Method": "GetById",
     "RelativePath": "api/Users/{id}",
     "HttpMethod": "GET",
@@ -287,7 +287,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.UsersController",
+    "ContainingType": "WatchAPI.Controllers.UsersController",
     "Method": "Update",
     "RelativePath": "api/Users/{id}",
     "HttpMethod": "PUT",
@@ -301,14 +301,14 @@
       },
       {
         "Name": "dto",
-        "Type": "BanDongHo.DTOs.UserDTO",
+        "Type": "WatchAPI.DTOs.UserDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.UsersController",
+    "ContainingType": "WatchAPI.Controllers.UsersController",
     "Method": "Delete",
     "RelativePath": "api/Users/{id}",
     "HttpMethod": "DELETE",
@@ -324,7 +324,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.WatchesController",
+    "ContainingType": "WatchAPI.Controllers.WatchesController",
     "Method": "GetAll",
     "RelativePath": "api/Watches",
     "HttpMethod": "GET",
@@ -334,18 +334,13 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.WatchesController",
+    "ContainingType": "WatchAPI.Controllers.WatchesController",
     "Method": "Create",
     "RelativePath": "api/Watches",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
       {
         "Name": "Name",
         "Type": "System.String",
@@ -372,20 +367,20 @@
         "IsRequired": false
       },
       {
-        "Name": "ImageUrl",
-        "Type": "System.String",
+        "Name": "ImageFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
       },
       {
-        "Name": "ImageFile",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "Name": "ImageUrl",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.WatchesController",
+    "ContainingType": "WatchAPI.Controllers.WatchesController",
     "Method": "GetById",
     "RelativePath": "api/Watches/{id}",
     "HttpMethod": "GET",
@@ -401,7 +396,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.WatchesController",
+    "ContainingType": "WatchAPI.Controllers.WatchesController",
     "Method": "Update",
     "RelativePath": "api/Watches/{id}",
     "HttpMethod": "PUT",
@@ -412,11 +407,6 @@
         "Name": "id",
         "Type": "System.Guid",
         "IsRequired": true
-      },
-      {
-        "Name": "Id",
-        "Type": "System.Guid",
-        "IsRequired": false
       },
       {
         "Name": "Name",
@@ -444,20 +434,20 @@
         "IsRequired": false
       },
       {
-        "Name": "ImageUrl",
-        "Type": "System.String",
+        "Name": "ImageFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
       },
       {
-        "Name": "ImageFile",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "Name": "ImageUrl",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.WatchesController",
+    "ContainingType": "WatchAPI.Controllers.WatchesController",
     "Method": "Delete",
     "RelativePath": "api/Watches/{id}",
     "HttpMethod": "DELETE",
@@ -473,7 +463,33 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BanDongHo.Controllers.WatchesController",
+    "ContainingType": "WatchAPI.Controllers.WatchesController",
+    "Method": "GetAllAdmin",
+    "RelativePath": "api/Watches/admin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WatchAPI.Controllers.WatchesController",
+    "Method": "GetAdminById",
+    "RelativePath": "api/Watches/admin/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WatchAPI.Controllers.WatchesController",
     "Method": "GetByName",
     "RelativePath": "api/Watches/check-name",
     "HttpMethod": "GET",

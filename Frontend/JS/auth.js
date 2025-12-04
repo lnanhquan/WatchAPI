@@ -149,6 +149,7 @@ async function login() {
         const response = await authAPI.login({ email, password });
         localStorage.setItem("user", JSON.stringify(response.data));
         updateUIAfterLogin(true);
+        loadCartCount();
         loginModal.hide();
 
         Swal.fire({

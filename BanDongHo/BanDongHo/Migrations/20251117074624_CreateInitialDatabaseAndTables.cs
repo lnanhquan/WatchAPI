@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace BanDongHo.Migrations
+namespace WatchAPI.Migrations
 {
     /// <inheritdoc />
     public partial class CreateInitialDatabaseAndTables : Migration

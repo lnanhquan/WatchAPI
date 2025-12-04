@@ -1,7 +1,7 @@
-﻿using BanDongHo.DTOs;
-using BanDongHo.Services;
+﻿using WatchAPI.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WatchAPI.DTOs;
 
 namespace WatchAPI.Controllers
 {

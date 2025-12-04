@@ -1,6 +1,6 @@
-﻿using BanDongHo.DTOs;
+﻿using WatchAPI.DTOs;
 
-namespace BanDongHo.Services
+namespace WatchAPI.Services
 {
     public interface IUserService
     {

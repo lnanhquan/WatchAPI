@@ -39,7 +39,7 @@ function renderUserManagementPage(page) {
             tdEmail.textContent = i.email;
 
             const tdUsername = document.createElement("td");
-            tdUsername.textContent = i.username;
+            tdUsername.textContent = i.userName;
 
             const tdRole = document.createElement("td");
             tdRole.textContent = i.role;
@@ -199,7 +199,7 @@ function openDetailModal(user) {
     viewUserManagementContainer.innerHTML = `
         <p>ID: ${user.id}</p>
         <p>Email: ${user.email}</p>
-        <p>Username: ${user.username}</p>
+        <p>Username: ${user.userName}</p>
         <p>Role: ${user.role}</p>
     `;
 

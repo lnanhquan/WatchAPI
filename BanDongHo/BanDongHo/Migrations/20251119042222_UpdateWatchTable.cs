@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace BanDongHo.Migrations
+namespace WatchAPI.Migrations
 {
     /// <inheritdoc />
     public partial class UpdateWatchTable : Migration

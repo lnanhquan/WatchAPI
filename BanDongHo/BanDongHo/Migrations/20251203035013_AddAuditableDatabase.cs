@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace BanDongHo.Migrations
+namespace WatchAPI.Migrations
 {
     /// <inheritdoc />
     public partial class AddAuditableDatabase : Migration

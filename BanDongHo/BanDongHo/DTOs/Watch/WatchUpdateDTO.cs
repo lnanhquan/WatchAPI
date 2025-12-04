@@ -1,0 +1,26 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WatchAPI.DTOs.Watch
+{
+    public class WatchUpdateDTO
+    {
+        [Required, MaxLength(100)]
+        public string Name { get; set; } = string.Empty;
+
+        [Required, Range(1, 1000000000)]
+        public int Price { get; set; }
+
+        [Required, MaxLength(50)]
+        public string Category { get; set; } = string.Empty;
+
+        [Required, MaxLength(50)]
+        public string Brand { get; set; } = string.Empty;
+
+        [MaxLength(500)]
+        public string? Description { get; set; }
+
+        public IFormFile? ImageFile { get; set; }
+
+        public string? ImageUrl { get; set; }
+    }
+}

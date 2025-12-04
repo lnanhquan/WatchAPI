@@ -1,81 +1,60 @@
-﻿using BanDongHo.DTOs;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using WatchAPI.DTOs;
 using WatchAPI.Models.Entities;
 
-namespace BanDongHo.Services
+namespace WatchAPI.Services
 {
     public class UserService : IUserService
     {
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ILogger<UserService> _logger;
+        private readonly IMapper _mapper;
 
-        public UserService(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, ILogger<UserService> logger)
+        public UserService(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, ILogger<UserService> logger, IMapper mapper)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _logger = logger;
+            _mapper = mapper;
         }
 
         public async Task<List<UserDTO>> GetAllUsersAsync()
         {
-            try
-            {
-                _logger.LogInformation("Retrieving all users");
-                var users = await _userManager.Users.ToListAsync();
-                var result = new List<UserDTO>();
+            _logger.LogInformation("Retrieving all users");
 
-                foreach (var user in users)
-                {
-                    var role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "";
-                    result.Add(new UserDTO
-                    {
-                        Id = user.Id,
-                        Email = user.Email!,
-                        Username = user.UserName!,
-                        Role = role
-                    });
-                }
-                return result;
-            }
-            catch (Exception ex)
+            var users = await _userManager.Users.ToListAsync();
+            var result = new List<UserDTO>();
+
+            foreach (var user in users)
             {
-                _logger.LogError("{ExceptionType} - {Message}", ex.GetType().Name, ex.Message);
-                throw;
+                var userDto = _mapper.Map<UserDTO>(user);
+                userDto.Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "";
+                result.Add(userDto);
             }
+            return result;
         }
 
         public async Task<UserDTO?> GetByIdAsync(string id)
         {
-            try
+            _logger.LogInformation("Fetching user by id {id}", id);
+
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
             {
-                _logger.LogInformation("Fetching user by id {id}", id);
-                var user = await _userManager.FindByIdAsync(id);
-
-                if (user == null)
-                {
-                    _logger.LogWarning("User with id {id} not found", id);
-                    return null;
-                }
-
-                var role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "";
-
-                _logger.LogInformation("Found user {username} with id {id}", user.UserName, id);
-
-                return new UserDTO
-                {
-                    Id = user.Id,
-                    Email = user.Email!,
-                    Username = user.UserName!,
-                    Role = role
-                };
+                _logger.LogWarning("User with id {id} not found", id);
+                return null;
             }
-            catch (Exception ex)
-            {
-                _logger.LogError("{ExceptionType} - {Message}", ex.GetType().Name, ex.Message);
-                throw;
-            }
+
+            var dto = _mapper.Map<UserDTO>(user);
+            dto.Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault() ?? "";
+
+            _logger.LogInformation("Found user {username} with id {id}", dto.UserName, id);
+
+            return dto;
         }
 
         public async Task<bool> UpdateUserAsync(string id, UserDTO dto)
@@ -83,6 +62,7 @@ namespace BanDongHo.Services
             try
             {
                 _logger.LogInformation("Updating user {id}", id);
+
                 var user = await _userManager.FindByIdAsync(id);
                 if (user == null)
                 {
@@ -91,7 +71,7 @@ namespace BanDongHo.Services
                 }
 
                 user.Email = dto.Email;
-                user.UserName = dto.Username;
+                user.UserName = dto.UserName;
 
                 var updateResult = await _userManager.UpdateAsync(user);
                 if (!updateResult.Succeeded)

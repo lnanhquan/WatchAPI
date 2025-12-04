@@ -1,10 +1,10 @@
-﻿using BanDongHo.DTOs;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WatchAPI.DTOs;
 using WatchAPI.Services;
 
-namespace BanDongHo.Controllers
+namespace WatchAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

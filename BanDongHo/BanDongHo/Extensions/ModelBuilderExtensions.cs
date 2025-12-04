@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WatchAPI.Models.Base;
 
-namespace WatchAPI.Data.Extensions
+namespace WatchAPI.Extensions
 {
     public static class ModelBuilderExtensions
     {

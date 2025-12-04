@@ -8,7 +8,7 @@ using WatchAPI.Data;
 
 #nullable disable
 
-namespace BanDongHo.Migrations
+namespace WatchAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot

@@ -1,14 +1,7 @@
 ﻿using WatchAPI.Models.Entities;
+using WatchAPI.Repositories;
 
-namespace BanDongHo.Repositories
+public interface IWatchRepository : IGenericRepository<Watch>
 {
-    public interface IWatchRepository
-    {
-        Task<IEnumerable<Watch>> GetAllAsync();
-        Task<Watch?> GetByIdAsync(Guid id);
-        Task CreateAsync(Watch watch);
-        Task UpdateAsync(Watch watch);
-        Task DeleteAsync(Guid id);
-        Task<Watch?> GetByNameAsync(string name);
-    }
+    Task<Watch?> GetByNameAsync(string name);
 }

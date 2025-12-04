@@ -1,8 +1,8 @@
-﻿using WatchAPI.Models.Base;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace WatchAPI.Models.Entities
 {
-    public class User : AuditableIdentityUser
+    public class User : IdentityUser
     {
         // Navigation property: 1 user can have multiple invoices
         public ICollection<Invoice> Invoices { get; set; } = new List<Invoice>();

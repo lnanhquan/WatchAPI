@@ -1,9 +1,8 @@
-﻿using BanDongHo.DTOs;
-using BanDongHo.Repositories;
+﻿using WatchAPI.DTOs;
 using WatchAPI.Models.Entities;
-using WatchAPI.Services;
+using WatchAPI.Repositories;
 
-namespace BanDongHo.Services
+namespace WatchAPI.Services
 {
     public class InvoiceService : IInvoiceService
     {

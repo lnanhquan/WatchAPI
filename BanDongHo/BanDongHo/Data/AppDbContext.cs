@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WatchAPI.Data.Configurations;
-using WatchAPI.Data.Extensions;
+using WatchAPI.Extensions;
 using WatchAPI.Models.Entities;
 
 namespace WatchAPI.Data

@@ -2,7 +2,7 @@
 using WatchAPI.Data;
 using WatchAPI.Models.Entities;
 
-namespace BanDongHo.Repositories
+namespace WatchAPI.Repositories
 {
     public class InvoiceRepository : IInvoiceRepository
     {

@@ -1,4 +1,4 @@
-﻿using BanDongHo.DTOs;
+﻿using WatchAPI.DTOs;
 
 namespace WatchAPI.Services
 {

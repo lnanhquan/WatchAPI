@@ -1,6 +1,4 @@
-﻿using BanDongHo.DTOs;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -9,9 +7,10 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using WatchAPI.DTOs;
 using WatchAPI.Models.Entities;
 
-namespace BanDongHo.Controllers
+namespace WatchAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

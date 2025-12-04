@@ -1,6 +1,6 @@
 const watchAPI = {
-    getAll: () => api.get("/Watches"),
-    getById: id => api.get(`/Watches/${id}`),
+    getAll: () => api.get("/Watches/admin"),
+    getById: id => api.get(`/Watches/admin/${id}`),
     checkName: name => api.get(`/Watches/check-name`, { params: { name } }),
     create: formData => api.post("/Watches", formData),
     update: (id, formData) => api.put(`/Watches/${id}`, formData),
@@ -24,6 +24,7 @@ let watchRowsPerPage = 3;
 let watchesDataAll = [];
 let watchesData = []; 
 let watchSortState = {};
+let watchDetailModal = document.getElementById("watchDetailModal");
 
 async function getTable() {
     try {
@@ -35,7 +36,7 @@ async function getTable() {
     } 
     catch (error) 
     {
-        watchTable.innerHTML = `<tr><td colspan="4">${error.message}</td></tr>`;
+        watchTable.innerHTML = `<tr><td colspan="9">${error.message}</td></tr>`;
         console.error(error);
     }
 }
@@ -48,7 +49,7 @@ function renderWatchPage(page) {
     watchTable.innerHTML = "";
 
     if (pageData.length === 0) {
-        watchTable.innerHTML = '<tr><td colspan="6">No watches found</td></tr>';
+        watchTable.innerHTML = '<tr><td colspan="9">No watches found</td></tr>';
     } else {
         pageData.forEach(w => {
             const tr = document.createElement("tr");
@@ -57,8 +58,8 @@ function renderWatchPage(page) {
             const img = document.createElement("img"); 
             img.src = getFullImageUrl(w.imageUrl);
             img.alt = w.name;
-            img.style.width = "180px";
-            img.style.height = "180px";
+            img.style.width = "160px";
+            img.style.height = "160px";
             tdImage.appendChild(img);
 
             const tdName = document.createElement("td");
@@ -73,26 +74,79 @@ function renderWatchPage(page) {
             const tdBrand = document.createElement("td");
             tdBrand.textContent = w.brand;
 
+            const tdCreatedAt = document.createElement("td");
+            if (w.createdAt) 
+            {
+                const createdAtUTC = new Date(w.createdAt.replace(/\.\d+/, ''));
+                const vnTime = new Date(createdAtUTC.getTime() + 7 * 60 * 60 * 1000);
+                tdCreatedAt.textContent = vnTime.toLocaleString("vi-VN", { hour12: false });
+            } 
+            else 
+            {
+                tdCreatedAt.textContent = "-";
+            }
+
+            const tdUpdatedAt = document.createElement("td");
+            if (w.updatedAt) 
+            {
+                const updatedAtUTC = new Date(w.updatedAt.replace(/\.\d+/, ''));
+                const vnTime = new Date(updatedAtUTC.getTime() + 7 * 60 * 60 * 1000);
+                tdUpdatedAt.textContent = vnTime.toLocaleString("vi-VN", { hour12: false });
+            }
+            else 
+            {
+                tdUpdatedAt.textContent = "-";
+            }
+
+            const tdStatus = document.createElement("td");
+            const statusBadge = document.createElement("span");
+
+            if (w.isDeleted) {
+                statusBadge.className = "badge bg-danger";
+                statusBadge.textContent = "Deleted";
+            } else {
+                statusBadge.className = "badge bg-success";
+                statusBadge.textContent = "Active";
+            }
+            tdStatus.appendChild(statusBadge);
+
             const tdActions = document.createElement("td");
 
+            const actionContainer = document.createElement("div");
+            actionContainer.style.display = "flex";
+            actionContainer.style.flexDirection = "column";
+            actionContainer.style.gap = "5px";              
+            actionContainer.style.alignItems = "center";
+
+            const btnDetail = document.createElement("button");
+            btnDetail.className = "btn btn-secondary w-100";
+            btnDetail.innerHTML = `<i class="bi bi-info-circle"></i> Detail`;
+            btnDetail.addEventListener("click", () => openDetailModal(w));
+
             const btnEdit = document.createElement("button");
-            btnEdit.className = "btn btn-success me-2";
+            btnEdit.className = "btn btn-success w-100";
             btnEdit.innerHTML = `<i class="bi bi-pencil"></i> Edit`;
             btnEdit.addEventListener("click", () => openEditModal(w));
 
             const btnDelete = document.createElement("button");
-            btnDelete.className = "btn btn-danger";
+            btnDelete.className = "btn btn-danger w-100";
             btnDelete.innerHTML = `<i class="bi bi-trash"></i> Delete`;
             btnDelete.addEventListener("click", () => deleteWatch(w.id, btnDelete));
 
-            tdActions.appendChild(btnEdit);
-            tdActions.appendChild(btnDelete);
+            actionContainer.appendChild(btnDetail);
+            actionContainer.appendChild(btnEdit);
+            actionContainer.appendChild(btnDelete);
+
+            tdActions.appendChild(actionContainer);
 
             tr.appendChild(tdImage);
             tr.appendChild(tdName);
             tr.appendChild(tdPrice);
             tr.appendChild(tdCategory);
             tr.appendChild(tdBrand);
+            tr.appendChild(tdCreatedAt);
+            tr.appendChild(tdUpdatedAt);
+            tr.appendChild(tdStatus);
             tr.appendChild(tdActions);
 
             watchTable.appendChild(tr);
@@ -110,6 +164,34 @@ function renderWatchPage(page) {
         }
     });
 }
+
+function openDetailModal(watch) {
+    document.getElementById("detailImage").src = getFullImageUrl(watch.imageUrl);
+    document.getElementById("detailName").textContent = watch.name;
+    document.getElementById("detailPrice").textContent = watch.price.toLocaleString() + " VND";
+    document.getElementById("detailCategory").textContent = watch.category;
+    document.getElementById("detailBrand").textContent = watch.brand;
+    document.getElementById("detailDescription").textContent = watch.description || "-";
+
+    function formatDate(dateStr) {
+        if (!dateStr) return "-";
+        const dt = new Date(dateStr.replace(/\.\d+/, ''));
+        const vnTime = new Date(dt.getTime() + 7 * 60 * 60 * 1000);
+        return vnTime.toLocaleString("vi-VN", { hour12: false });
+    }
+
+    document.getElementById("auditCreatedBy").textContent = watch.createdBy || "-";
+    document.getElementById("auditCreatedAt").textContent = formatDate(watch.createdAt);
+
+    document.getElementById("auditUpdatedBy").textContent = watch.updatedBy || "-";
+    document.getElementById("auditUpdatedAt").textContent = formatDate(watch.updatedAt);
+
+    document.getElementById("auditDeletedBy").textContent = watch.deletedBy || "-";
+    document.getElementById("auditDeletedAt").textContent = formatDate(watch.deletedAt);
+
+    watchDetailModal.show();
+}
+
 
 function openCreateModal() {
     isEditing = false;
@@ -227,6 +309,8 @@ async function handleSaveWatch() {
     for (let [key, value] of formData.entries()) {
         console.log(key, value);
     }
+    console.log(watchId.value);
+
     saveBtn.disabled = true;
 
     try {
@@ -294,7 +378,7 @@ async function deleteWatch(id, btnDelete) {
 
             Swal.fire({
                 icon: "success",
-                title: "Your watchh has been deleted!",
+                title: "Your watch has been deleted!",
                 toast: true,
                 position: "bottom-end",
                 showConfirmButton: false,
@@ -324,19 +408,24 @@ async function deleteWatch(id, btnDelete) {
 function searchManagementWatch()
 {
     const keyword = document.getElementById("searchManagementWatch").value.trim().toLowerCase();
-    if (keyword == null) {
+
+    if (!keyword) {
         watchesData = [...watchesDataAll];
-        return;
-    }
-    else
-    {
-        watchesData = watchesDataAll.filter(w => 
-            w.name.toLowerCase().includes(keyword)
-        );
+    } else {
+        watchesData = watchesDataAll.filter(w => {
+            const matchName = w.name.toLowerCase().includes(keyword);
+
+            const matchBrand = w.brand.toLowerCase().includes(keyword);
+            
+            const createdAtStr = w.createdAt ? new Date(w.createdAt).toLocaleString("vi-VN", { hour12: false }).toLowerCase() : "";
+            const updatedAtStr = w.updatedAt ? new Date(w.updatedAt).toLocaleString("vi-VN", { hour12: false }).toLowerCase() : "";
+            const matchTime = createdAtStr.includes(keyword) || updatedAtStr.includes(keyword);
+
+            return matchName || matchBrand || matchTime;
+        });
     }
 
     watchCurrentPage = 1;
-
     renderWatchPage(watchCurrentPage);
 }
 
@@ -368,6 +457,18 @@ function sortWatchBy(field)
                 x = a.category.toLowerCase();
                 y = b.category.toLowerCase();
                 break;
+            case "createdAt":
+                x = new Date(a.createdAt || 0);
+                y = new Date(b.createdAt || 0);
+                break;
+            case "updatedAt":
+                x = new Date(a.updatedAt || 0);
+                y = new Date(b.updatedAt || 0);
+                break;
+            case "status": 
+                x = a.isDeleted ? 1 : 0;
+                y = b.isDeleted ? 1 : 0;
+                break;
         }
 
         if (x < y) return direction === "asc" ? -1 : 1;
@@ -384,6 +485,7 @@ document.addEventListener("DOMContentLoaded", () => {
         getTable();
 
         watchModal = new bootstrap.Modal(document.getElementById("watchModal"));
+        watchDetailModal = new bootstrap.Modal(document.getElementById("watchDetailModal"));
 
         document.getElementById("watchForm").addEventListener("submit", function(e) {
             e.preventDefault();

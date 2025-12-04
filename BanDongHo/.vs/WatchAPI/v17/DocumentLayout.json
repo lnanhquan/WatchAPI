@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\mappings\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\mappings\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +18,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "BanDongHo\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "BanDongHo\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAuwLMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T10:01:19.073Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AutoMapperProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Mappings\\AutoMapperProfile.cs",
+              "RelativeDocumentMoniker": "BanDongHo\\Mappings\\AutoMapperProfile.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Mappings\\AutoMapperProfile.cs",
+              "RelativeToolTip": "BanDongHo\\Mappings\\AutoMapperProfile.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T10:00:30.321Z",
+              "EditorCaption": ""
             }
           ]
         }

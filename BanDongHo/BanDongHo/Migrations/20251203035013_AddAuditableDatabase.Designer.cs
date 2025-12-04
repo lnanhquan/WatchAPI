@@ -9,7 +9,7 @@ using WatchAPI.Data;
 
 #nullable disable
 
-namespace BanDongHo.Migrations
+namespace WatchAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20251203035013_AddAuditableDatabase")]

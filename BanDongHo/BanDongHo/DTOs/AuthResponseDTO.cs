@@ -1,4 +1,4 @@
-﻿namespace BanDongHo.DTOs
+﻿namespace WatchAPI.DTOs
 {
     public class AuthResponseDTO
     {

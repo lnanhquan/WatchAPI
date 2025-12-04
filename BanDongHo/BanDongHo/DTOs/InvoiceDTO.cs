@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BanDongHo.DTOs
+namespace WatchAPI.DTOs
 {
     public class InvoiceDTO
     {

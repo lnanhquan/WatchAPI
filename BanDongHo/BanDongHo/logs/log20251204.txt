@@ -1,0 +1,431 @@
+2025-12-04 13:39:14.075 +07:00 [INF] User admin logged in successfully
+2025-12-04 13:39:54.532 +07:00 [INF] User requested all watches
+2025-12-04 13:39:54.576 +07:00 [INF] Returned 20 watches
+2025-12-04 13:43:47.627 +07:00 [INF] User admin logged in successfully
+2025-12-04 13:46:28.939 +07:00 [INF] User requested all watches
+2025-12-04 13:46:28.943 +07:00 [INF] Returned 20 watches
+2025-12-04 13:46:29.686 +07:00 [INF] User requested all watches
+2025-12-04 13:46:29.693 +07:00 [INF] Returned 20 watches
+2025-12-04 13:46:59.055 +07:00 [INF] User admin logged in successfully
+2025-12-04 13:47:12.834 +07:00 [INF] User requested all watches
+2025-12-04 13:47:12.840 +07:00 [INF] Returned 20 watches
+2025-12-04 13:49:15.182 +07:00 [INF] User requested all watches
+2025-12-04 13:49:15.189 +07:00 [INF] Returned 20 watches
+2025-12-04 13:49:28.315 +07:00 [INF] User requested watch by Id: "0a389b58-efc0-4211-a120-0fffff8a4acb"
+2025-12-04 13:49:28.327 +07:00 [INF] Returned watch SRWATCH SG88806.1205AT
+2025-12-04 13:49:59.601 +07:00 [INF] User requested watch by Id: "0a389b58-efc0-4211-a120-0fffff8a4acb"
+2025-12-04 13:49:59.605 +07:00 [INF] Returned watch SRWATCH SG88806.1205AT
+2025-12-04 13:50:07.907 +07:00 [INF] User requested watch by Id: "0a389b58-efc0-4211-a120-0fffff8a4acb"
+2025-12-04 13:50:07.911 +07:00 [INF] Returned watch SRWATCH SG88806.1205AT
+2025-12-04 13:50:11.411 +07:00 [INF] User requested watch by Id: "0a389b58-efc0-4211-a120-0fffff8a4acb"
+2025-12-04 13:50:11.415 +07:00 [INF] Returned watch SRWATCH SG88806.1205AT
+2025-12-04 13:50:22.000 +07:00 [INF] User requested watch by Id: "0a389b58-efc0-4211-a120-0fffff8a4acb"
+2025-12-04 13:50:22.004 +07:00 [INF] Returned watch SRWATCH SG88806.1205AT
+2025-12-04 13:50:30.690 +07:00 [INF] User requested watch by Id: "0a389b58-efc0-4211-a120-0fffff8a4acb"
+2025-12-04 13:50:30.695 +07:00 [INF] Returned watch SRWATCH SG88806.1205AT
+2025-12-04 13:51:15.623 +07:00 [INF] User requested all watches
+2025-12-04 13:51:15.627 +07:00 [INF] Returned 20 watches
+2025-12-04 13:51:32.381 +07:00 [INF] User admin logged in successfully
+2025-12-04 13:51:36.530 +07:00 [INF] User requested all watches
+2025-12-04 13:51:36.536 +07:00 [INF] Returned 20 watches
+2025-12-04 13:55:29.384 +07:00 [INF] User requested all watches
+2025-12-04 13:55:29.390 +07:00 [INF] Returned 20 watches
+2025-12-04 13:56:01.890 +07:00 [INF] User requested all watches
+2025-12-04 13:56:01.896 +07:00 [INF] Returned 20 watches
+2025-12-04 13:57:30.910 +07:00 [INF] User requested all watches
+2025-12-04 13:57:30.914 +07:00 [INF] Returned 20 watches
+2025-12-04 13:57:39.793 +07:00 [INF] User requested all watches
+2025-12-04 13:57:39.798 +07:00 [INF] Returned 20 watches
+2025-12-04 13:57:42.958 +07:00 [INF] User requested all watches
+2025-12-04 13:57:42.963 +07:00 [INF] Returned 20 watches
+2025-12-04 13:58:15.110 +07:00 [INF] User requested all watches
+2025-12-04 13:58:15.115 +07:00 [INF] Returned 20 watches
+2025-12-04 14:06:13.626 +07:00 [INF] User admin logged in successfully
+2025-12-04 14:06:22.754 +07:00 [INF] User requested all watches
+2025-12-04 14:06:22.760 +07:00 [INF] Returned 20 watches
+2025-12-04 14:10:53.296 +07:00 [INF] User admin logged in successfully
+2025-12-04 14:17:36.347 +07:00 [INF] User admin logged in successfully
+2025-12-04 14:21:57.059 +07:00 [INF] User admin logged in successfully
+2025-12-04 14:26:22.924 +07:00 [INF] User user logged in successfully
+2025-12-04 14:34:13.557 +07:00 [INF] User admin logged in successfully
+2025-12-04 14:41:47.289 +07:00 [INF] User admin logged in successfully
+2025-12-04 14:44:56.744 +07:00 [INF] User admin logged in successfully
+2025-12-04 14:52:59.861 +07:00 [INF] User admin logged in successfully
+2025-12-04 14:58:12.185 +07:00 [INF] User admin logged in successfully
+2025-12-04 15:08:22.507 +07:00 [INF] User admin logged in successfully
+2025-12-04 15:08:45.739 +07:00 [INF] User requested all watches
+2025-12-04 15:08:45.798 +07:00 [INF] Returned 20 watches
+2025-12-04 15:12:02.431 +07:00 [INF] User admin logged in successfully
+2025-12-04 15:25:55.767 +07:00 [INF] User admin logged in successfully
+2025-12-04 15:28:36.069 +07:00 [INF] Admin requested all watches
+2025-12-04 15:28:36.109 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:37:06.727 +07:00 [INF] User admin logged in successfully
+2025-12-04 15:37:29.368 +07:00 [INF] Admin requested all watches
+2025-12-04 15:37:29.415 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:39:30.199 +07:00 [INF] User requested all watches
+2025-12-04 15:39:30.212 +07:00 [INF] Returned 20 watches
+2025-12-04 15:40:13.252 +07:00 [INF] User admin logged in successfully
+2025-12-04 15:40:17.356 +07:00 [INF] Admin requested all watches
+2025-12-04 15:40:17.374 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:40:17.412 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:40:51.940 +07:00 [INF] Admin requested all watches
+2025-12-04 15:40:51.963 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:40:51.977 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:43:22.499 +07:00 [INF] Admin requested all watches
+2025-12-04 15:43:22.514 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:43:22.514 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:43:27.747 +07:00 [INF] Admin requested all watches
+2025-12-04 15:43:27.750 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:43:27.752 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:44:11.425 +07:00 [INF] Admin requested all watches
+2025-12-04 15:44:11.432 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:44:11.450 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:44:38.167 +07:00 [INF] Admin requested all watches
+2025-12-04 15:44:38.171 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:44:38.176 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:44:50.850 +07:00 [INF] Admin requested all watches
+2025-12-04 15:44:50.851 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:44:50.857 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:44:54.825 +07:00 [INF] Admin requested all watches
+2025-12-04 15:44:54.829 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:44:54.834 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:45:03.629 +07:00 [INF] Admin requested all watches
+2025-12-04 15:45:03.632 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:45:03.635 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:45:19.289 +07:00 [INF] Admin requested all watches
+2025-12-04 15:45:19.293 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:45:19.296 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:46:48.801 +07:00 [INF] Admin requested all watches
+2025-12-04 15:46:48.805 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:46:48.815 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:47:14.464 +07:00 [INF] Admin requested all watches
+2025-12-04 15:47:14.467 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:47:14.469 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:48:54.843 +07:00 [INF] Admin requested all watches
+2025-12-04 15:48:54.848 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:48:54.860 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:49:29.341 +07:00 [INF] Admin requested all watches
+2025-12-04 15:49:29.346 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:49:29.353 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:50:00.910 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:50:00.917 +07:00 [INF] Retrieving all users
+2025-12-04 15:50:01.351 +07:00 [INF] Admin requested all watches
+2025-12-04 15:50:01.352 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:50:01.376 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:51:22.921 +07:00 [INF] Admin requested all watches
+2025-12-04 15:51:22.931 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:51:22.935 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:51:46.940 +07:00 [INF] Admin requested all watches
+2025-12-04 15:51:46.947 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:51:46.950 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:51:50.425 +07:00 [INF] Admin requested all watches
+2025-12-04 15:51:50.435 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:51:50.446 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:51:56.982 +07:00 [INF] Admin requested all watches
+2025-12-04 15:51:56.984 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:51:56.988 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:53:55.533 +07:00 [INF] Admin requested all watches
+2025-12-04 15:53:55.535 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:53:55.540 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:54:14.274 +07:00 [INF] Admin requested all watches
+2025-12-04 15:54:14.278 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:54:14.283 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:54:46.775 +07:00 [INF] Admin requested all watches
+2025-12-04 15:54:46.779 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:54:46.788 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:55:10.201 +07:00 [INF] Admin requested all watches
+2025-12-04 15:55:10.204 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:55:10.210 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:55:49.751 +07:00 [INF] Admin requested all watches
+2025-12-04 15:55:49.755 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:55:49.761 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:56:45.563 +07:00 [INF] Admin requested all watches
+2025-12-04 15:56:45.566 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:56:45.574 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:56:48.313 +07:00 [INF] Admin requested all watches
+2025-12-04 15:56:48.315 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:56:48.322 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:57:09.004 +07:00 [INF] Admin requested all watches
+2025-12-04 15:57:09.007 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:57:09.017 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:57:20.323 +07:00 [INF] Admin requested all watches
+2025-12-04 15:57:20.326 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:57:20.332 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:57:39.242 +07:00 [INF] User requested watch by Name: SRWATCH SG88805.1102AT
+2025-12-04 15:57:39.251 +07:00 [INF] Found watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd" with name SRWATCH SG88805.1102AT
+2025-12-04 15:58:00.178 +07:00 [INF] User requested watch by Name: SRWATCH SG88805.1102AT
+2025-12-04 15:58:00.181 +07:00 [INF] Found watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd" with name SRWATCH SG88805.1102AT
+2025-12-04 15:59:34.488 +07:00 [INF] Admin requested all watches
+2025-12-04 15:59:34.494 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:59:34.506 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 15:59:45.219 +07:00 [INF] Admin requested all watches
+2025-12-04 15:59:45.221 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 15:59:45.226 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 16:01:53.962 +07:00 [INF] Admin requested all watches
+2025-12-04 16:01:53.965 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:01:53.977 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 16:02:49.626 +07:00 [INF] Admin requested all watches
+2025-12-04 16:02:49.633 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:02:49.651 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 16:03:36.705 +07:00 [INF] Admin requested all watches
+2025-12-04 16:03:36.707 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:03:36.719 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 16:03:44.961 +07:00 [INF] Admin requested all watches
+2025-12-04 16:03:44.967 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:03:44.982 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 16:03:52.114 +07:00 [INF] Admin requested all watches
+2025-12-04 16:03:52.116 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:03:52.119 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 16:03:59.733 +07:00 [INF] Admin requested all watches
+2025-12-04 16:03:59.736 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:03:59.739 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 16:04:16.603 +07:00 [INF] User requested all watches
+2025-12-04 16:04:16.605 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:04:16.608 +07:00 [INF] Returned 20 watches
+2025-12-04 16:04:20.966 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:04:20.967 +07:00 [INF] Retrieving all users
+2025-12-04 16:04:23.097 +07:00 [INF] Admin requested all watches
+2025-12-04 16:04:23.101 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:04:23.114 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 16:05:49.139 +07:00 [INF] User admin logged out
+2025-12-04 16:05:49.212 +07:00 [INF] User requested all watches
+2025-12-04 16:05:49.217 +07:00 [INF] Returned 20 watches
+2025-12-04 16:05:50.359 +07:00 [INF] User requested all watches
+2025-12-04 16:05:50.364 +07:00 [INF] Returned 20 watches
+2025-12-04 16:05:51.018 +07:00 [INF] User requested all watches
+2025-12-04 16:05:51.021 +07:00 [INF] Returned 20 watches
+2025-12-04 16:05:58.508 +07:00 [INF] User admin logged in successfully
+2025-12-04 16:06:02.167 +07:00 [INF] User requested all watches
+2025-12-04 16:06:02.170 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:06:02.174 +07:00 [INF] Returned 20 watches
+2025-12-04 16:06:05.510 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:06:05.512 +07:00 [INF] Admin requested all watches
+2025-12-04 16:06:05.516 +07:00 [INF] Returned 20 watches for admin
+2025-12-04 16:09:40.844 +07:00 [INF] User requested watch by Name: Orient Contemporary RA-AR0012N30B
+2025-12-04 16:09:40.850 +07:00 [WRN] Watch with name Orient Contemporary RA-AR0012N30B not found
+2025-12-04 16:09:40.941 +07:00 [INF] Created watch Orient Contemporary RA-AR0012N30B by user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:09:40.967 +07:00 [INF] Admin requested all watches
+2025-12-04 16:09:40.971 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:09:41.057 +07:00 [INF] Admin requested all watches
+2025-12-04 16:09:41.071 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:09:41.075 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:09:42.531 +07:00 [INF] Admin requested all watches
+2025-12-04 16:09:42.534 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:09:42.536 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:09:43.581 +07:00 [INF] Admin requested all watches
+2025-12-04 16:09:43.583 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:09:43.586 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:09:44.604 +07:00 [INF] Admin requested all watches
+2025-12-04 16:09:44.607 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:09:44.610 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:09:45.651 +07:00 [INF] Admin requested all watches
+2025-12-04 16:09:45.654 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:09:45.664 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:10:04.109 +07:00 [INF] User requested watch by Name: Orient Contemporary RA-AR0012N30B
+2025-12-04 16:10:04.113 +07:00 [INF] Found watch "0cdd6653-1a5b-4f67-ada2-bfd1d9afd2b7" with name Orient Contemporary RA-AR0012N30B
+2025-12-04 16:10:31.101 +07:00 [INF] Admin requested all watches
+2025-12-04 16:10:31.105 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:10:31.121 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:11:39.711 +07:00 [INF] User requested watch by Name: SRWATCH SG88805.1102AT
+2025-12-04 16:11:39.714 +07:00 [INF] Found watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd" with name SRWATCH SG88805.1102AT
+2025-12-04 16:14:40.645 +07:00 [INF] Admin requested all watches
+2025-12-04 16:14:40.655 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:14:40.669 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:14:44.783 +07:00 [INF] User requested watch by Name: SRWATCH SG88805.1102AT
+2025-12-04 16:14:44.788 +07:00 [INF] Found watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd" with name SRWATCH SG88805.1102AT
+2025-12-04 16:16:02.375 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:16:02.402 +07:00 [INF] User requested all watches
+2025-12-04 16:16:02.472 +07:00 [INF] Returned 21 watches
+2025-12-04 16:16:09.381 +07:00 [INF] Admin requested all watches
+2025-12-04 16:16:09.385 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:16:09.392 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:16:11.714 +07:00 [INF] User requested watch by Name: SRWATCH SG88805.1102AT
+2025-12-04 16:16:11.724 +07:00 [INF] Found watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd" with name SRWATCH SG88805.1102AT
+2025-12-04 16:16:23.962 +07:00 [INF] User requested watch by ID: "4ff97927-e0cb-418f-8b60-0e40523c4ffd"
+2025-12-04 16:16:23.972 +07:00 [INF] Returned watch SRWATCH SG88805.1102AT
+2025-12-04 16:17:33.974 +07:00 [INF] Admin requested all watches
+2025-12-04 16:17:33.985 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:17:33.994 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:17:54.353 +07:00 [INF] User requested watch by Name: SRWATCH SG88805.1102AT
+2025-12-04 16:17:54.359 +07:00 [INF] Found watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd" with name SRWATCH SG88805.1102AT
+2025-12-04 16:18:18.016 +07:00 [INF] User requested all watches
+2025-12-04 16:18:17.991 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:18:18.092 +07:00 [INF] Returned 21 watches
+2025-12-04 16:18:19.917 +07:00 [INF] Retrieving all users
+2025-12-04 16:18:19.920 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:18:21.102 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:18:21.108 +07:00 [INF] Admin requested all watches
+2025-12-04 16:18:21.118 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:18:27.704 +07:00 [INF] User requested watch by Name: SRWATCH SG88805.1102AT
+2025-12-04 16:18:27.716 +07:00 [INF] Found watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd" with name SRWATCH SG88805.1102AT
+2025-12-04 16:21:01.404 +07:00 [INF] Admin requested all watches
+2025-12-04 16:21:01.412 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:21:01.427 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:21:39.422 +07:00 [INF] Admin requested all watches
+2025-12-04 16:21:39.433 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:21:39.436 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:22:02.542 +07:00 [INF] User requested all watches
+2025-12-04 16:22:02.547 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:22:02.552 +07:00 [INF] Returned 21 watches
+2025-12-04 16:22:07.791 +07:00 [INF] User requested all watches
+2025-12-04 16:22:07.794 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:22:07.798 +07:00 [INF] Returned 21 watches
+2025-12-04 16:22:09.614 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:22:09.619 +07:00 [INF] Admin requested all watches
+2025-12-04 16:22:09.624 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:22:12.191 +07:00 [INF] User requested watch by Name: SRWATCH SG88805.1102AT
+2025-12-04 16:22:12.196 +07:00 [INF] Found watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd" with name SRWATCH SG88805.1102AT
+2025-12-04 16:22:29.205 +07:00 [INF] User requested watch by Name: SRWATCH SG88805.1102AT
+2025-12-04 16:22:29.209 +07:00 [INF] Found watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd" with name SRWATCH SG88805.1102AT
+2025-12-04 16:23:49.366 +07:00 [INF] Admin requested all watches
+2025-12-04 16:23:49.371 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:23:49.382 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:24:04.320 +07:00 [INF] User requested watch by Name: SRWATCH SG88805.1102AT
+2025-12-04 16:24:04.326 +07:00 [INF] Found watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd" with name SRWATCH SG88805.1102AT
+2025-12-04 16:24:07.360 +07:00 [INF] User requested watch by ID: "4ff97927-e0cb-418f-8b60-0e40523c4ffd"
+2025-12-04 16:24:07.369 +07:00 [INF] Returned watch SRWATCH SG88805.1102AT
+2025-12-04 16:25:58.177 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:25:58.207 +07:00 [INF] User requested all watches
+2025-12-04 16:25:58.290 +07:00 [INF] Returned 21 watches
+2025-12-04 16:25:59.812 +07:00 [INF] Admin requested all watches
+2025-12-04 16:25:59.817 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:25:59.824 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:26:01.700 +07:00 [INF] User requested watch by Name: SRWATCH SG88805.1102AT
+2025-12-04 16:26:01.708 +07:00 [INF] Found watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd" with name SRWATCH SG88805.1102AT
+2025-12-04 16:26:01.830 +07:00 [INF] Admin requested all watches
+2025-12-04 16:26:01.836 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:26:40.937 +07:00 [INF] Admin requested all watches
+2025-12-04 16:26:40.949 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:26:40.956 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:27:16.824 +07:00 [INF] Soft deleted watch "0cdd6653-1a5b-4f67-ada2-bfd1d9afd2b7" by user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:27:16.831 +07:00 [INF] Admin requested all watches
+2025-12-04 16:27:16.837 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:31:34.752 +07:00 [INF] Admin requested all watches
+2025-12-04 16:31:34.758 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:31:34.758 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:31:43.540 +07:00 [INF] Admin requested all watches
+2025-12-04 16:31:43.544 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:31:43.553 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:32:18.734 +07:00 [INF] Admin requested all watches
+2025-12-04 16:32:18.736 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:32:18.740 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:32:25.234 +07:00 [INF] Admin requested all watches
+2025-12-04 16:32:25.237 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:32:25.240 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:33:06.615 +07:00 [INF] Admin requested all watches
+2025-12-04 16:33:06.620 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:33:06.621 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:33:25.973 +07:00 [INF] Admin requested all watches
+2025-12-04 16:33:25.976 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:33:25.982 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:33:36.494 +07:00 [INF] Admin requested all watches
+2025-12-04 16:33:36.501 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:33:36.502 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:36:28.356 +07:00 [INF] Admin requested all watches
+2025-12-04 16:36:28.363 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:36:28.363 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:37:32.235 +07:00 [INF] Admin requested all watches
+2025-12-04 16:37:32.242 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:37:32.242 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:38:19.008 +07:00 [INF] Admin requested all watches
+2025-12-04 16:38:19.013 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:38:19.015 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:38:52.852 +07:00 [INF] Admin requested all watches
+2025-12-04 16:38:52.855 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:38:52.861 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:41:12.936 +07:00 [INF] Admin requested all watches
+2025-12-04 16:41:12.941 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:41:12.942 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:41:44.904 +07:00 [INF] Admin requested all watches
+2025-12-04 16:41:44.908 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:41:44.909 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:41:45.782 +07:00 [INF] Admin requested all watches
+2025-12-04 16:41:45.785 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:41:45.788 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:42:42.391 +07:00 [INF] Admin requested all watches
+2025-12-04 16:42:42.398 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:42:42.398 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:43:23.346 +07:00 [INF] Admin requested all watches
+2025-12-04 16:43:23.349 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:43:23.357 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:45:22.232 +07:00 [INF] Admin requested all watches
+2025-12-04 16:45:22.241 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:45:22.243 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:45:45.943 +07:00 [INF] Admin requested all watches
+2025-12-04 16:45:45.947 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:45:45.948 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:46:45.785 +07:00 [INF] Admin requested all watches
+2025-12-04 16:46:45.788 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:46:45.791 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:47:20.871 +07:00 [WRN] Watch with ID "0cdd6653-1a5b-4f67-ada2-bfd1d9afd2b7" not found for deletion
+2025-12-04 16:47:26.719 +07:00 [INF] User requested watch by ID: "0cdd6653-1a5b-4f67-ada2-bfd1d9afd2b7"
+2025-12-04 16:47:26.722 +07:00 [WRN] Watch with ID "0cdd6653-1a5b-4f67-ada2-bfd1d9afd2b7" not found
+2025-12-04 16:49:16.203 +07:00 [INF] Admin requested all watches
+2025-12-04 16:49:16.211 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:49:16.213 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:49:36.978 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:49:37.035 +07:00 [INF] Retrieved all invoices.
+2025-12-04 16:49:40.764 +07:00 [INF] Retrieving all users
+2025-12-04 16:49:40.797 +07:00 [INF] Admin requested all watches
+2025-12-04 16:49:40.801 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:49:51.371 +07:00 [INF] Retrieving all users
+2025-12-04 16:49:51.373 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:50:52.128 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:50:52.133 +07:00 [INF] Retrieving all users
+2025-12-04 16:51:05.461 +07:00 [INF] Retrieving all users
+2025-12-04 16:51:05.463 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:51:26.946 +07:00 [INF] Retrieving all users
+2025-12-04 16:51:26.953 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:51:35.595 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:51:35.608 +07:00 [INF] Retrieved all invoices.
+2025-12-04 16:51:37.507 +07:00 [INF] Admin requested all watches
+2025-12-04 16:51:37.507 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:51:37.511 +07:00 [INF] Returned 21 watches for admin
+2025-12-04 16:51:41.658 +07:00 [INF] User requested all watches
+2025-12-04 16:51:41.660 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-04 16:51:41.667 +07:00 [INF] Returned 20 watches
+2025-12-04 16:51:45.224 +07:00 [INF] User admin logged out
+2025-12-04 16:51:45.270 +07:00 [INF] User requested all watches
+2025-12-04 16:51:45.275 +07:00 [INF] Returned 20 watches
+2025-12-04 16:52:09.944 +07:00 [INF] User user logged in successfully
+2025-12-04 16:52:20.917 +07:00 [INF] User requested watch by ID: "0a389b58-efc0-4211-a120-0fffff8a4acb"
+2025-12-04 16:52:20.923 +07:00 [INF] Returned watch SRWATCH SG88806.1205AT
+2025-12-04 16:52:20.988 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-04 16:52:21.885 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-04 16:52:21.892 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-04 16:52:23.365 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-04 16:52:23.368 +07:00 [INF] User requested all watches
+2025-12-04 16:52:23.375 +07:00 [INF] Returned 20 watches
+2025-12-04 16:52:24.908 +07:00 [INF] User requested all watches
+2025-12-04 16:52:24.911 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-04 16:52:24.915 +07:00 [INF] Returned 20 watches
+2025-12-04 16:52:26.509 +07:00 [INF] User user logged out
+2025-12-04 16:52:26.566 +07:00 [INF] User requested all watches
+2025-12-04 16:52:26.570 +07:00 [INF] Returned 20 watches
+2025-12-04 16:52:43.676 +07:00 [INF] User user logged in successfully
+2025-12-04 16:52:47.605 +07:00 [INF] User requested watch by ID: "3f070cb9-2ccc-4bbd-8be2-268c8076e752"
+2025-12-04 16:52:47.612 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-04 16:52:47.614 +07:00 [INF] Returned watch SRWATCH SL7004.1202
+2025-12-04 16:52:49.077 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-04 16:52:49.078 +07:00 [INF] User requested all watches
+2025-12-04 16:52:49.084 +07:00 [INF] Returned 20 watches
+2025-12-04 16:53:58.811 +07:00 [INF] User requested all watches
+2025-12-04 16:53:58.817 +07:00 [INF] Returned 20 watches
+2025-12-04 16:53:58.818 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-04 16:54:07.317 +07:00 [INF] User user logged out
+2025-12-04 16:54:07.394 +07:00 [INF] User requested all watches
+2025-12-04 16:54:07.398 +07:00 [INF] Returned 20 watches
+2025-12-04 16:54:13.968 +07:00 [INF] User user logged in successfully
+2025-12-04 16:54:13.980 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-04 16:54:16.497 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-04 16:54:16.497 +07:00 [INF] User requested all watches
+2025-12-04 16:54:16.504 +07:00 [INF] Returned 20 watches
+2025-12-04 16:54:17.031 +07:00 [INF] User requested all watches
+2025-12-04 16:54:17.036 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-04 16:54:17.039 +07:00 [INF] Returned 20 watches
+2025-12-04 16:54:17.570 +07:00 [INF] User requested all watches
+2025-12-04 16:54:17.574 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-04 16:54:17.576 +07:00 [INF] Returned 20 watches
+2025-12-04 16:54:18.628 +07:00 [INF] User requested all watches
+2025-12-04 16:54:18.631 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-04 16:54:18.634 +07:00 [INF] Returned 20 watches

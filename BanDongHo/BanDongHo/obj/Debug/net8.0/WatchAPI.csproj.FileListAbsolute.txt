@@ -161,3 +161,4 @@ C:\Users\Admin\Documents\GitHub\BanDongHo\BanDongHo\BanDongHo\obj\Debug\net8.0\r
 C:\Users\Admin\Documents\GitHub\BanDongHo\BanDongHo\BanDongHo\obj\Debug\net8.0\WatchAPI.pdb
 C:\Users\Admin\Documents\GitHub\BanDongHo\BanDongHo\BanDongHo\obj\Debug\net8.0\WatchAPI.genruntimeconfig.cache
 C:\Users\Admin\Documents\GitHub\BanDongHo\BanDongHo\BanDongHo\obj\Debug\net8.0\ref\WatchAPI.dll
+C:\Users\Admin\Documents\GitHub\BanDongHo\BanDongHo\BanDongHo\bin\Debug\net8.0\AutoMapper.dll
