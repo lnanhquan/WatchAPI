@@ -6,7 +6,6 @@ function renderHeader() {
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
             <div class="container-fluid d-flex align-items-center">
 
-                <!-- Menu trái -->
                 <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="home.html">Home</a>
@@ -22,13 +21,11 @@ function renderHeader() {
                     </li>
                 </ul>
 
-                <!-- Thanh tìm kiếm căn giữa -->
                 <form id="searchForm" class="d-flex mx-auto position-relative">
                     <input id="searchInput" class="form-control pe-5" type="search" placeholder="Search watches..." aria-label="Search" style="width: 450px;">
                     <i class="bi bi-search position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%); color: #6c757d;"></i>
                 </form>
 
-                <!-- Nút phải -->
                 <div class="d-flex align-items-center ms-auto">
                     <span id="userGreeting" class="me-2 d-none"></span>
 
@@ -48,48 +45,46 @@ function renderHeader() {
             </div>
         </nav>
 
-    <!-- Pop up login -->
-    <div class="modal fade" id="loginModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header justify-content-center">
-                    <h2 class="modal-title">Login</h2>
-                </div>
-                <div class="modal-body">
-                    <form id="loginForm">
-                        <input type="email" id="loginEmail" class="form-control mb-2" placeholder="Email" autocomplete="email"></input>
-                        <input type="password" id="loginPassword" class="form-control mb-2" placeholder="Password" autocomplete="current-password">
-                    </form>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary me-2" onclick="login()">Login</button>
-                    <button type="button" class="btn btn-success" onclick="switchToRegister()">Register</button>
+        <div class="modal fade" id="loginModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <h2 class="modal-title">Login</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form id="loginForm">
+                            <input type="email" id="loginEmail" class="form-control mb-2" placeholder="Email" autocomplete="email"></input>
+                            <input type="password" id="loginPassword" class="form-control mb-2" placeholder="Password" autocomplete="current-password">
+                        </form>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary me-2" onclick="login()">Login</button>
+                        <button type="button" class="btn btn-success" onclick="switchToRegister()">Register</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Pop up register -->
-    <div class="modal fade" id="registerModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header justify-content-center">
-                    <h2 class="modal-title">Register</h2>
-                </div>
-                <div class="modal-body">
-                    <form id="registerForm">
-                        <input type="email" id="registerEmail" class="form-control mb-2" placeholder="Email">
-                        <input type="text" id="registerUsername" class="form-control mb-2" placeholder="Username" autocomplete="username">
-                        <input type="password" id="registerPassword" class="form-control mb-2" placeholder="Password" autocomplete="current-password">
-                    </form>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" class="btn btn-success me-2" onclick="register()">Register</button>
-                    <button type="button" class="btn btn-secondary" onclick="switchToLogin()">Back to Login</button>
+        <div class="modal fade" id="registerModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <h2 class="modal-title">Register</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form id="registerForm">
+                            <input type="email" id="registerEmail" class="form-control mb-2" placeholder="Email">
+                            <input type="text" id="registerUsername" class="form-control mb-2" placeholder="Username" autocomplete="username">
+                            <input type="password" id="registerPassword" class="form-control mb-2" placeholder="Password" autocomplete="current-password">
+                        </form>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-success me-2" onclick="register()">Register</button>
+                        <button type="button" class="btn btn-secondary" onclick="switchToLogin()">Back to Login</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     `;
 
     document.getElementById("header").insertAdjacentHTML("beforeend", headerHTML);
@@ -191,19 +186,17 @@ function setupSearch() {
     const searchForm = document.getElementById("searchForm");
     const searchInput = document.getElementById("searchInput");
 
-    searchForm.addEventListener("submit", function(e) {
+    searchForm.addEventListener("submit", function (e) {
         e.preventDefault(); // không submit form
 
         const query = searchInput.value.trim();
         if (!query) return;
 
         // Nếu đang ở home.html thì chỉ cần lọc và render lại
-        if (window.location.pathname.endsWith("home.html"))
-        {
+        if (window.location.pathname.endsWith("home.html")) {
             renderSearchResults(query);
-        } 
-        else 
-        {
+        }
+        else {
             // Nếu ở trang khác, redirect về home.html kèm query
             window.location.href = `home.html?search=${encodeURIComponent(query)}`;
         }

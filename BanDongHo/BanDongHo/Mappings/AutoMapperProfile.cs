@@ -13,6 +13,12 @@ namespace WatchAPI.Mappings
             CreateMap<User, UserDTO>()
                 .ForMember(dest => dest.Role, opt => opt.Ignore()); // get Role from UserManager separately
 
+            // Auth
+            CreateMap<User, AuthResponseDTO>()
+            .ForMember(dest => dest.Roles, opt => opt.Ignore()) 
+            .ForMember(dest => dest.AccessToken, opt => opt.Ignore())
+            .ForMember(dest => dest.RefreshToken, opt => opt.Ignore());
+
 
             // Watch
             CreateMap<Watch, WatchUserDTO>();

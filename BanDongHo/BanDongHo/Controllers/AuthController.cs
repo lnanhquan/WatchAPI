@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -19,15 +20,16 @@ namespace WatchAPI.Controllers
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IConfiguration _config;
+        private readonly IMapper _mapper;
 
-        public AuthController(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration config)
+        public AuthController(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration config, IMapper mapper)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _config = config;
+            _mapper = mapper;
         }
 
-        // Sinh refresh token
         private string GenerateRefreshToken()
         {
             var randomNumber = new byte[64];
@@ -44,7 +46,6 @@ namespace WatchAPI.Controllers
             return Convert.ToBase64String(hash);
         }
 
-        // Lấy thông tin từ token cũ 
         private ClaimsPrincipal? GetPrincipalFromExpiredToken(string token)
         {
             var tokenValidationParameters = new TokenValidationParameters
@@ -57,28 +58,23 @@ namespace WatchAPI.Controllers
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            try
+            var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
+            if (securityToken is JwtSecurityToken jwt && jwt.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
             {
-                var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
-                if (securityToken is JwtSecurityToken jwt &&
-                    jwt.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
-                {
-                    return principal;
-                }
+                return principal;
             }
-            catch
+            else
             {
                 return null;
             }
-            return null;
         }
 
-        // Sinh token mới
         private (string accessToken, string refreshToken) GenerateTokens(User user, IList<string> roles)
         {
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+                new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(ClaimTypes.Email, user.Email)
             };
@@ -105,84 +101,64 @@ namespace WatchAPI.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDTO dto)
         {
-            try
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            if (await _userManager.FindByEmailAsync(dto.Email) != null)
             {
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
-
-                if (await _userManager.FindByEmailAsync(dto.Email) != null)
-                {
-                    Log.Warning("Registration failed: {Email} already exists", dto.Email);
-                    return BadRequest("Email already registered");
-                }
-                var user = new User { UserName = dto.Username, Email = dto.Email, EmailConfirmed = true };
-                var result = await _userManager.CreateAsync(user, dto.Password);
-
-                if (!result.Succeeded)
-                {
-                    Log.Warning("Registration failed for {Email}: {Errors}", dto.Email, string.Join(", ", result.Errors.Select(e => e.Description)));
-                    return BadRequest(result.Errors);
-                }
-
-                await _userManager.AddToRoleAsync(user, "User");
-                Log.Information("User {Username} registered successfully: {Email}", dto.Username, dto.Email);
-                return Ok("User registered successfully");
+                Log.Warning("Registration failed: {Email} already exists", dto.Email);
+                return BadRequest("Email already registered");
             }
-            catch (Exception ex)
+            var user = new User { UserName = dto.Username, Email = dto.Email, EmailConfirmed = true };
+            var result = await _userManager.CreateAsync(user, dto.Password);
+
+            if (!result.Succeeded)
             {
-                Log.Error(ex, "An error occurred during registration for {Email}", dto.Email);
-                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred during registration");
+                Log.Warning("Registration failed for {Email}: {Errors}", dto.Email, string.Join(", ", result.Errors.Select(e => e.Description)));
+                return BadRequest(result.Errors);
             }
+
+            await _userManager.AddToRoleAsync(user, "User");
+            Log.Information("User {Username} registered successfully: {Email}", dto.Username, dto.Email);
+            return Ok("User registered successfully");
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO dto)
         {
-            try
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var user = await _userManager.FindByEmailAsync(dto.Email);
+            if (user == null)
             {
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
-
-                var user = await _userManager.FindByEmailAsync(dto.Email);
-                if (user == null)
-                {
-                    Log.Warning("Login failed: {Email} not found", dto.Email);
-                    return Unauthorized("Invalid email");
-                }
-
-                var result = await _signInManager.CheckPasswordSignInAsync(user, dto.Password, false);
-
-                if (!result.Succeeded)
-                {
-                    Log.Warning("Login failed for {Email}: Invalid password", dto.Email);
-                    return Unauthorized("Invalid password");
-                }
-
-                var roles = await _userManager.GetRolesAsync(user);
-                var (accessToken, refreshToken) = GenerateTokens(user, roles);
-
-                // Lưu refresh token 
-                user.RefreshToken = HashToken(refreshToken);
-                user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(int.Parse(_config["Jwt:RefreshTokenExpiryDays"]));
-                await _userManager.UpdateAsync(user);
-
-                Log.Information("User {Username} logged in successfully", user.UserName);
-
-                return Ok(new AuthResponseDTO
-                {
-                    Id = user.Id,
-                    Username = user.UserName,
-                    Email = user.Email,
-                    Roles = roles,
-                    AccessToken = accessToken,
-                    RefreshToken = refreshToken
-                });
+                Log.Warning("Login failed: {Email} not found", dto.Email);
+                return Unauthorized("Invalid email");
             }
-            catch (Exception ex)
+
+            var result = await _signInManager.CheckPasswordSignInAsync(user, dto.Password, false);
+
+            if (!result.Succeeded)
             {
-                Log.Error(ex, "An error occurred during login for {Email}", dto.Email);
-                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred during login");
+                Log.Warning("Login failed for {Email}: Invalid password", dto.Email);
+                return Unauthorized("Invalid password");
             }
+
+            var roles = await _userManager.GetRolesAsync(user);
+            var (accessToken, refreshToken) = GenerateTokens(user, roles);
+
+            user.RefreshToken = HashToken(refreshToken);
+            user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(int.Parse(_config["Jwt:RefreshTokenExpiryDays"]));
+            await _userManager.UpdateAsync(user);
+
+            Log.Information("User {Username} logged in successfully", user.UserName);
+
+            var authResponse = _mapper.Map<AuthResponseDTO>(user);
+            authResponse.Roles = roles;
+            authResponse.AccessToken = accessToken;
+            authResponse.RefreshToken = refreshToken;
+
+            return Ok(authResponse);
         }
 
         [HttpGet("check-email")]
@@ -192,7 +168,6 @@ namespace WatchAPI.Controllers
             return Ok(user != null);
         }
 
-        // API khi cần refresh token
         [HttpPost("refresh-token")]
         public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenDTO dto)
         {
@@ -200,14 +175,22 @@ namespace WatchAPI.Controllers
             if (principal == null)
                 return BadRequest("Invalid access token");
 
-            var userId = principal.FindFirstValue(JwtRegisteredClaimNames.Sub);
+            var userId = principal.FindFirstValue(JwtRegisteredClaimNames.Sub) ?? principal.FindFirstValue(ClaimTypes.NameIdentifier);
             var user = await _userManager.FindByIdAsync(userId);
 
-            if (user == null ||
-                user.RefreshToken != HashToken(dto.RefreshToken) ||
-                user.RefreshTokenExpiryTime <= DateTime.UtcNow)
+            if (user == null)
             {
-                return Unauthorized("Invalid refresh token");
+                return Unauthorized("User not found");
+            }
+
+            if (user.RefreshToken != HashToken(dto.RefreshToken))
+            {
+                return Unauthorized("Hash token is wrong");
+            }
+
+            if (user.RefreshTokenExpiryTime <= DateTime.UtcNow)
+            {
+                return Unauthorized("Refresh token is expired");
             }
 
             var roles = await _userManager.GetRolesAsync(user);
@@ -217,7 +200,7 @@ namespace WatchAPI.Controllers
             user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(int.Parse(_config["Jwt:RefreshTokenExpiryDays"]));
             await _userManager.UpdateAsync(user);
 
-            Log.Information("Refresh token issued for user {Username}", user.UserName);
+            Log.Information("Refresh token issued for user {Email} with ID {ID}", user.Email, user.Id);
 
             return Ok(new
             {
@@ -226,7 +209,6 @@ namespace WatchAPI.Controllers
             });
         }
 
-        // Xóa refresh token đi sau khi log out
         [Authorize]
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()

@@ -1,12 +1,62 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "BanDongHo\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "BanDongHo\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAwwMEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T07:04:00.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\appsettings.json",
+              "RelativeDocumentMoniker": "BanDongHo\\appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\appsettings.json",
+              "RelativeToolTip": "BanDongHo\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-05T06:32:16.894Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -18,13 +18,12 @@ const getFullImageUrl = (relativeUrl) => {
 function updateUIAfterLogin(isLoggedIn) {
     const btnLogin = document.getElementById("btnLogin");
     const btnLogout = document.getElementById("btnLogout");
-    const managementDropdown = document.getElementById("managementDropdown");
     const user = JSON.parse(localStorage.getItem("user"));
 
     if (isLoggedIn) {
         btnLogin.classList.add("d-none");
         btnLogout.classList.remove("d-none");
-        userGreeting.textContent = `Welcome, ${user.username}!`;
+        userGreeting.textContent = `Welcome, ${user.userName}!`;
         userGreeting.classList.remove("d-none");
     } else {
         btnLogin.classList.remove("d-none");

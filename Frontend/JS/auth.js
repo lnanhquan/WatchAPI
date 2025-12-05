@@ -3,7 +3,6 @@ const authAPI = {
     login: (data) => {return api.post("/Auth/login", data);},
     logout: () => {return api.post("/Auth/logout");},
     checkEmail: (email) => {return api.get("/Auth/check-email", { params: { email } });},
-    refreshToken: (data) => {return api.post("/Auth/refresh-token", data);}
 };
 
 function openLoginModal() {
