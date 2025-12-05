@@ -1,10 +1,11 @@
 const watchAPI = {
-    getAll: () => api.get("/Watches/admin"),
+    getAll: (isDeleted = null) => api.get("/Watches/admin", { params: { isDeleted } }),
     getById: id => api.get(`/Watches/admin/${id}`),
     checkName: name => api.get(`/Watches/check-name`, { params: { name } }),
     create: formData => api.post("/Watches", formData),
     update: (id, formData) => api.put(`/Watches/${id}`, formData),
-    delete: id => api.delete(`/Watches/${id}`)
+    delete: id => api.delete(`/Watches/${id}`),
+    restore: id => api.put(`/Watches/${id}/restore`)
 };
 
 let watchTable = document.getElementById("watchTable");
@@ -25,10 +26,11 @@ let watchesDataAll = [];
 let watchesData = []; 
 let watchSortState = {};
 let watchDetailModal = document.getElementById("watchDetailModal");
+let watchStatusFilter = "all"; 
 
 async function getTable() {
     try {
-        const response = await watchAPI.getAll();
+        const response = await watchAPI.getAll(null);
         watchesDataAll = response.data;
         watchesData = [...watchesDataAll];
 
@@ -111,11 +113,10 @@ function renderWatchPage(page) {
             tdStatus.appendChild(statusBadge);
 
             const tdActions = document.createElement("td");
-
             const actionContainer = document.createElement("div");
             actionContainer.style.display = "flex";
             actionContainer.style.flexDirection = "column";
-            actionContainer.style.gap = "5px";              
+            actionContainer.style.gap = "5px";
             actionContainer.style.alignItems = "center";
 
             const btnDetail = document.createElement("button");
@@ -123,19 +124,28 @@ function renderWatchPage(page) {
             btnDetail.innerHTML = `<i class="bi bi-info-circle"></i> Detail`;
             btnDetail.addEventListener("click", () => openDetailModal(w));
 
-            const btnEdit = document.createElement("button");
-            btnEdit.className = "btn btn-success w-100";
-            btnEdit.innerHTML = `<i class="bi bi-pencil"></i> Edit`;
-            btnEdit.addEventListener("click", () => openEditModal(w));
-
-            const btnDelete = document.createElement("button");
-            btnDelete.className = "btn btn-danger w-100";
-            btnDelete.innerHTML = `<i class="bi bi-trash"></i> Delete`;
-            btnDelete.addEventListener("click", () => deleteWatch(w.id, btnDelete));
-
             actionContainer.appendChild(btnDetail);
-            actionContainer.appendChild(btnEdit);
-            actionContainer.appendChild(btnDelete);
+
+            if (w.isDeleted) {
+                const btnRestore = document.createElement("button");
+                btnRestore.className = "btn btn-success w-100";
+                btnRestore.innerHTML = `<i class="fas fa-undo"></i> Restore`;
+                btnRestore.addEventListener("click", () => restoreWatch(w.id, btnRestore));
+                actionContainer.appendChild(btnRestore);
+            } else {
+                const btnEdit = document.createElement("button");
+                btnEdit.className = "btn btn-success w-100";
+                btnEdit.innerHTML = `<i class="bi bi-pencil"></i> Edit`;
+                btnEdit.addEventListener("click", () => openEditModal(w));
+
+                const btnDelete = document.createElement("button");
+                btnDelete.className = "btn btn-danger w-100";
+                btnDelete.innerHTML = `<i class="bi bi-trash"></i> Delete`;
+                btnDelete.addEventListener("click", () => deleteWatch(w.id, btnDelete));
+
+                actionContainer.appendChild(btnEdit);
+                actionContainer.appendChild(btnDelete);
+            }
 
             tdActions.appendChild(actionContainer);
 
@@ -309,7 +319,6 @@ async function handleSaveWatch() {
     for (let [key, value] of formData.entries()) {
         console.log(key, value);
     }
-    console.log(watchId.value);
 
     saveBtn.disabled = true;
 
@@ -360,7 +369,7 @@ async function handleSaveWatch() {
 async function deleteWatch(id, btnDelete) {
     const result = await Swal.fire({
         title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        text: "This watch will be soft-deleted!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#d33',
@@ -401,6 +410,56 @@ async function deleteWatch(id, btnDelete) {
         finally 
         {
             btnDelete.disabled = false;
+        }
+    }
+}
+
+async function restoreWatch(id, btnRestore) {
+    const result = await Swal.fire({
+        title: 'Are you sure?',
+        text: "This watch will be restored to active!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Yes, restore it!'
+    });
+    if (result.isConfirmed)
+    {
+        btnRestore.disabled = true;
+
+        try {
+            await watchAPI.restore(id);
+
+            await getTable();
+
+            Swal.fire({
+                icon: "success",
+                title: "Your watch has been restored!",
+                toast: true,
+                position: "bottom-end",
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true,
+            });
+
+            applyStatusFilter();
+        } 
+        catch (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Could not restore item!",
+                toast: true,
+                position: "bottom-end",
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true,
+            });            
+            console.error(error);
+        } 
+        finally 
+        {
+            btnRestore.disabled = false;
         }
     }
 }
@@ -465,18 +524,46 @@ function sortWatchBy(field)
                 x = new Date(a.updatedAt || 0);
                 y = new Date(b.updatedAt || 0);
                 break;
-            case "status": 
-                x = a.isDeleted ? 1 : 0;
-                y = b.isDeleted ? 1 : 0;
-                break;
         }
 
         if (x < y) return direction === "asc" ? -1 : 1;
         if (x > y) return direction === "asc" ? 1 : -1;
         return 0;
     });
+    watchCurrentPage = 1;
+    renderWatchPage(watchCurrentPage);
+}
+
+function updateStatusFilterIcon() {
+    const icon = document.getElementById("statusFilterIcon");
+
+    if (watchStatusFilter === "all") {
+        icon.className = "fas fa-filter";        
+        icon.style.color = "black";
+    }
+    else if (watchStatusFilter === "active") {
+        icon.className = "fas fa-check-circle";  
+        icon.style.color = "green";
+    }
+    else if (watchStatusFilter === "deleted") {
+        icon.className = "fas fa-trash";        
+        icon.style.color = "red";
+    }
+}
+
+async function applyStatusFilter() {
+    let filterValue = null;
+
+    if (watchStatusFilter === "active") filterValue = false;
+    if (watchStatusFilter === "deleted") filterValue = true;
+
+    const response = await watchAPI.getAll(filterValue);
+    watchesDataAll = response.data;
+    watchesData = [...watchesDataAll];
+    watchCurrentPage = 1;
 
     renderWatchPage(watchCurrentPage);
+    updateStatusFilterIcon();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -501,11 +588,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 searchManagementWatch();
             }
         });
+
         document.querySelectorAll(".sort-icon").forEach(icon => {
             icon.addEventListener("click", () => {
                 const field = icon.dataset.sort;
                 sortWatchBy(field);
             });
         });
+
+        document.getElementById("statusFilterIcon").addEventListener("click", async () => {
+            if (watchStatusFilter === "all") 
+            {
+                watchStatusFilter = "active";
+            } 
+            else if (watchStatusFilter === "active") 
+            {
+                watchStatusFilter = "deleted";
+            } 
+            else
+            {
+                watchStatusFilter = "all";
+            }
+            await applyStatusFilter();
+        });
+
     }
 });

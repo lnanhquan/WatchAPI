@@ -11,7 +11,7 @@ namespace WatchAPI.Services
 
         Task<Watch?> GetByNameAsync(string name);
 
-        Task<IEnumerable<WatchAdminDTO>> GetAllAdminAsync();
+        Task<IEnumerable<WatchAdminDTO>> GetAllAdminAsync(bool? isDeleted = null);
 
         Task<WatchAdminDTO?> GetAdminByIdAsync(Guid id);
 
@@ -20,5 +20,7 @@ namespace WatchAPI.Services
         Task<bool> UpdateAsync(Guid id, WatchUpdateDTO dto, string? user = null);
 
         Task<bool> DeleteAsync(Guid id, string? user = null);
+
+        Task<bool> RestoreAsync(Guid id, string? user = null);
     }
 }

@@ -6,10 +6,11 @@ namespace WatchAPI.Repositories
     {
         Task<IEnumerable<T>> GetAllAsync();
         Task<T?> GetByIdAsync(Guid id);
-        Task<IEnumerable<T>> GetAllAdminAsync();
+        Task<IEnumerable<T>> GetAllAdminAsync(bool? isDeleted = null);
         Task<T?> GetAdminByIdAsync(Guid id);
         Task CreateAsync(T entity, string? user);
         void Update(T entity, string? user);
         Task DeleteAsync(Guid id, string? user);
+        Task RestoreAsync(Guid id, string? user);
     }
 }

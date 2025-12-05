@@ -34,6 +34,13 @@
             DeletedAt = DateTime.UtcNow;
             IncreaseVersion();
         }
+
+        public void Restore(string? user)
+        {
+            IsDeleted = false;
+            UpdatedBy = user;
+            UpdatedAt = DateTime.UtcNow;
+        }
     }
 
 }

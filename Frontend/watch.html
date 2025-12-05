@@ -16,6 +16,10 @@
         .container {
             max-width: 1400px;
         }
+
+        #statusFilterIcon {
+            font-size: 15px;
+        }
     </style>
 </head>
 
@@ -43,18 +47,13 @@
                     <thead class="text-center align-middle fs-5 fw-bold">
                         <tr style="height: 100px; text-align: center; vertical-align: middle;">
                             <th style="width: 160px;">Image</th>
-                            <th style="width: 120px;">Watch name <i class="fas fa-sort sort-icon"
-                                    data-sort="watchName"></i></th>
+                            <th style="width: 120px;">Watch name <i class="fas fa-sort sort-icon" data-sort="watchName"></i></th>
                             <th style="width: 150px;">Price <i class="fas fa-sort sort-icon" data-sort="price"></i></th>
-                            <th style="width: 120px;">Category <i class="fas fa-sort sort-icon"
-                                    data-sort="category"></i></th>
+                            <th style="width: 120px;">Category <i class="fas fa-sort sort-icon" data-sort="category"></i></th>
                             <th style="width: 120px;">Brand <i class="fas fa-sort sort-icon" data-sort="brand"></i></th>
-                            <th style="width: 130px;">Created At <i class="fas fa-sort sort-icon"
-                                    data-sort="createdAt"></i></th>
-                            <th style="width: 135px;">Updated At <i class="fas fa-sort sort-icon"
-                                    data-sort="updatedAt"></i></th>
-                            <th style="width: 120px;">Status <i class="fas fa-sort sort-icon" data-sort="status"></i>
-                            </th>
+                            <th style="width: 130px;">Created At <i class="fas fa-sort sort-icon" data-sort="createdAt"></i></th>
+                            <th style="width: 135px;">Updated At <i class="fas fa-sort sort-icon" data-sort="updatedAt"></i></th>
+                            <th style="width: 120px;">Status <i class="fas fa-filter" id="statusFilterIcon" style="cursor:pointer;"></i></th>
                             <th style="width: 100px;"></th>
                         </tr>
                     </thead>

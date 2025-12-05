@@ -48,9 +48,9 @@ namespace WatchAPI.Controllers
 
         [HttpGet("admin")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetAllAdmin()
+        public async Task<IActionResult> GetAllAdmin([FromQuery] bool? isDeleted)
         {
-            var watches = await _service.GetAllAdminAsync();
+            var watches = await _service.GetAllAdminAsync(isDeleted);
             return Ok(watches);
         }
 
@@ -132,6 +132,19 @@ namespace WatchAPI.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var deleted = await _service.DeleteAsync(id, userId);
             if (!deleted)
+            {
+                return NotFound();
+            }
+            return NoContent();
+        }
+
+        [HttpPut("{id:guid}/restore")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Restore(Guid id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var restored = await _service.RestoreAsync(id, userId);
+            if (!restored)
             {
                 return NotFound();
             }

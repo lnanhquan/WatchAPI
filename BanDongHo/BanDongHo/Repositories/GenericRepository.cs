@@ -28,11 +28,16 @@ namespace WatchAPI.Repositories
                          .FirstOrDefaultAsync(e => e.Id == id && !e.IsDeleted);
         }
 
-        public async Task<IEnumerable<T>> GetAllAdminAsync()
+        public async Task<IEnumerable<T>> GetAllAdminAsync(bool? isDeleted = null)
         {
-            return await _dbSet
-                .ToListAsync();
+            var query = _dbSet.AsQueryable();
+
+            if (isDeleted.HasValue)
+                query = query.Where(e => e.IsDeleted == isDeleted.Value);
+
+            return await query.ToListAsync();
         }
+
 
         public async Task<T?> GetAdminByIdAsync(Guid id)
         {
@@ -58,6 +63,16 @@ namespace WatchAPI.Repositories
             if (entity != null)
             {
                 entity.SoftDelete(user);
+            }
+        }
+
+        public async Task RestoreAsync(Guid id, string? user)
+        {
+            var entity = await _dbSet.FirstOrDefaultAsync(e => e.Id == id);
+
+            if (entity != null && entity.IsDeleted)
+            {
+                entity.Restore(user);
             }
         }
     }

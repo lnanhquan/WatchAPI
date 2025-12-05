@@ -58,10 +58,10 @@ namespace WatchAPI.Services
             }
         }
 
-        public async Task<IEnumerable<WatchAdminDTO>> GetAllAdminAsync()
+        public async Task<IEnumerable<WatchAdminDTO>> GetAllAdminAsync(bool? isDeleted = null)
         {
             _logger.LogInformation("Admin requested all watches");
-            var watches = await _uow.Watches.GetAllAdminAsync();
+            var watches = await _uow.Watches.GetAllAdminAsync(isDeleted);
             _logger.LogInformation("Returned {Count} watches for admin", watches.Count());
             return _mapper.Map<IEnumerable<WatchAdminDTO>>(watches);
         }
@@ -69,7 +69,7 @@ namespace WatchAPI.Services
         public async Task<WatchAdminDTO?> GetAdminByIdAsync(Guid id)
         {
             _logger.LogInformation("Admin requested watch by ID: {WatchId}", id);
-            var watch = await _uow.Watches.GetByIdAsync(id);
+            var watch = await _uow.Watches.GetAdminByIdAsync(id);
             if (watch == null)
             { 
                 _logger.LogWarning("Watch with Id {WatchId} not found for admin", id);
@@ -138,6 +138,28 @@ namespace WatchAPI.Services
             await _uow.SaveChangesAsync();
 
             _logger.LogInformation("Soft deleted watch {WatchId} by user {User}", id, user);
+
+            return true;
+        }
+
+        public async Task<bool> RestoreAsync(Guid id, string? user = null)
+        {
+            var watch = await _uow.Watches.GetAdminByIdAsync(id);
+            if (watch == null)
+            {
+                _logger.LogWarning("Watch with ID {WatchId} not found for restoration", id);
+                return false;
+            }
+            else if (!watch.IsDeleted)
+            {
+                _logger.LogWarning("Watch with ID {WatchId} is not deleted, cannot restore", id);
+                return false;
+            }
+
+            await _uow.Watches.RestoreAsync(id, user);
+            await _uow.SaveChangesAsync();
+
+            _logger.LogInformation("Restored watch {WatchId} by user {User}", id, user);
 
             return true;
         }

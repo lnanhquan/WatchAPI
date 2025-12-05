@@ -792,6 +792,15 @@
         "tags": [
           "Watches"
         ],
+        "parameters": [
+          {
+            "name": "isDeleted",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -801,6 +810,29 @@
     },
     "/api/Watches/admin/{id}": {
       "get": {
+        "tags": [
+          "Watches"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Watches/{id}/restore": {
+      "put": {
         "tags": [
           "Watches"
         ],
