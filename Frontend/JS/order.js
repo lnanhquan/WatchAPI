@@ -37,7 +37,6 @@ function renderOrderPage(page) {
 
             const tdActions = document.createElement("td");
 
-            // Nút Detail
             const btnDetail = document.createElement("button");
             btnDetail.className = "btn btn-secondary me-2";
             btnDetail.innerHTML = `<i class="bi bi-info-circle"></i> Detail`;
@@ -113,8 +112,8 @@ function openDetailOrderModal(order) {
                     <th>Image</th>
                     <th>Watch</th>
                     <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Total</th>
+                    <th style="width:150px;">Price</th>
+                    <th style="width:150px;">Total</th>
                 </tr>
             </thead>
             <tbody class="text-center align-middle">

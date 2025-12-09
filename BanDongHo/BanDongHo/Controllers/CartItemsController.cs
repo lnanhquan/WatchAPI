@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using WatchAPI.DTOs;
@@ -21,66 +20,56 @@ namespace WatchAPI.Controllers
 
         // GET: api/cartitems
         [HttpGet]
-        public async Task<ActionResult<List<CartItemDTO>>> GetCart()
+        public async Task<IActionResult> GetCart()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userId == null)
-                return Unauthorized();
-
-            var cart = await _service.GetCartAsync(userId);
-            return Ok(cart);
+            var userId = GetUserId();
+            var items = await _service.GetCartAsync(userId);
+            return Ok(items);
         }
 
         // POST: api/cartitems
         [HttpPost]
         public async Task<ActionResult> AddToCart([FromBody] CartItemDTO dto)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userId == null)
-                return Unauthorized();
-
-            await _service.AddAsync(userId, dto);
-            await _service.SaveChangesAsync();
-            return Ok(new { message = "Item added to cart successfully." });
+            var userId = GetUserId();
+            await _service.CreateAsync(userId, dto);
+            return CreatedAtAction(nameof(GetCart), new { }, dto);
         }
 
         // PUT: api/cartitems
         [HttpPut]
         public async Task<ActionResult> UpdateCartItem([FromBody] CartItemDTO dto)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userId == null)
-                return Unauthorized();
-
+            var userId = GetUserId();
             await _service.UpdateAsync(userId, dto);
-            await _service.SaveChangesAsync();
-            return Ok(new { message = "Cart item updated successfully." });
+            return NoContent();
         }
 
         // DELETE: api/cartitems/{watchId}
         [HttpDelete("{watchId}")]
         public async Task<ActionResult> DeleteCartItem(Guid watchId)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userId == null)
-                return Unauthorized();
-
+            var userId = GetUserId();
             await _service.DeleteAsync(userId, watchId);
-            await _service.SaveChangesAsync();
-            return Ok(new { message = "Cart item deleted successfully." });
+            return NoContent();
         }
 
         // DELETE: api/cartitems/clear
         [HttpDelete("clear")]
         public async Task<ActionResult> ClearCart()
         {
+            var userId = GetUserId();
+            await _service.ClearCartAsync(userId);
+            return NoContent();
+        }
+
+        private string GetUserId()
+        {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userId == null)
-                return Unauthorized();
-
-            await _service.ClearCartAsync(userId);
-            await _service.SaveChangesAsync();
-            return Ok(new { message = "Cart cleared successfully." });
+                throw new UnauthorizedAccessException("User not authenticated.");
+            return userId;
         }
+
     }
 }

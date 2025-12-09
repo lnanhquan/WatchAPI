@@ -10,6 +10,7 @@ let userEmail = document.getElementById("userEmail");
 let userName = document.getElementById("userName");
 let userRole = document.getElementById("userRole");
 let existingEmail;
+let existingUsername;
 let editingUserId;
 let viewUserManagementModal;
 let viewUserManagementContainer = document.getElementById("viewUserManagementContainer");
@@ -46,19 +47,16 @@ function renderUserManagementPage(page) {
 
             const tdActions = document.createElement("td");
 
-            // Nút Detail
             const btnDetail = document.createElement("button");
             btnDetail.className = "btn btn-secondary me-2";
             btnDetail.innerHTML = `<i class="bi bi-info-circle"></i> Detail`;
             btnDetail.addEventListener("click", () => openDetailModal(i));
 
-            // Nút Edit
             const btnEdit = document.createElement("button");
             btnEdit.className = "btn btn-success me-2";
             btnEdit.innerHTML = `<i class="bi bi-pencil"></i> Edit`;
             btnEdit.addEventListener("click", () => openEditModal(i));
 
-            // Nút Delete
             const btnDelete = document.createElement("button");
             btnDelete.className = "btn btn-danger";
             btnDelete.innerHTML = `<i class="bi bi-trash"></i> Delete`;
@@ -105,10 +103,11 @@ async function getUserManagementTable() {
 
 async function openEditModal(user) {
     userEmail.value = user.email;
-    userName.value = user.username;
+    userName.value = user.userName;
     userRole.value = user.role;
     existingEmail = user.email;
     editingUserId = user.id;
+    existingUsername = user.userName;
     userManagementModal.show();
 }
 
@@ -162,9 +161,16 @@ async function editUser()
         return;
     }
 
+    if (username !== existingUsername) {
+        if (await isUsernameTaken(username)) {
+            Swal.fire("Error", "Username is already registered.", "error");
+            return;
+        }
+    }
+
     data = {
         email: email,
-        username: username,
+        userName: username,
         role: role
     }
 
@@ -265,9 +271,8 @@ function searchUserManagement()
         userManagementData = userManagementDataAll.filter(i => {
             const idMatch = i.id.toLowerCase().includes(keyword);
             const emailMatch = i.email.toLowerCase().includes(keyword);
-            const usernameMatch = i.username.toLowerCase().includes(keyword);
-            const roleMatch = i.role.toLowerCase().includes(keyword);
-            return idMatch || emailMatch || usernameMatch || roleMatch;
+            const usernameMatch = i.userName.toLowerCase().includes(keyword);
+            return idMatch || emailMatch || usernameMatch;
         });
     }
 
@@ -280,9 +285,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const pathName = window.location.pathname;
     if (pathName.endsWith("userManagement.html")) {
         getUserManagementTable();
+
         userManagementModal = new bootstrap.Modal(document.getElementById("userManagementModal"));
+
         updateBtn.addEventListener("click", editUser);
+
         viewUserManagementModal = new bootstrap.Modal(document.getElementById("viewUserManagementModal"));
+        
         document.getElementById("searchUserManagement").addEventListener("keyup", e => {
             if (e.key === "Enter") {
                 searchUserManagement();

@@ -187,17 +187,15 @@ function setupSearch() {
     const searchInput = document.getElementById("searchInput");
 
     searchForm.addEventListener("submit", function (e) {
-        e.preventDefault(); // không submit form
+        e.preventDefault(); 
 
         const query = searchInput.value.trim();
         if (!query) return;
 
-        // Nếu đang ở home.html thì chỉ cần lọc và render lại
         if (window.location.pathname.endsWith("home.html")) {
             renderSearchResults(query);
         }
         else {
-            // Nếu ở trang khác, redirect về home.html kèm query
             window.location.href = `home.html?search=${encodeURIComponent(query)}`;
         }
     });

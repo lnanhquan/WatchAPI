@@ -3,6 +3,7 @@ const authAPI = {
     login: (data) => {return api.post("/Auth/login", data);},
     logout: () => {return api.post("/Auth/logout");},
     checkEmail: (email) => {return api.get("/Auth/check-email", { params: { email } });},
+    checkUsername: (userName) => {return api.get("/Auth/check-username", { params: { userName } });}
 };
 
 function openLoginModal() {
@@ -40,6 +41,11 @@ function validatePassword(password) {
 
 async function isEmailTaken(email) {
     const response = await authAPI.checkEmail(email);
+    return response.data;
+}
+
+async function isUsernameTaken(userName) {
+    const response = await authAPI.checkUsername(userName);
     return response.data;
 }
 
@@ -91,6 +97,12 @@ async function register() {
                 title: 'Username Requirement',
                 html: 'Username can only contain letters, numbers, and underscores.'
             });
+            return;
+        }
+
+        if (await isUsernameTaken(username)) 
+        {
+            Swal.fire("Error", "Username is already registered.", "error");
             return;
         }
 

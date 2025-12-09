@@ -2,7 +2,7 @@
 
 namespace WatchAPI.Models.Entities
 {
-    public class InvoiceDetail : AuditableEntity
+    public class InvoiceDetail : BaseEntity
     {
         // Foreign key to Invoice
         public Guid InvoiceId { get; set; }

@@ -35,7 +35,6 @@ namespace WatchAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(string id, [FromBody] UserDTO dto)
         {
             if (!ModelState.IsValid)

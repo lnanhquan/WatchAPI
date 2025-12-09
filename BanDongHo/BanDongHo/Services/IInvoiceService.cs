@@ -6,8 +6,6 @@ namespace WatchAPI.Services
     {
         Task<IEnumerable<InvoiceDTO>> GetAllAsync();
         Task<InvoiceDTO?> GetByIdAsync(Guid id);
-        Task<InvoiceDTO> CreateAsync(InvoiceDTO dto);
-        Task<InvoiceDTO?> UpdateAsync(Guid id, InvoiceDTO dto);
-        Task<bool> DeleteAsync(Guid id);
+        Task<InvoiceDTO> CreateAsync(InvoiceDTO dto, string? user = null);
     }
 }

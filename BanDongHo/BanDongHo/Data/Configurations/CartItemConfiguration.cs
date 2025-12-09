@@ -22,7 +22,7 @@ namespace WatchAPI.Data.Configurations
 
             builder.Property(e => e.Quantity).IsRequired();
 
-            builder.Ignore(e => e.Total); // not mapped
+            builder.Ignore(e => e.Total);
         }
     }
 }

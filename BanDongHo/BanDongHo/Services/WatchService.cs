@@ -72,7 +72,7 @@ namespace WatchAPI.Services
             var watch = await _uow.Watches.GetAdminByIdAsync(id);
             if (watch == null)
             { 
-                _logger.LogWarning("Watch with Id {WatchId} not found for admin", id);
+                _logger.LogWarning("Watch with ID {WatchId} not found for admin", id);
                 return null;
             }
             else
@@ -82,7 +82,7 @@ namespace WatchAPI.Services
             }
         }
 
-        public async Task<Watch> CreateAsync(WatchCreateDTO dto, string? user = null)
+        public async Task<WatchAdminDTO> CreateAsync(WatchCreateDTO dto, string? user = null)
         {
             ValidateWatchCreate(dto);
 
@@ -97,7 +97,7 @@ namespace WatchAPI.Services
             await _uow.SaveChangesAsync();
 
             _logger.LogInformation("Created watch {Name} by user {User}", watch.Name, user);
-            return watch;
+            return _mapper.Map<WatchAdminDTO>(watch);
         }
 
         public async Task<bool> UpdateAsync(Guid id, WatchUpdateDTO dto, string? user = null)

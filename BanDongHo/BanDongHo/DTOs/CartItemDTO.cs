@@ -9,12 +9,10 @@ namespace WatchAPI.DTOs
         [Required]
         public Guid WatchId { get; set; }
 
-        [Required]
         public string WatchName { get; set; } = string.Empty;
 
         public string? ImageUrl { get; set; }
 
-        [Required]
         [Range(0, 1_000_000_000)]
         public int Price { get; set; }
 

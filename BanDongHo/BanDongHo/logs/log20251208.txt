@@ -1,0 +1,323 @@
+2025-12-08 08:44:20.328 +07:00 [INF] User requested all watches
+2025-12-08 08:44:20.450 +07:00 [INF] Returned 21 watches
+2025-12-08 08:44:20.544 +07:00 [INF] User requested all watches
+2025-12-08 08:44:20.551 +07:00 [INF] Returned 21 watches
+2025-12-08 08:44:20.773 +07:00 [INF] User requested all watches
+2025-12-08 08:44:20.777 +07:00 [INF] Returned 21 watches
+2025-12-08 08:44:22.237 +07:00 [INF] User requested all watches
+2025-12-08 08:44:22.245 +07:00 [INF] Returned 21 watches
+2025-12-08 08:44:23.415 +07:00 [INF] User requested all watches
+2025-12-08 08:44:23.422 +07:00 [INF] Returned 21 watches
+2025-12-08 08:44:24.959 +07:00 [INF] User requested all watches
+2025-12-08 08:44:24.965 +07:00 [INF] Returned 21 watches
+2025-12-08 08:44:26.020 +07:00 [INF] User requested all watches
+2025-12-08 08:44:26.025 +07:00 [INF] Returned 21 watches
+2025-12-08 08:44:27.030 +07:00 [INF] User requested all watches
+2025-12-08 08:44:27.035 +07:00 [INF] Returned 21 watches
+2025-12-08 08:44:28.069 +07:00 [INF] User requested all watches
+2025-12-08 08:44:28.075 +07:00 [INF] Returned 21 watches
+2025-12-08 08:44:48.122 +07:00 [INF] User admin logged in successfully
+2025-12-08 08:44:48.221 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:44:50.237 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:44:50.246 +07:00 [INF] Admin requested all watches
+2025-12-08 08:44:50.255 +07:00 [INF] Returned 21 watches for admin
+2025-12-08 08:45:02.537 +07:00 [INF] Soft deleted watch "3f070cb9-2ccc-4bbd-8be2-268c8076e752" by user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:45:02.543 +07:00 [INF] Admin requested all watches
+2025-12-08 08:45:02.547 +07:00 [INF] Returned 21 watches for admin
+2025-12-08 08:45:06.976 +07:00 [INF] Restored watch "3f070cb9-2ccc-4bbd-8be2-268c8076e752" by user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:45:06.985 +07:00 [INF] Admin requested all watches
+2025-12-08 08:45:06.988 +07:00 [INF] Returned 21 watches for admin
+2025-12-08 08:45:06.998 +07:00 [INF] Admin requested all watches
+2025-12-08 08:45:07.003 +07:00 [INF] Returned 21 watches for admin
+2025-12-08 08:45:29.246 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:45:29.306 +07:00 [INF] Retrieved all invoices.
+2025-12-08 08:46:32.557 +07:00 [INF] Admin requested all watches
+2025-12-08 08:46:32.559 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:46:32.578 +07:00 [INF] Returned 21 watches for admin
+2025-12-08 08:46:33.156 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:46:33.161 +07:00 [INF] Retrieving all users
+2025-12-08 08:46:40.741 +07:00 [INF] User requested all watches
+2025-12-08 08:46:40.745 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:46:40.755 +07:00 [INF] Returned 21 watches
+2025-12-08 08:46:42.194 +07:00 [INF] User requested all watches
+2025-12-08 08:46:42.197 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:46:42.200 +07:00 [INF] Returned 21 watches
+2025-12-08 08:46:42.669 +07:00 [INF] User requested all watches
+2025-12-08 08:46:42.671 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:46:42.686 +07:00 [INF] Returned 21 watches
+2025-12-08 08:46:43.126 +07:00 [INF] User requested all watches
+2025-12-08 08:46:43.129 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:46:43.134 +07:00 [INF] Returned 21 watches
+2025-12-08 08:46:44.094 +07:00 [INF] User requested all watches
+2025-12-08 08:46:44.097 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:46:44.101 +07:00 [INF] Returned 21 watches
+2025-12-08 08:49:31.365 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:31.371 +07:00 [INF] User requested watch by ID: "1ccaa472-4cea-4b88-80a6-5ab511cb0375"
+2025-12-08 08:49:31.374 +07:00 [INF] Returned watch SRWATCH Couple-F SR80081.1102CF
+2025-12-08 08:49:34.102 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:34.104 +07:00 [INF] Retrieving all users
+2025-12-08 08:49:35.006 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:35.007 +07:00 [INF] User requested all watches
+2025-12-08 08:49:35.010 +07:00 [INF] Returned 21 watches
+2025-12-08 08:49:36.759 +07:00 [INF] User requested watch by ID: "4ff97927-e0cb-418f-8b60-0e40523c4ffd"
+2025-12-08 08:49:36.761 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:36.763 +07:00 [INF] Returned watch SRWATCH SG88805.1102AT
+2025-12-08 08:49:39.118 +07:00 [INF] User requested all watches
+2025-12-08 08:49:39.121 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:39.125 +07:00 [INF] Returned 21 watches
+2025-12-08 08:49:39.741 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:39.742 +07:00 [INF] User requested watch by ID: "3f070cb9-2ccc-4bbd-8be2-268c8076e752"
+2025-12-08 08:49:39.745 +07:00 [INF] Returned watch SRWATCH SL7004.1202
+2025-12-08 08:49:40.539 +07:00 [INF] User requested all watches
+2025-12-08 08:49:40.541 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:40.544 +07:00 [INF] Returned 21 watches
+2025-12-08 08:49:41.168 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:41.169 +07:00 [INF] User requested watch by ID: "1ccaa472-4cea-4b88-80a6-5ab511cb0375"
+2025-12-08 08:49:41.173 +07:00 [INF] Returned watch SRWATCH Couple-F SR80081.1102CF
+2025-12-08 08:49:42.373 +07:00 [INF] User requested all watches
+2025-12-08 08:49:42.376 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:42.391 +07:00 [INF] Returned 21 watches
+2025-12-08 08:49:42.979 +07:00 [INF] User requested watch by ID: "52a8917a-9053-4c61-bb45-39cbb464c289"
+2025-12-08 08:49:42.980 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:42.985 +07:00 [INF] Returned watch SRWATCH SL5012.1502BL
+2025-12-08 08:49:43.649 +07:00 [INF] User requested all watches
+2025-12-08 08:49:43.651 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:43.654 +07:00 [INF] Returned 21 watches
+2025-12-08 08:49:48.238 +07:00 [INF] User requested all watches
+2025-12-08 08:49:48.240 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:48.243 +07:00 [INF] Returned 21 watches
+2025-12-08 08:49:49.120 +07:00 [INF] User requested all watches
+2025-12-08 08:49:49.122 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:49.126 +07:00 [INF] Returned 21 watches
+2025-12-08 08:49:50.582 +07:00 [INF] User requested all watches
+2025-12-08 08:49:50.584 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:50.587 +07:00 [INF] Returned 21 watches
+2025-12-08 08:49:52.302 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:52.303 +07:00 [INF] User requested watch by ID: "0cdd6653-1a5b-4f67-ada2-bfd1d9afd2b7"
+2025-12-08 08:49:52.307 +07:00 [INF] Returned watch Orient Contemporary RA-AR0012N30B
+2025-12-08 08:49:53.898 +07:00 [INF] User requested all watches
+2025-12-08 08:49:53.901 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:53.905 +07:00 [INF] Returned 21 watches
+2025-12-08 08:49:54.818 +07:00 [INF] User requested watch by ID: "817417db-9730-4782-bc5e-ff93c965e3e4"
+2025-12-08 08:49:54.818 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:54.823 +07:00 [INF] Returned watch SRWATCH SL1611.1302TE
+2025-12-08 08:49:57.739 +07:00 [INF] User requested all watches
+2025-12-08 08:49:57.741 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 08:49:57.745 +07:00 [INF] Returned 21 watches
+2025-12-08 09:42:07.877 +07:00 [INF] Refresh token issued for user admin@gmail.com with ID 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 09:42:07.886 +07:00 [INF] Retrieving all users
+2025-12-08 09:42:11.860 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 09:42:11.876 +07:00 [INF] Retrieved all invoices.
+2025-12-08 09:42:23.562 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 09:42:23.580 +07:00 [INF] Retrieved all invoices.
+2025-12-08 09:42:29.170 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 09:42:29.173 +07:00 [INF] Retrieved all invoices.
+2025-12-08 09:42:31.795 +07:00 [INF] User requested all watches
+2025-12-08 09:42:31.797 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 09:42:31.800 +07:00 [INF] Returned 21 watches
+2025-12-08 11:29:27.823 +07:00 [INF] Refresh token issued for user admin@gmail.com with ID 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:29:27.890 +07:00 [INF] User requested all watches
+2025-12-08 11:29:27.947 +07:00 [INF] Returned 21 watches
+2025-12-08 11:29:40.342 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:29:40.368 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:29:40.412 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:29:55.167 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:29:55.171 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:29:55.187 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:30:28.913 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:30:28.917 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:30:28.940 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:30:44.971 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:30:44.975 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:30:44.979 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:30:58.519 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:30:58.523 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:30:58.532 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:31:18.633 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:31:18.635 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:31:18.644 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:32:08.073 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:32:08.075 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:32:08.085 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:32:15.490 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:32:15.493 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:32:15.500 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:32:59.730 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:32:59.739 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:32:59.743 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:33:42.927 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:33:42.930 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:33:42.937 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:33:50.680 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:33:50.690 +07:00 [INF] Admin requested all watches
+2025-12-08 11:33:50.698 +07:00 [INF] Returned 21 watches for admin
+2025-12-08 11:33:53.028 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:33:53.028 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:33:53.034 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:34:36.200 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:34:36.205 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:34:36.220 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:37:19.652 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:37:19.660 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:37:19.669 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:38:41.788 +07:00 [INF] Refresh token issued for user admin@gmail.com with ID 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:38:41.794 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:38:41.798 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:38:55.972 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:38:55.975 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 11:38:55.980 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 11:39:24.383 +07:00 [INF] User admin logged in successfully
+2025-12-08 11:39:43.046 +07:00 [INF] Admin requested all invoices
+2025-12-08 11:39:43.051 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 13:47:46.431 +07:00 [INF] User admin logged in successfully
+2025-12-08 13:48:05.823 +07:00 [INF] Admin requested all invoices
+2025-12-08 13:48:05.841 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 13:49:06.983 +07:00 [INF] User requested all watches
+2025-12-08 13:49:06.988 +07:00 [INF] Returned 21 watches
+2025-12-08 13:49:12.883 +07:00 [INF] User requested all watches
+2025-12-08 13:49:12.887 +07:00 [INF] Returned 21 watches
+2025-12-08 13:49:13.384 +07:00 [INF] User requested all watches
+2025-12-08 13:49:13.388 +07:00 [INF] Returned 21 watches
+2025-12-08 13:49:13.727 +07:00 [INF] User requested all watches
+2025-12-08 13:49:13.732 +07:00 [INF] Returned 21 watches
+2025-12-08 13:49:22.386 +07:00 [INF] User requested all watches
+2025-12-08 13:49:22.390 +07:00 [INF] Returned 21 watches
+2025-12-08 13:49:22.734 +07:00 [INF] User requested all watches
+2025-12-08 13:49:22.737 +07:00 [INF] Returned 21 watches
+2025-12-08 13:49:23.127 +07:00 [INF] User requested all watches
+2025-12-08 13:49:23.132 +07:00 [INF] Returned 21 watches
+2025-12-08 13:53:56.569 +07:00 [ERR] Unhandled exception
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - WatchAPI.Controllers.InvoicesController.GetAll (WatchAPI). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at WatchAPI.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Admin\Documents\GitHub\BanDongHo\BanDongHo\BanDongHo\Middlewares\ExceptionMiddleware.cs:line 18
+2025-12-08 13:54:36.258 +07:00 [ERR] Unhandled exception
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - WatchAPI.Controllers.InvoicesController.GetAll (WatchAPI). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at WatchAPI.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Admin\Documents\GitHub\BanDongHo\BanDongHo\BanDongHo\Middlewares\ExceptionMiddleware.cs:line 18
+2025-12-08 13:56:30.438 +07:00 [INF] User requested all watches
+2025-12-08 13:56:30.545 +07:00 [INF] Returned 21 watches
+2025-12-08 13:56:47.457 +07:00 [INF] User user logged in successfully
+2025-12-08 13:56:47.570 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 13:56:53.050 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 13:56:53.052 +07:00 [INF] Admin requested all invoices
+2025-12-08 13:56:53.103 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 13:59:08.404 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 13:59:08.410 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 13:59:22.882 +07:00 [INF] User requested all watches
+2025-12-08 13:59:22.886 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 13:59:22.895 +07:00 [INF] Returned 21 watches
+2025-12-08 13:59:25.900 +07:00 [INF] User user logged out
+2025-12-08 13:59:25.947 +07:00 [INF] User requested all watches
+2025-12-08 13:59:25.953 +07:00 [INF] Returned 21 watches
+2025-12-08 13:59:37.501 +07:00 [INF] User admin logged in successfully
+2025-12-08 13:59:37.516 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 13:59:39.002 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 13:59:39.010 +07:00 [INF] Admin requested all watches
+2025-12-08 13:59:39.019 +07:00 [INF] Returned 21 watches for admin
+2025-12-08 13:59:41.646 +07:00 [INF] Admin requested all watches
+2025-12-08 13:59:41.653 +07:00 [INF] Returned 21 watches for admin
+2025-12-08 13:59:42.039 +07:00 [INF] Admin requested all watches
+2025-12-08 13:59:42.044 +07:00 [INF] Returned 0 watches for admin
+2025-12-08 13:59:43.166 +07:00 [INF] Admin requested all watches
+2025-12-08 13:59:43.172 +07:00 [INF] Returned 21 watches for admin
+2025-12-08 13:59:47.241 +07:00 [INF] Soft deleted watch "4ff97927-e0cb-418f-8b60-0e40523c4ffd" by user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 13:59:47.252 +07:00 [INF] Admin requested all watches
+2025-12-08 13:59:47.256 +07:00 [INF] Returned 21 watches for admin
+2025-12-08 13:59:48.487 +07:00 [INF] Admin requested all watches
+2025-12-08 13:59:48.494 +07:00 [INF] Returned 20 watches for admin
+2025-12-08 13:59:48.985 +07:00 [INF] Admin requested all watches
+2025-12-08 13:59:48.988 +07:00 [INF] Returned 1 watches for admin
+2025-12-08 13:59:50.037 +07:00 [INF] Admin requested all watches
+2025-12-08 13:59:50.043 +07:00 [INF] Returned 21 watches for admin
+2025-12-08 13:59:50.975 +07:00 [INF] Admin requested all watches
+2025-12-08 13:59:50.983 +07:00 [INF] Returned 21 watches for admin
+2025-12-08 13:59:50.990 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 13:59:51.482 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 13:59:51.484 +07:00 [INF] Admin requested all invoices
+2025-12-08 13:59:51.491 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 13:59:52.157 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 13:59:52.164 +07:00 [INF] Retrieving all users
+2025-12-08 13:59:56.386 +07:00 [INF] Admin requested all invoices
+2025-12-08 13:59:56.389 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 13:59:56.402 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 14:03:33.484 +07:00 [INF] Admin requested all invoices
+2025-12-08 14:03:33.487 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:03:33.499 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 14:03:42.263 +07:00 [INF] Admin requested all invoices
+2025-12-08 14:03:42.267 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:03:42.270 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 14:04:11.243 +07:00 [INF] Admin requested all invoices
+2025-12-08 14:04:11.245 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:04:11.248 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 14:04:59.267 +07:00 [INF] Admin requested all invoices
+2025-12-08 14:04:59.271 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:04:59.277 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 14:05:24.954 +07:00 [INF] Admin requested all invoices
+2025-12-08 14:05:24.957 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:05:24.967 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 14:06:15.832 +07:00 [INF] Admin requested all invoices
+2025-12-08 14:06:15.836 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:06:15.849 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 14:06:45.059 +07:00 [INF] User requested all watches
+2025-12-08 14:06:45.065 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:06:45.077 +07:00 [INF] Returned 20 watches
+2025-12-08 14:06:51.176 +07:00 [INF] Admin requested all invoices
+2025-12-08 14:06:51.178 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:06:51.182 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 14:07:11.931 +07:00 [INF] Admin requested all invoices
+2025-12-08 14:07:11.939 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:07:11.955 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 14:07:38.027 +07:00 [INF] Admin requested all invoices
+2025-12-08 14:07:38.035 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:07:38.039 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 14:07:39.382 +07:00 [INF] Admin requested all invoices
+2025-12-08 14:07:39.385 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:07:39.389 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 14:08:48.280 +07:00 [INF] Refresh token issued for user admin@gmail.com with ID 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:08:52.431 +07:00 [INF] User admin logged out
+2025-12-08 14:08:52.485 +07:00 [INF] User requested all watches
+2025-12-08 14:08:52.489 +07:00 [INF] Returned 20 watches
+2025-12-08 14:09:02.663 +07:00 [INF] User requested all watches
+2025-12-08 14:09:02.667 +07:00 [INF] Returned 20 watches
+2025-12-08 14:09:12.350 +07:00 [INF] User admin logged in successfully
+2025-12-08 14:09:12.360 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:09:14.225 +07:00 [INF] Retrieved cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-08 14:09:14.226 +07:00 [INF] Admin requested all invoices
+2025-12-08 14:09:14.230 +07:00 [INF] Returned 12 invoice for admin
+2025-12-08 14:09:16.192 +07:00 [INF] User admin logged out
+2025-12-08 14:09:16.239 +07:00 [INF] User requested all watches
+2025-12-08 14:09:16.242 +07:00 [INF] Returned 20 watches
+2025-12-08 14:14:28.383 +07:00 [INF] User user logged in successfully
+2025-12-08 14:14:28.398 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 14:14:30.944 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 14:14:30.948 +07:00 [INF] User requested watch by ID: "1d564372-c6fb-40f7-b148-27f7a454b860"
+2025-12-08 14:14:30.951 +07:00 [INF] Returned watch SRWATCH SL1610.1401TE
+2025-12-08 14:14:32.288 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 14:14:32.293 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 14:14:33.450 +07:00 [INF] Deleted cart item for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de, watch "0a389b58-efc0-4211-a120-0fffff8a4acb"
+2025-12-08 14:14:33.474 +07:00 [INF] Saved changes for cart operations.
+2025-12-08 14:14:33.485 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 14:15:00.750 +07:00 [INF] User requested all watches
+2025-12-08 14:15:00.754 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 14:15:00.769 +07:00 [INF] Returned 20 watches
+2025-12-08 14:15:01.614 +07:00 [INF] User requested watch by ID: "0a389b58-efc0-4211-a120-0fffff8a4acb"
+2025-12-08 14:15:01.614 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 14:15:01.619 +07:00 [INF] Returned watch SRWATCH SG88806.1205AT
+2025-12-08 14:15:08.954 +07:00 [INF] User requested all watches
+2025-12-08 14:15:08.956 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 14:15:08.958 +07:00 [INF] Returned 20 watches
+2025-12-08 14:15:34.424 +07:00 [INF] User requested watch by ID: "3f070cb9-2ccc-4bbd-8be2-268c8076e752"
+2025-12-08 14:15:34.425 +07:00 [INF] Retrieved cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-08 14:15:34.427 +07:00 [INF] Returned watch SRWATCH SL7004.1202

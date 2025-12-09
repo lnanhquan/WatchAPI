@@ -109,7 +109,14 @@ namespace WatchAPI.Controllers
                 Log.Warning("Registration failed: {Email} already exists", dto.Email);
                 return BadRequest("Email already registered");
             }
-            var user = new User { UserName = dto.Username, Email = dto.Email, EmailConfirmed = true };
+
+            if (await _userManager.FindByNameAsync(dto.UserName) != null)
+            {
+                Log.Warning("Registration failed: {Username} already exists", dto.UserName);
+                return BadRequest("Username already taken");
+            }
+
+            var user = new User { UserName = dto.UserName, Email = dto.Email, EmailConfirmed = true };
             var result = await _userManager.CreateAsync(user, dto.Password);
 
             if (!result.Succeeded)
@@ -119,7 +126,7 @@ namespace WatchAPI.Controllers
             }
 
             await _userManager.AddToRoleAsync(user, "User");
-            Log.Information("User {Username} registered successfully: {Email}", dto.Username, dto.Email);
+            Log.Information("User {Username} registered successfully: {Email}", dto.UserName, dto.Email);
             return Ok("User registered successfully");
         }
 
@@ -167,6 +174,14 @@ namespace WatchAPI.Controllers
             var user = await _userManager.FindByEmailAsync(email);
             return Ok(user != null);
         }
+
+        [HttpGet("check-username")]
+        public async Task<IActionResult> CheckUsername(string username)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+            return Ok(user != null);
+        }
+
 
         [HttpPost("refresh-token")]
         public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenDTO dto)

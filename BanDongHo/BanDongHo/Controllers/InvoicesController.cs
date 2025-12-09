@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using WatchAPI.DTOs;
 using WatchAPI.Services;
 
@@ -13,23 +13,26 @@ namespace WatchAPI.Controllers
     {
         private readonly IInvoiceService _service;
 
-        public InvoicesController(IInvoiceService invoiceService)
+        public InvoicesController(IInvoiceService service)
         {
-            _service = invoiceService;
+            _service = service;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<InvoiceDTO>>> GetAll()
+        public async Task<IActionResult> GetAll()
         {
             var invoices = await _service.GetAllAsync();
             return Ok(invoices);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<InvoiceDTO>> GetById(Guid id)
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> GetById(Guid id)
         {
             var invoice = await _service.GetByIdAsync(id);
-            if (invoice == null) return NotFound();
+            if (invoice == null)
+            {
+                return NotFound();
+            }
             return Ok(invoice);
         }
 
@@ -38,53 +41,9 @@ namespace WatchAPI.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            if (dto.Details == null || dto.Details.Count == 0)
-            {
-                return BadRequest("Invoice must have at least one watch.");
-            }
-
-            try
-            {
-                var invoice = await _service.CreateAsync(dto);
-                return CreatedAtAction(nameof(GetById), new { id = invoice.Id }, invoice);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-        }
-
-        [HttpPut("{id}")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Update(Guid id, [FromBody] InvoiceDTO dto)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            if (dto.Details == null || dto.Details.Count == 0)
-            {
-                return BadRequest("Invoice must have at least one watch.");
-            }
-
-            try
-            {
-                var updated = await _service.UpdateAsync(id, dto);
-                if (updated == null) return NotFound();
-                return Ok(updated);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-        }
-
-        // DELETE: api/Invoice/{id}
-        [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Delete(Guid id)
-        {
-            var deleted = await _service.DeleteAsync(id);
-            if (!deleted) return NotFound();
-            return NoContent();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var invoice = await _service.CreateAsync(dto, userId);
+            return CreatedAtAction(nameof(GetById), new { id = invoice.Id }, invoice);
         }
     }
 }

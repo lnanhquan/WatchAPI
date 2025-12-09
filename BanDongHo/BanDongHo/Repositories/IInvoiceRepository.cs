@@ -2,12 +2,9 @@
 
 namespace WatchAPI.Repositories
 {
-    public interface IInvoiceRepository
+    public interface IInvoiceRepository : IGenericRepository<Invoice>
     {
-        Task<IEnumerable<Invoice>> GetAllAsync();
-        Task<Invoice?> GetByIdAsync(Guid id);
-        Task<Invoice> CreateAsync(Invoice invoice);
-        Task UpdateAsync(Invoice invoice);
-        Task DeleteAsync(Guid id);
+        Task<IEnumerable<Invoice>> GetAllWithDetailAsync();
+        Task<Invoice?> GetDetailAsync(Guid id);
     }
 }

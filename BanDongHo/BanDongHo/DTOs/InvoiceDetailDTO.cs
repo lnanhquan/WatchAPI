@@ -12,7 +12,6 @@ namespace WatchAPI.DTOs
         [Required]
         public Guid WatchId { get; set; }
 
-        [Required]
         public string WatchName { get; set; } = string.Empty;
 
         public string? ImageUrl { get; set; }
@@ -21,7 +20,6 @@ namespace WatchAPI.DTOs
         [Range(1, 1000, ErrorMessage = "Quantity must be between 1 and 1000.")]
         public int Quantity { get; set; }
 
-        [Required]
         [Range(0, 1_000_000_000, ErrorMessage = "Price must be between 0 and 1,000,000,000.")]
         public int Price { get; set; }
 

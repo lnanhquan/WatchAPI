@@ -27,21 +27,19 @@ namespace WatchAPI.Repositories
                 .FirstOrDefaultAsync(c => c.UserId == userId && c.WatchId == watchId);
         }
 
-        public async Task AddAsync(CartItem item)
+        public async Task CreateAsync(CartItem item)
         {
             await _db.CartItems.AddAsync(item);
         }
 
-        public Task UpdateAsync(CartItem item)
+        public void Update(CartItem item)
         {
             _db.CartItems.Update(item);
-            return Task.CompletedTask;
         }
 
-        public Task DeleteAsync(CartItem item)
+        public void Delete(CartItem item)
         {
             _db.CartItems.Remove(item);
-            return Task.CompletedTask;
         }
 
         public async Task ClearCartAsync(string userId)
@@ -51,11 +49,6 @@ namespace WatchAPI.Repositories
                 .ToListAsync();
 
             _db.CartItems.RemoveRange(items);
-        }
-
-        public async Task SaveChangesAsync()
-        {
-            await _db.SaveChangesAsync();
         }
     }
 }

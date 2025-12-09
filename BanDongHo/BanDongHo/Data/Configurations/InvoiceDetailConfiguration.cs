@@ -18,7 +18,7 @@ namespace WatchAPI.Data.Configurations
             builder.HasOne(e => e.Watch)
                    .WithMany()
                    .HasForeignKey(e => e.WatchId)
-                   .OnDelete(DeleteBehavior.Restrict); // Prevent deletion of Watch if referenced
+                   .OnDelete(DeleteBehavior.Restrict);
 
             builder.Property(e => e.Quantity).IsRequired();
 

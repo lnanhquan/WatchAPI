@@ -15,7 +15,7 @@ namespace WatchAPI.Services
 
         Task<WatchAdminDTO?> GetAdminByIdAsync(Guid id);
 
-        Task<Watch> CreateAsync(WatchCreateDTO dto, string? user = null);
+        Task<WatchAdminDTO> CreateAsync(WatchCreateDTO dto, string? user = null);
 
         Task<bool> UpdateAsync(Guid id, WatchUpdateDTO dto, string? user = null);
 

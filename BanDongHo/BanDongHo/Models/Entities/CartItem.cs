@@ -2,7 +2,7 @@
 
 namespace WatchAPI.Models.Entities
 {
-    public class CartItem : AuditableEntity
+    public class CartItem : BaseEntity
     {
         // Foreign key to User
         public string UserId { get; set; } = string.Empty;

@@ -38,7 +38,6 @@ function renderCart() {
     cartDataAll.forEach(item => {
         const tr = document.createElement("tr");
         
-        // Checkbox chọn sản phẩm
         const tdSelect = document.createElement("td");
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -51,7 +50,6 @@ function renderCart() {
         });
         tdSelect.appendChild(checkbox);
 
-        // Ảnh
         const tdImage = document.createElement("td");
         const img = document.createElement("img");
         img.src = getFullImageUrl(item.imageUrl);
@@ -59,15 +57,12 @@ function renderCart() {
         img.style.width = "80px";
         tdImage.appendChild(img);
 
-        // Tên sản phẩm
         const tdName = document.createElement("td");
         tdName.textContent = item.watchName;
 
-        // Giá
         const tdPrice = document.createElement("td");
         tdPrice.textContent = item.price.toLocaleString() + " VND";
 
-        // Số lượng và nút +/- 
         const tdQuantity = document.createElement("td");
         const group = document.createElement("div");
         group.className = "input-group quantity-group";
@@ -127,11 +122,9 @@ function renderCart() {
         group.appendChild(btnIncrease);
         tdQuantity.appendChild(group);
 
-        // Tổng tiền
         const tdTotal = document.createElement("td");
         tdTotal.textContent = (item.price * item.quantity).toLocaleString() + " VND";
 
-        // Xóa sản phẩm
         const tdRemove = document.createElement("td");
         const btnRemove = document.createElement("button");
         btnRemove.className = "btn btn-danger btn-sm";
@@ -223,7 +216,7 @@ async function checkout() {
             }))
         };
 
-        const invoiceResponse = await api.post("/Invoices", invoiceData);
+        await api.post("/Invoices", invoiceData);
 
         await Promise.all(selectedItems.map(item => cartAPI.deleteItem(item.watchId)));
 
@@ -232,8 +225,6 @@ async function checkout() {
         updateCartTotal();
         loadCartCount();
         Swal.fire('Success', 'Order created and cart updated successfully!', 'success');
-        console.log("Invoice response:", invoiceResponse.data);
-
     } catch (err) {
         console.error(err);
         Swal.fire('Error', 'Checkout failed.', 'error');

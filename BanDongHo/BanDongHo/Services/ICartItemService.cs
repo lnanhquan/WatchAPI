@@ -4,11 +4,10 @@ namespace WatchAPI.Services
 {
     public interface ICartItemService
     {
-        Task<List<CartItemDTO>> GetCartAsync(string userId);
-        Task AddAsync(string userId, CartItemDTO dto);
-        Task UpdateAsync(string userId, CartItemDTO dto);
-        Task DeleteAsync(string userId, Guid watchId);
-        Task ClearCartAsync(string userId);
-        Task SaveChangesAsync();
+        Task<IEnumerable<CartItemDTO>> GetCartAsync(string userId);
+        Task<CartItemDTO> CreateAsync(string userId, CartItemDTO dto);
+        Task<bool> UpdateAsync(string userId, CartItemDTO dto);
+        Task<bool> DeleteAsync(string userId, Guid watchId);
+        Task<bool> ClearCartAsync(string userId);
     }
 }

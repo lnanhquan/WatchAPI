@@ -4,54 +4,34 @@ using WatchAPI.Models.Entities;
 
 namespace WatchAPI.Repositories
 {
-    public class InvoiceRepository : IInvoiceRepository
+    public class InvoiceRepository : GenericRepository<Invoice>, IInvoiceRepository
     {
         private readonly AppDbContext _db;
 
-        public InvoiceRepository(AppDbContext db)
+        public InvoiceRepository(AppDbContext db) : base(db)
         {
             _db = db;
         }
 
-        public async Task<IEnumerable<Invoice>> GetAllAsync()
+        public async Task<IEnumerable<Invoice>> GetAllWithDetailAsync()
         {
             return await _db.Invoices
-                .Include(i => i.User)
-                .Include(i => i.InvoiceDetails)
-                .ThenInclude(d => d.Watch)
                 .AsNoTracking()
+                .Where(x => !x.IsDeleted)
+                .Include(x => x.User)
+                .Include(x => x.InvoiceDetails)
+                    .ThenInclude(d => d.Watch)
                 .ToListAsync();
         }
 
-        public async Task<Invoice?> GetByIdAsync(Guid id)
+        public async Task<Invoice?> GetDetailAsync(Guid id)
         {
             return await _db.Invoices
-                .Include(i => i.User)
-                .Include(i => i.InvoiceDetails)
-                .ThenInclude(d => d.Watch)
-                .FirstOrDefaultAsync(i => i.Id == id);
-        }
-
-        public async Task<Invoice> CreateAsync(Invoice invoice)
-        {
-            await _db.Invoices.AddAsync(invoice);
-            await _db.SaveChangesAsync();
-            return invoice;
-        }
-
-        public async Task UpdateAsync(Invoice invoice)
-        {
-            await _db.SaveChangesAsync();
-        }
-
-        public async Task DeleteAsync(Guid id)
-        {
-            var invoice = await _db.Invoices.FindAsync(id);
-            if (invoice != null)
-            {
-                _db.Invoices.Remove(invoice);
-                await _db.SaveChangesAsync();
-            }
+                .Where(x => x.Id == id && !x.IsDeleted)
+                .Include(x => x.User)
+                .Include(x => x.InvoiceDetails)
+                    .ThenInclude(d => d.Watch)
+                .FirstOrDefaultAsync();
         }
     }
 }

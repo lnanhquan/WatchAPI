@@ -6,10 +6,9 @@ namespace WatchAPI.Repositories
     {
         Task<List<CartItem>> GetCartAsync(string userId);
         Task<CartItem?> GetItemAsync(string userId, Guid watchId);
-        Task AddAsync(CartItem item);
-        Task UpdateAsync(CartItem item);
-        Task DeleteAsync(CartItem item);
+        Task CreateAsync(CartItem item);
+        void Update(CartItem item);
+        void Delete(CartItem item);
         Task ClearCartAsync(string userId);
-        Task SaveChangesAsync();
     }
 }
