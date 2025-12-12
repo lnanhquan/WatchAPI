@@ -1,9 +1,8 @@
-﻿namespace WatchAPI.DTOs
-{
-    public class RefreshTokenDTO
-    {
-        public string AccessToken { get; set; }
-        public string RefreshToken { get; set; }
+﻿namespace WatchAPI.DTOs;
 
-    }
+public class RefreshTokenDTO
+{
+    public string AccessToken { get; set; }
+    public string RefreshToken { get; set; }
+
 }

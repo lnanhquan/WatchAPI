@@ -2,153 +2,153 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using WatchAPI.DTOs.Watch;
-using WatchAPI.Services;
+using WatchAPI.Services.Interfaces;
 
-namespace WatchAPI.Controllers
+namespace WatchAPI.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class WatchesController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class WatchesController : ControllerBase
+    private readonly IWatchService _service;
+
+    public WatchesController(IWatchService service)
     {
-        private readonly IWatchService _service;
+        _service = service;
+    }
 
-        public WatchesController(IWatchService service)
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        var watches = await _service.GetAllAsync();
+        return Ok(watches);
+    }
+
+    [HttpGet("{id:guid}")]
+    public async Task<IActionResult> GetById(Guid id)
+    {
+        var watch = await _service.GetByIdAsync(id);
+        if (watch == null)
         {
-            _service = service;
+            return NotFound();
+        }
+        return Ok(watch);
+    }
+
+    [HttpGet("check-name")]
+    public async Task<IActionResult> GetByName(string name)
+    {
+        var watch = await _service.GetByNameAsync(name);
+        if (watch == null)
+        {
+            return NotFound();
+        }
+        return Ok(watch);
+    }
+
+    [HttpGet("admin")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> GetAllAdmin([FromQuery] bool? isDeleted)
+    {
+        var watches = await _service.GetAllAdminAsync(isDeleted);
+        return Ok(watches);
+    }
+
+    [HttpGet("admin/{id:guid}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> GetAdminById(Guid id)
+    {
+        var watch = await _service.GetAdminByIdAsync(id);
+        if (watch == null)
+        {
+            return NotFound();
+        }
+        return Ok(watch);
+    }
+
+    [HttpPost]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Create([FromForm] WatchCreateDTO dto)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
+        var fileName = $"{Guid.NewGuid()}{Path.GetExtension(dto.ImageFile.FileName)}";
+        var filePath = Path.Combine("wwwroot/Images/Watches", fileName);
+        using var stream = System.IO.File.Create(filePath);
+        await dto.ImageFile.CopyToAsync(stream);
+        dto.ImageUrl = $"Images/Watches/{fileName}";
+
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var watch = await _service.CreateAsync(dto, userId);
+        return CreatedAtAction(nameof(GetAdminById), new { id = watch.Id }, watch);
+    }
+
+    [HttpPut("{id:guid}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Update(Guid id, [FromForm] WatchUpdateDTO dto)
+    {
+        if (!ModelState.IsValid)
         {
-            var watches = await _service.GetAllAsync();
-            return Ok(watches);
+            return BadRequest(ModelState);
         }
 
-        [HttpGet("{id:guid}")]
-        public async Task<IActionResult> GetById(Guid id)
+        if (dto.ImageFile != null)
         {
-            var watch = await _service.GetByIdAsync(id);
-            if (watch == null)
+            var currentWatch = await _service.GetAdminByIdAsync(id);
+            if (currentWatch != null && !string.IsNullOrEmpty(currentWatch.ImageUrl))
             {
-                return NotFound();
-            }
-            return Ok(watch);
-        }
-
-        [HttpGet("check-name")]
-        public async Task<IActionResult> GetByName(string name)
-        {
-            var watch = await _service.GetByNameAsync(name);
-            if (watch == null)
-            {
-                return NotFound();
-            }
-            return Ok(watch);
-        }
-
-        [HttpGet("admin")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetAllAdmin([FromQuery] bool? isDeleted)
-        {
-            var watches = await _service.GetAllAdminAsync(isDeleted);
-            return Ok(watches);
-        }
-
-        [HttpGet("admin/{id:guid}")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetAdminById(Guid id)
-        {
-            var watch = await _service.GetAdminByIdAsync(id);
-            if (watch == null)
-                return NotFound();
-            return Ok(watch);
-        }
-
-        [HttpPost]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Create([FromForm] WatchCreateDTO dto)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            if (dto.ImageFile != null)
-            {
-                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(dto.ImageFile.FileName)}";
-                var filePath = Path.Combine("wwwroot/Images/Watches", fileName);
-                using var stream = System.IO.File.Create(filePath);
-                await dto.ImageFile.CopyToAsync(stream);
-                dto.ImageUrl = $"Images/Watches/{fileName}";
-            }
-
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var watch = await _service.CreateAsync(dto, userId);
-            return CreatedAtAction(nameof(GetAdminById), new { id = watch.Id }, watch);
-        }
-
-        [HttpPut("{id:guid}")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Update(Guid id, [FromForm] WatchUpdateDTO dto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (dto.ImageFile != null)
-            {
-                var currentWatch = await _service.GetAdminByIdAsync(id);
-                if (currentWatch != null && !string.IsNullOrEmpty(currentWatch.ImageUrl))
-                {
-                    var oldPath = Path.Combine("wwwroot", currentWatch.ImageUrl);
-                    if (System.IO.File.Exists(oldPath))
-                        System.IO.File.Delete(oldPath);
-                }
-
-                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(dto.ImageFile.FileName)}";
-                var filePath = Path.Combine("wwwroot/Images/Watches", fileName);
-                using var stream = System.IO.File.Create(filePath);
-                await dto.ImageFile.CopyToAsync(stream);
-                dto.ImageUrl = $"Images/Watches/{fileName}";
-            }
-            else
-            {
-                dto.ImageUrl = null;
+                var oldPath = Path.Combine("wwwroot", currentWatch.ImageUrl);
+                if (System.IO.File.Exists(oldPath))
+                    System.IO.File.Delete(oldPath);
             }
 
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var updated = await _service.UpdateAsync(id, dto, userId);
-
-            if (!updated)
-            {
-                return NotFound();
-            }
-            return NoContent();
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(dto.ImageFile.FileName)}";
+            var filePath = Path.Combine("wwwroot/Images/Watches", fileName);
+            using var stream = System.IO.File.Create(filePath);
+            await dto.ImageFile.CopyToAsync(stream);
+            dto.ImageUrl = $"Images/Watches/{fileName}";
         }
-
-        [HttpDelete("{id:guid}")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Delete(Guid id)
+        else
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var deleted = await _service.DeleteAsync(id, userId);
-            if (!deleted)
-            {
-                return NotFound();
-            }
-            return NoContent();
+            dto.ImageUrl = null;
         }
 
-        [HttpPut("{id:guid}/restore")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Restore(Guid id)
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var updated = await _service.UpdateAsync(id, dto, userId);
+
+        if (!updated)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var restored = await _service.RestoreAsync(id, userId);
-            if (!restored)
-            {
-                return NotFound();
-            }
-            return NoContent();
+            return NotFound();
         }
+        return NoContent();
+    }
+
+    [HttpDelete("{id:guid}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Delete(Guid id)
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var deleted = await _service.DeleteAsync(id, userId);
+        if (!deleted)
+        {
+            return NotFound();
+        }
+        return NoContent();
+    }
+
+    [HttpPut("{id:guid}/restore")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Restore(Guid id)
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var restored = await _service.RestoreAsync(id, userId);
+        if (!restored)
+        {
+            return NotFound();
+        }
+        return NoContent();
     }
 }

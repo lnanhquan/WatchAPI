@@ -4,7 +4,7 @@ using WatchAPI.Middlewares;
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure Services
-builder.Services.ConfigureCors();
+builder.Services.ConfigureCors(builder.Configuration);
 builder.Services.ConfigureDbAndIdentity(builder.Configuration);
 builder.Services.ConfigureRepositoriesAndServices();
 builder.Services.ConfigureJwtAuthentication(builder.Configuration);

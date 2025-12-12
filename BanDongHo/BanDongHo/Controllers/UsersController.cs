@@ -1,59 +1,64 @@
-﻿using WatchAPI.Services;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WatchAPI.DTOs;
+using WatchAPI.Services.Interfaces;
 
-namespace WatchAPI.Controllers
+namespace WatchAPI.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+[Authorize]
+public class UsersController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    [Authorize]
-    public class UsersController : ControllerBase
+    private readonly IUserService _userService;
+
+    public UsersController(IUserService userService)
     {
-        private readonly IUserService _userService;
+        _userService = userService;
+    }
 
-        public UsersController(IUserService userService)
+    [HttpGet]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> GetAll()
+    {
+        var users = await _userService.GetAllUsersAsync();
+        return Ok(users);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(string id)
+    {
+        var user = await _userService.GetByIdAsync(id);
+        if (user == null)
         {
-            _userService = userService;
+            return NotFound("User not found");
         }
 
-        [HttpGet]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetAll()
+        return Ok(user);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(string id, [FromBody] UserDTO dto)
+    {
+        if (!ModelState.IsValid)
         {
-            var users = await _userService.GetAllUsersAsync();
-            return Ok(users);
+            return BadRequest(ModelState);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(string id)
+        var updated = await _userService.UpdateUserAsync(id, dto);
+        if (!updated) return BadRequest("Update failed");
+
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
+    {
+        var deleted = await _userService.DeleteUserAsync(id);
+        if (!deleted)
         {
-            var user = await _userService.GetByIdAsync(id);
-            if (user == null) return NotFound("User not found");
-
-            return Ok(user);
+            return NotFound();
         }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(string id, [FromBody] UserDTO dto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var updated = await _userService.UpdateUserAsync(id, dto);
-            if (!updated) return BadRequest("Update failed");
-
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(string id)
-        {
-            var deleted = await _userService.DeleteUserAsync(id);
-            if (!deleted) return NotFound();
-            return NoContent();
-        }
+        return NoContent();
     }
 }

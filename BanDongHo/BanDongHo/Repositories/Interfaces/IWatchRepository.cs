@@ -1,5 +1,5 @@
 ﻿using WatchAPI.Models.Entities;
-using WatchAPI.Repositories;
+using WatchAPI.Repositories.Interfaces;
 
 public interface IWatchRepository : IGenericRepository<Watch>
 {

@@ -486,6 +486,7 @@
                     "format": "binary"
                   },
                   "ImageUrl": {
+                    "maxLength": 500,
                     "type": "string"
                   }
                 }
@@ -599,6 +600,7 @@
                     "format": "binary"
                   },
                   "ImageUrl": {
+                    "maxLength": 500,
                     "type": "string"
                   }
                 }
@@ -773,7 +775,7 @@
           },
           "price": {
             "maximum": 1000000000,
-            "minimum": 0,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
@@ -864,7 +866,7 @@
           },
           "price": {
             "maximum": 1000000000,
-            "minimum": 0,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           },

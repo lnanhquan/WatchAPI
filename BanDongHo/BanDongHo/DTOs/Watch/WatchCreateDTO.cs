@@ -1,27 +1,28 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using WatchAPI.Constants;
 
-namespace WatchAPI.DTOs.Watch
+namespace WatchAPI.DTOs.Watch;
+
+public class WatchCreateDTO
 {
-    public class WatchCreateDTO
-    {
-        [Required, MaxLength(100)]
-        public string Name { get; set; } = string.Empty;
+    [Required, MaxLength(WatchConstants.MaxNameLength)]
+    public string Name { get; set; } = string.Empty;
 
-        [Required, Range(1, 1000000000)]
-        public int Price { get; set; }
+    [Required, Range(ValidationConstants.MinPrice, ValidationConstants.MaxPrice)]
+    public int Price { get; set; }
 
-        [Required, MaxLength(50)]
-        public string Category { get; set; } = string.Empty;
+    [Required, MaxLength(WatchConstants.MaxCategoryLength)]
+    public string Category { get; set; } = string.Empty;
 
-        [Required, MaxLength(50)]
-        public string Brand { get; set; } = string.Empty;
+    [Required, MaxLength(WatchConstants.MaxBrandLength)]
+    public string Brand { get; set; } = string.Empty;
 
-        [MaxLength(500)]
-        public string? Description { get; set; }
+    [MaxLength(WatchConstants.MaxDescriptionLength)]
+    public string? Description { get; set; }
 
-        [Required]
-        public IFormFile ImageFile { get; set; } = default!;
+    [Required]
+    public IFormFile ImageFile { get; set; } = default!;
 
-        public string? ImageUrl { get; set; }
-    }
+    [MaxLength(WatchConstants.MaxImageUrlLength)]
+    public string? ImageUrl { get; set; }
 }
