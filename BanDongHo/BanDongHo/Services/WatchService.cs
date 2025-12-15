@@ -92,7 +92,6 @@ public class WatchService : IWatchService
             throw new ArgumentException($"Watch name '{dto.Name}' already exists");
         }
         var watch = _mapper.Map<Watch>(dto);
-        watch.SetCreated(user);
 
         await _uow.Watches.CreateAsync(watch, user);
         await _uow.SaveChangesAsync();
@@ -120,7 +119,6 @@ public class WatchService : IWatchService
         {
             watch.ImageUrl = dto.ImageUrl;
         }
-        watch.SetUpdated(user);
 
         _uow.Watches.Update(watch, user);
         await _uow.SaveChangesAsync();

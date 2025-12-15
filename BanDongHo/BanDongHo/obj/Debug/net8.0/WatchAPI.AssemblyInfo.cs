@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WatchAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12793ff5cd4b55cd6c0ff4ec1f4e5f5af58ecf28")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e504753b06d244bb8791e21dca4e7546396b8310")]
 [assembly: System.Reflection.AssemblyProductAttribute("WatchAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WatchAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

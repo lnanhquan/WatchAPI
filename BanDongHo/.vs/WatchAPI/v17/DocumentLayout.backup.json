@@ -3,72 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\watchapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\watchapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{989483DB-8498-447D-B7FF-39D72A11AE9F}|WatchAPITests\\WatchAPITests.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\watchapitests\\services\\watchservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{989483DB-8498-447D-B7FF-39D72A11AE9F}|WatchAPITests\\WatchAPITests.csproj|solutionrelative:watchapitests\\services\\watchservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\services\\watchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\services\\watchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\services\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\services\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\services\\cartitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\services\\cartitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\dtos\\refreshtokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\dtos\\refreshtokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\dtos\\invoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\dtos\\invoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\dtos\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\dtos\\cartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\extensions\\serviceextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\extensions\\serviceextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\constants\\authconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\constants\\authconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\options\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\options\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,210 +30,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WatchAPI",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\WatchAPI.csproj",
-              "RelativeDocumentMoniker": "BanDongHo\\WatchAPI.csproj",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\WatchAPI.csproj",
-              "RelativeToolTip": "BanDongHo\\WatchAPI.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-12T01:42:59.964Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "WatchService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Services\\WatchService.cs",
               "RelativeDocumentMoniker": "BanDongHo\\Services\\WatchService.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Services\\WatchService.cs",
               "RelativeToolTip": "BanDongHo\\Services\\WatchService.cs",
-              "ViewState": "AgIAAIsAAAAAAAAAAAAYwIIAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAowJkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:15:47.572Z",
+              "WhenOpened": "2025-12-12T03:29:54.381Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InvoiceService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Services\\InvoiceService.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\Services\\InvoiceService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Services\\InvoiceService.cs",
-              "RelativeToolTip": "BanDongHo\\Services\\InvoiceService.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "WatchServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\WatchAPITests\\Services\\WatchServiceTests.cs",
+              "RelativeDocumentMoniker": "WatchAPITests\\Services\\WatchServiceTests.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\WatchAPITests\\Services\\WatchServiceTests.cs",
+              "RelativeToolTip": "WatchAPITests\\Services\\WatchServiceTests.cs",
+              "ViewState": "AgIAAFMBAAAAAAAAAAAiwOIBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:15:34.512Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CartItemService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Services\\CartItemService.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\Services\\CartItemService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Services\\CartItemService.cs",
-              "RelativeToolTip": "BanDongHo\\Services\\CartItemService.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:15:28.482Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\UserDTO.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\DTOs\\UserDTO.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\UserDTO.cs",
-              "RelativeToolTip": "BanDongHo\\DTOs\\UserDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:15:24.386Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RefreshTokenDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\RefreshTokenDTO.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\DTOs\\RefreshTokenDTO.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\RefreshTokenDTO.cs",
-              "RelativeToolTip": "BanDongHo\\DTOs\\RefreshTokenDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:15:21.692Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LoginDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\LoginDTO.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\DTOs\\LoginDTO.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\LoginDTO.cs",
-              "RelativeToolTip": "BanDongHo\\DTOs\\LoginDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:15:18.989Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "InvoiceDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\InvoiceDTO.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\DTOs\\InvoiceDTO.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\InvoiceDTO.cs",
-              "RelativeToolTip": "BanDongHo\\DTOs\\InvoiceDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:15:18.177Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CartItemDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\CartItemDTO.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\DTOs\\CartItemDTO.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\CartItemDTO.cs",
-              "RelativeToolTip": "BanDongHo\\DTOs\\CartItemDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:15:14.079Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AuthResponseDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\AuthResponseDTO.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\DTOs\\AuthResponseDTO.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\AuthResponseDTO.cs",
-              "RelativeToolTip": "BanDongHo\\DTOs\\AuthResponseDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:15:14.39Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RegisterDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\RegisterDTO.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\DTOs\\RegisterDTO.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\DTOs\\RegisterDTO.cs",
-              "RelativeToolTip": "BanDongHo\\DTOs\\RegisterDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T04:27:38.572Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Program.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Program.cs",
-              "RelativeToolTip": "BanDongHo\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T04:23:54.94Z",
+              "WhenOpened": "2025-12-12T03:29:53.351Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Services\\UserService.cs",
-              "RelativeToolTip": "BanDongHo\\Services\\UserService.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:15:37.736Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ServiceExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Extensions\\ServiceExtensions.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\Extensions\\ServiceExtensions.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Extensions\\ServiceExtensions.cs",
-              "RelativeToolTip": "BanDongHo\\Extensions\\ServiceExtensions.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAUwBoAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T04:23:59.132Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\appsettings.json",
-              "RelativeDocumentMoniker": "BanDongHo\\appsettings.json",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\appsettings.json",
-              "RelativeToolTip": "BanDongHo\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-11T04:24:21.866Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "JwtOptions.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Options\\JwtOptions.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\Options\\JwtOptions.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Options\\JwtOptions.cs",
-              "RelativeToolTip": "BanDongHo\\Options\\JwtOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T04:23:26.547Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AuthConstants.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Constants\\AuthConstants.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\Constants\\AuthConstants.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Constants\\AuthConstants.cs",
-              "RelativeToolTip": "BanDongHo\\Constants\\AuthConstants.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T04:13:42.742Z"
             }
           ]
         }
