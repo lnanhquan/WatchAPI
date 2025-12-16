@@ -26,7 +26,7 @@ public class UserService : IUserService
     {
         _logger.LogInformation("Retrieving all users");
 
-        var users = await _userManager.Users.ToListAsync();
+        var users = _userManager.Users.ToList();
         var result = new List<UserDTO>();
 
         foreach (var user in users)

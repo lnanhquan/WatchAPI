@@ -7,8 +7,12 @@
       "RelativeMoniker": "D:0:0:{989483DB-8498-447D-B7FF-39D72A11AE9F}|WatchAPITests\\WatchAPITests.csproj|solutionrelative:watchapitests\\services\\watchservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\services\\watchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\services\\watchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{989483DB-8498-447D-B7FF-39D72A11AE9F}|WatchAPITests\\WatchAPITests.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\watchapitests\\services\\userservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{989483DB-8498-447D-B7FF-39D72A11AE9F}|WatchAPITests\\WatchAPITests.csproj|solutionrelative:watchapitests\\services\\userservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|c:\\users\\admin\\documents\\github\\bandongho\\bandongho\\bandongho\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{854EB33C-9652-4D65-81F1-4445DAD3002D}|BanDongHo\\WatchAPI.csproj|solutionrelative:bandongho\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,28 +34,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WatchService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Services\\WatchService.cs",
-              "RelativeDocumentMoniker": "BanDongHo\\Services\\WatchService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Services\\WatchService.cs",
-              "RelativeToolTip": "BanDongHo\\Services\\WatchService.cs",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAowJkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T03:29:54.381Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "WatchServiceTests.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\WatchAPITests\\Services\\WatchServiceTests.cs",
               "RelativeDocumentMoniker": "WatchAPITests\\Services\\WatchServiceTests.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\WatchAPITests\\Services\\WatchServiceTests.cs",
               "RelativeToolTip": "WatchAPITests\\Services\\WatchServiceTests.cs",
-              "ViewState": "AgIAAFMBAAAAAAAAAAAiwOIBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwBAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-12T03:29:53.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\WatchAPITests\\Services\\UserServiceTests.cs",
+              "RelativeDocumentMoniker": "WatchAPITests\\Services\\UserServiceTests.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\WatchAPITests\\Services\\UserServiceTests.cs",
+              "RelativeToolTip": "WatchAPITests\\Services\\UserServiceTests.cs",
+              "ViewState": "AgIAAAMBAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T08:33:07.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "BanDongHo\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\BanDongHo\\BanDongHo\\BanDongHo\\Services\\UserService.cs",
+              "RelativeToolTip": "BanDongHo\\Services\\UserService.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAcwHIAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T08:31:19.4Z",
               "EditorCaption": ""
             }
           ]

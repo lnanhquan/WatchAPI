@@ -266,7 +266,7 @@ public class WatchServiceTests
     }
 
     [TestMethod]
-    public async Task CreateAsync_NameNotExists_CreatesWatch()
+    public async Task CreateAsync_NameNotExists_ReturnsCreatedWatch()
     {
         // Arrange
         var dto = new WatchCreateDTO
@@ -328,7 +328,7 @@ public class WatchServiceTests
     }
 
     [TestMethod]
-    public async Task UpdateAsync_WatchExists_UpdatesWatch()
+    public async Task UpdateAsync_WatchExists_ReturnsTrue()
     {
         // Arrange
         Guid id = Guid.NewGuid();
@@ -413,7 +413,7 @@ public class WatchServiceTests
     }
 
     [TestMethod]
-    public async Task DeleteAsync_WatchExists_DeletesWatch()
+    public async Task DeleteAsync_WatchExists_ReturnsTrue()
     {
         // Arrange
         var id = Guid.NewGuid();
@@ -449,7 +449,7 @@ public class WatchServiceTests
     }
 
     [TestMethod]
-    public async Task RestoreAsync_WatchExists_RestoresWatch()
+    public async Task RestoreAsync_WatchExists_ReturnsTrue()
     {
         // Arrange
         var id = Guid.NewGuid();
