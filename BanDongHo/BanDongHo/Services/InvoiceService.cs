@@ -44,7 +44,7 @@ public class InvoiceService : IInvoiceService
 
     public async Task<InvoiceDTO> CreateAsync(InvoiceDTO dto, string? user = null)
     {
-        await ValidateInvoiceCreateAsync(dto);
+        ValidateInvoiceCreateAsync(dto);
 
         var invoice = new Invoice
         {
@@ -72,7 +72,7 @@ public class InvoiceService : IInvoiceService
         return _mapper.Map<InvoiceDTO>(invoice);
     }
 
-    private async Task ValidateInvoiceCreateAsync(InvoiceDTO dto)
+    private void ValidateInvoiceCreateAsync(InvoiceDTO dto)
     {
         if (string.IsNullOrWhiteSpace(dto.UserId))
         {
@@ -96,8 +96,6 @@ public class InvoiceService : IInvoiceService
                 throw new ArgumentException("Quantity must be greater than zero.");
             }
 
-            var watch = await _uow.Watches.GetByIdAsync(d.WatchId) ?? throw new InvalidOperationException($"Watch with Id {d.WatchId} not found.");
-
             if (d.Price != 0)
             {
                 throw new InvalidOperationException("Price cannot be provided by the client.");
@@ -114,6 +112,4 @@ public class InvoiceService : IInvoiceService
             throw new ArgumentException("InvoiceDetail IDs must not be included when creating.");
         }
     }
-
-
 }

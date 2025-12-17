@@ -1,18 +1,18 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using WatchAPI.DTOs;
 using WatchAPI.Models.Entities;
+using WatchAPI.Services;
 
-namespace WatchAPI.Services.Tests;
+namespace WatchAPITests.Services;
 
 [TestClass()]
 public class UserServiceTests
 {
     private Mock<UserManager<User>> _userManagerMock;
     private Mock<RoleManager<IdentityRole>> _roleManagerMock;
-    private Mock<ILogger<UserService>> _loggerMock;
     private Mock<IMapper> _mapperMock;
     private UserService _service;
 
@@ -32,12 +32,11 @@ public class UserServiceTests
         );
 
         _mapperMock = new Mock<IMapper>();
-        _loggerMock = new Mock<ILogger<UserService>>();
 
         _service = new UserService(
             _userManagerMock.Object,
             _roleManagerMock.Object,
-            _loggerMock.Object,
+            NullLogger<UserService>.Instance,
             _mapperMock.Object
         );
     }

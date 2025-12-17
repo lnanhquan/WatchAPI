@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using System.Reflection;
 using WatchAPI.DTOs.Watch;
@@ -16,7 +16,6 @@ public class WatchServiceTests
     private Mock<IUnitOfWork> _uowMock;
     private Mock<IWatchRepository> _watchRepoMock;
     private Mock<IMapper> _mapperMock;
-    private Mock<ILogger<WatchService>> _loggerMock;
     private WatchService _service;
 
     [TestInitialize]
@@ -25,14 +24,13 @@ public class WatchServiceTests
         _uowMock = new Mock<IUnitOfWork>();
         _watchRepoMock = new Mock<IWatchRepository>();
         _mapperMock = new Mock<IMapper>();
-        _loggerMock = new Mock<ILogger<WatchService>>();
 
         _uowMock.Setup(u => u.Watches).Returns(_watchRepoMock.Object);
 
         _service = new WatchService(
             _uowMock.Object,
             _mapperMock.Object,
-            _loggerMock.Object
+             NullLogger<WatchService>.Instance
         );
     }
 
@@ -45,22 +43,16 @@ public class WatchServiceTests
             new Watch { Name = "Omega" },
             new Watch { Name = "Seiko" }
         };
-        typeof(Watch)
-            .GetProperty("Id", BindingFlags.Public | BindingFlags.Instance)!
-            .SetValue(watches[0], Guid.NewGuid());
-        typeof(Watch)
-            .GetProperty("Id", BindingFlags.Public | BindingFlags.Instance)!
-            .SetValue(watches[1], Guid.NewGuid());
 
         _watchRepoMock.Setup(r => r.GetAllAsync())
             .ReturnsAsync(watches);
 
-        _mapperMock.Setup(m => m.Map<IEnumerable<WatchUserDTO>>(watches))
-            .Returns(new List<WatchUserDTO>
+        _mapperMock.Setup(m => m.Map<IEnumerable<WatchUserDTO>>(It.IsAny<IEnumerable<Watch>>()))
+        .Returns((IEnumerable<Watch> ws) =>
+            ws.Select(w => new WatchUserDTO
             {
-                new WatchUserDTO { Id = watches[0].Id, Name = "Omega" },
-                new WatchUserDTO { Id = watches[1].Id, Name = "Seiko" }
-            });
+                Name = w.Name
+            }));
 
         // Act
         var result = await _service.GetAllAsync();
