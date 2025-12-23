@@ -33,6 +33,16 @@
   },
   {
     "ContainingType": "WatchAPI.Controllers.AuthController",
+    "Method": "ClearCookies",
+    "RelativePath": "api/Auth/clear-cookies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WatchAPI.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
@@ -64,13 +74,7 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "WatchAPI.DTOs.RefreshTokenDTO",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

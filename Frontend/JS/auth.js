@@ -204,11 +204,7 @@ async function logout() {
     });
 
     if (result.isConfirmed) {
-        const user = JSON.parse(localStorage.getItem("user") || "{}");
-        if (user?.refreshToken) {
-            try { await authAPI.logout(); } catch {}
-        }
-
+        await authAPI.logout();
         localStorage.removeItem("user");
         updateUIAfterLogin(false);
         removeSidebar();

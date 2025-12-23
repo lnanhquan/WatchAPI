@@ -15,10 +15,7 @@ public class AutoMapperProfile : Profile
 
         // Auth
         CreateMap<User, AuthResponseDTO>()
-        .ForMember(dest => dest.Roles, opt => opt.Ignore())
-        .ForMember(dest => dest.AccessToken, opt => opt.Ignore())
-        .ForMember(dest => dest.RefreshToken, opt => opt.Ignore());
-
+        .ForMember(dest => dest.Roles, opt => opt.Ignore());
 
         // Watch
         CreateMap<Watch, WatchUserDTO>();

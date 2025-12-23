@@ -1,0 +1,263 @@
+2025-12-23 08:47:49.305 +07:00 [INF] User requested all watches
+2025-12-23 08:47:49.491 +07:00 [INF] User requested all watches
+2025-12-23 08:47:49.748 +07:00 [INF] User requested all watches
+2025-12-23 08:47:50.253 +07:00 [INF] Returned 19 watches
+2025-12-23 08:47:50.253 +07:00 [INF] Returned 19 watches
+2025-12-23 08:47:50.253 +07:00 [INF] Returned 19 watches
+2025-12-23 08:47:52.274 +07:00 [INF] User requested all watches
+2025-12-23 08:47:52.280 +07:00 [INF] Returned 19 watches
+2025-12-23 08:47:53.811 +07:00 [INF] User requested all watches
+2025-12-23 08:47:53.823 +07:00 [INF] Returned 19 watches
+2025-12-23 08:47:54.894 +07:00 [INF] User requested all watches
+2025-12-23 08:47:54.903 +07:00 [INF] Returned 19 watches
+2025-12-23 08:48:09.905 +07:00 [INF] User user logged in successfully
+2025-12-23 08:48:09.995 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 08:48:14.011 +07:00 [INF] User requested all watches
+2025-12-23 08:48:14.016 +07:00 [INF] Returned 19 watches
+2025-12-23 08:48:14.020 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 08:48:21.936 +07:00 [INF] User user logged out
+2025-12-23 08:48:21.997 +07:00 [INF] User requested all watches
+2025-12-23 08:48:22.003 +07:00 [INF] Returned 19 watches
+2025-12-23 08:48:44.164 +07:00 [INF] User requested all watches
+2025-12-23 08:48:44.169 +07:00 [INF] Returned 19 watches
+2025-12-23 08:51:01.993 +07:00 [INF] User requested all watches
+2025-12-23 08:51:01.999 +07:00 [INF] Returned 19 watches
+2025-12-23 08:51:10.012 +07:00 [INF] User requested all watches
+2025-12-23 08:51:10.018 +07:00 [INF] Returned 19 watches
+2025-12-23 08:51:18.907 +07:00 [INF] User requested all watches
+2025-12-23 08:51:18.911 +07:00 [INF] Returned 19 watches
+2025-12-23 08:52:08.030 +07:00 [INF] User requested all watches
+2025-12-23 08:52:08.126 +07:00 [INF] Returned 19 watches
+2025-12-23 08:52:20.956 +07:00 [INF] User user logged in successfully
+2025-12-23 08:52:21.057 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 08:52:28.837 +07:00 [INF] User requested all watches
+2025-12-23 08:52:28.854 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 08:52:28.870 +07:00 [INF] Returned 19 watches
+2025-12-23 08:52:32.720 +07:00 [INF] User requested all watches
+2025-12-23 08:52:32.733 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 08:52:32.734 +07:00 [INF] Returned 19 watches
+2025-12-23 08:52:33.364 +07:00 [INF] User requested all watches
+2025-12-23 08:52:33.364 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 08:52:33.369 +07:00 [INF] Returned 19 watches
+2025-12-23 08:52:34.101 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 08:52:34.102 +07:00 [INF] User requested all watches
+2025-12-23 08:52:34.109 +07:00 [INF] Returned 19 watches
+2025-12-23 08:52:35.063 +07:00 [INF] User requested all watches
+2025-12-23 08:52:35.067 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 08:52:35.070 +07:00 [INF] Returned 19 watches
+2025-12-23 08:52:36.724 +07:00 [INF] User requested all watches
+2025-12-23 08:52:36.728 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 08:52:36.731 +07:00 [INF] Returned 19 watches
+2025-12-23 08:52:37.557 +07:00 [INF] User requested all watches
+2025-12-23 08:52:37.560 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 08:52:37.562 +07:00 [INF] Returned 19 watches
+2025-12-23 08:52:38.173 +07:00 [INF] User requested all watches
+2025-12-23 08:52:38.177 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 08:52:38.180 +07:00 [INF] Returned 19 watches
+2025-12-23 08:52:38.745 +07:00 [INF] User requested all watches
+2025-12-23 08:52:38.750 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 08:52:38.752 +07:00 [INF] Returned 19 watches
+2025-12-23 08:54:58.402 +07:00 [INF] User requested all watches
+2025-12-23 08:54:58.407 +07:00 [INF] Returned 19 watches
+2025-12-23 08:55:31.143 +07:00 [INF] User requested all watches
+2025-12-23 08:55:31.148 +07:00 [INF] Returned 19 watches
+2025-12-23 08:57:05.725 +07:00 [INF] User requested all watches
+2025-12-23 08:57:05.732 +07:00 [INF] Returned 19 watches
+2025-12-23 08:57:41.010 +07:00 [INF] User requested all watches
+2025-12-23 08:57:41.016 +07:00 [INF] Returned 19 watches
+2025-12-23 08:57:58.514 +07:00 [INF] User requested all watches
+2025-12-23 08:57:58.519 +07:00 [INF] Returned 19 watches
+2025-12-23 08:58:53.808 +07:00 [INF] User requested all watches
+2025-12-23 08:58:53.896 +07:00 [INF] Returned 19 watches
+2025-12-23 08:59:01.522 +07:00 [INF] User admin logged in successfully
+2025-12-23 08:59:01.609 +07:00 [INF] Returned cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-23 09:06:08.471 +07:00 [INF] User requested all watches
+2025-12-23 09:06:08.563 +07:00 [INF] Returned 19 watches
+2025-12-23 09:12:23.929 +07:00 [INF] User requested all watches
+2025-12-23 09:12:23.935 +07:00 [INF] Returned 19 watches
+2025-12-23 09:12:30.331 +07:00 [INF] User requested all watches
+2025-12-23 09:12:30.427 +07:00 [INF] Returned 19 watches
+2025-12-23 09:12:33.251 +07:00 [INF] User requested all watches
+2025-12-23 09:12:33.267 +07:00 [INF] Returned 19 watches
+2025-12-23 09:12:52.274 +07:00 [WRN] The cookie 'access_token' has set 'SameSite=None' and must also set 'Secure'.
+2025-12-23 09:12:52.276 +07:00 [WRN] The cookie 'refresh_token' has set 'SameSite=None' and must also set 'Secure'.
+2025-12-23 09:12:52.278 +07:00 [INF] User user logged in successfully
+2025-12-23 09:15:28.345 +07:00 [INF] User requested all watches
+2025-12-23 09:15:28.360 +07:00 [INF] Returned 19 watches
+2025-12-23 09:15:29.825 +07:00 [INF] User requested all watches
+2025-12-23 09:15:29.832 +07:00 [INF] Returned 19 watches
+2025-12-23 09:15:30.583 +07:00 [INF] User requested all watches
+2025-12-23 09:15:30.590 +07:00 [INF] Returned 19 watches
+2025-12-23 09:15:32.892 +07:00 [INF] User requested all watches
+2025-12-23 09:15:32.898 +07:00 [INF] Returned 19 watches
+2025-12-23 09:15:43.244 +07:00 [WRN] The cookie 'access_token' has set 'SameSite=None' and must also set 'Secure'.
+2025-12-23 09:15:43.245 +07:00 [WRN] The cookie 'refresh_token' has set 'SameSite=None' and must also set 'Secure'.
+2025-12-23 09:15:43.246 +07:00 [INF] User user logged in successfully
+2025-12-23 09:16:01.865 +07:00 [INF] User requested all watches
+2025-12-23 09:16:01.871 +07:00 [INF] Returned 19 watches
+2025-12-23 09:16:10.452 +07:00 [INF] User requested all watches
+2025-12-23 09:16:10.458 +07:00 [INF] Returned 19 watches
+2025-12-23 09:16:10.471 +07:00 [INF] User requested all watches
+2025-12-23 09:16:10.477 +07:00 [INF] Returned 19 watches
+2025-12-23 09:16:26.210 +07:00 [WRN] The cookie 'access_token' has set 'SameSite=None' and must also set 'Secure'.
+2025-12-23 09:16:26.211 +07:00 [WRN] The cookie 'refresh_token' has set 'SameSite=None' and must also set 'Secure'.
+2025-12-23 09:16:26.212 +07:00 [INF] User admin logged in successfully
+2025-12-23 09:16:28.069 +07:00 [INF] User requested all watches
+2025-12-23 09:16:28.074 +07:00 [INF] Returned 19 watches
+2025-12-23 09:17:36.694 +07:00 [INF] User requested all watches
+2025-12-23 09:17:36.694 +07:00 [INF] User requested all watches
+2025-12-23 09:17:36.820 +07:00 [INF] Returned 19 watches
+2025-12-23 09:17:36.820 +07:00 [INF] Returned 19 watches
+2025-12-23 09:17:55.732 +07:00 [INF] User requested all watches
+2025-12-23 09:17:55.743 +07:00 [INF] Returned 19 watches
+2025-12-23 09:18:09.518 +07:00 [INF] User requested all watches
+2025-12-23 09:18:09.531 +07:00 [INF] Returned 19 watches
+2025-12-23 09:18:26.791 +07:00 [INF] User user logged in successfully
+2025-12-23 09:18:26.888 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:18:42.558 +07:00 [INF] User requested all watches
+2025-12-23 09:18:42.566 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:18:42.567 +07:00 [INF] Returned 19 watches
+2025-12-23 09:21:00.374 +07:00 [INF] User requested all watches
+2025-12-23 09:21:00.379 +07:00 [INF] Returned 19 watches
+2025-12-23 09:22:54.428 +07:00 [INF] User requested all watches
+2025-12-23 09:22:54.448 +07:00 [INF] Returned 19 watches
+2025-12-23 09:23:36.218 +07:00 [INF] User requested all watches
+2025-12-23 09:23:36.225 +07:00 [INF] Returned 19 watches
+2025-12-23 09:23:36.231 +07:00 [INF] User requested all watches
+2025-12-23 09:23:36.235 +07:00 [INF] Returned 19 watches
+2025-12-23 09:24:01.305 +07:00 [WRN] The cookie 'refresh_token' has set 'SameSite=None' and must also set 'Secure'.
+2025-12-23 09:26:41.830 +07:00 [INF] User requested all watches
+2025-12-23 09:26:41.945 +07:00 [INF] Returned 19 watches
+2025-12-23 09:26:55.147 +07:00 [INF] User admin logged in successfully
+2025-12-23 09:26:55.225 +07:00 [INF] Returned cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-23 09:27:01.214 +07:00 [INF] User requested all watches
+2025-12-23 09:27:01.220 +07:00 [INF] Returned cart for user 8a77aa77-7abf-4241-ba5e-0d22ad107ad1
+2025-12-23 09:27:01.251 +07:00 [INF] Returned 19 watches
+2025-12-23 09:29:42.940 +07:00 [INF] User requested all watches
+2025-12-23 09:29:42.948 +07:00 [INF] Returned 19 watches
+2025-12-23 09:30:31.528 +07:00 [INF] User user logged in successfully
+2025-12-23 09:30:31.557 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:30:34.045 +07:00 [INF] User requested all watches
+2025-12-23 09:30:34.061 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:30:34.071 +07:00 [INF] Returned 19 watches
+2025-12-23 09:32:23.025 +07:00 [INF] User requested all watches
+2025-12-23 09:32:23.031 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:32:23.040 +07:00 [INF] Returned 19 watches
+2025-12-23 09:32:53.647 +07:00 [INF] User requested all watches
+2025-12-23 09:32:53.657 +07:00 [INF] Returned 19 watches
+2025-12-23 09:34:34.506 +07:00 [INF] User requested all watches
+2025-12-23 09:34:34.512 +07:00 [INF] Returned 19 watches
+2025-12-23 09:34:51.399 +07:00 [INF] User requested all watches
+2025-12-23 09:34:51.493 +07:00 [INF] Returned 19 watches
+2025-12-23 09:35:12.596 +07:00 [INF] User user logged in successfully
+2025-12-23 09:35:12.693 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:35:41.758 +07:00 [INF] User requested all watches
+2025-12-23 09:35:41.780 +07:00 [INF] Returned 19 watches
+2025-12-23 09:35:41.826 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:35:43.920 +07:00 [INF] User requested all watches
+2025-12-23 09:35:43.933 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:35:43.934 +07:00 [INF] Returned 19 watches
+2025-12-23 09:35:44.644 +07:00 [INF] User requested all watches
+2025-12-23 09:35:44.652 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:35:44.653 +07:00 [INF] Returned 19 watches
+2025-12-23 09:36:25.583 +07:00 [INF] User requested all watches
+2025-12-23 09:36:25.592 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:36:25.602 +07:00 [INF] Returned 19 watches
+2025-12-23 09:36:39.442 +07:00 [INF] User requested all watches
+2025-12-23 09:36:39.446 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:36:39.449 +07:00 [INF] Returned 19 watches
+2025-12-23 09:36:43.116 +07:00 [INF] User requested all watches
+2025-12-23 09:36:43.120 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:36:43.125 +07:00 [INF] Returned 19 watches
+2025-12-23 09:36:46.643 +07:00 [INF] User requested all watches
+2025-12-23 09:36:46.650 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:36:46.650 +07:00 [INF] Returned 19 watches
+2025-12-23 09:37:04.881 +07:00 [INF] User requested all watches
+2025-12-23 09:37:04.887 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:37:04.888 +07:00 [INF] Returned 19 watches
+2025-12-23 09:37:34.185 +07:00 [INF] User requested all watches
+2025-12-23 09:37:34.214 +07:00 [INF] Returned 19 watches
+2025-12-23 09:37:34.309 +07:00 [INF] Refresh token issued for user user@gmail.com with Id 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:37:34.325 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:37:55.329 +07:00 [INF] User requested all watches
+2025-12-23 09:37:55.336 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:37:55.337 +07:00 [INF] Returned 19 watches
+2025-12-23 09:40:54.612 +07:00 [INF] User requested all watches
+2025-12-23 09:40:54.618 +07:00 [INF] Returned 19 watches
+2025-12-23 09:40:54.633 +07:00 [INF] Refresh token issued for user user@gmail.com with Id 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:40:54.643 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:44:03.680 +07:00 [INF] User requested all watches
+2025-12-23 09:44:03.691 +07:00 [INF] Returned 19 watches
+2025-12-23 09:44:03.702 +07:00 [INF] Refresh token issued for user user@gmail.com with Id 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:44:03.711 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:44:48.455 +07:00 [INF] User requested all watches
+2025-12-23 09:44:48.461 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:44:48.461 +07:00 [INF] Returned 19 watches
+2025-12-23 09:44:58.427 +07:00 [INF] User requested all watches
+2025-12-23 09:44:58.431 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:44:58.433 +07:00 [INF] Returned 19 watches
+2025-12-23 09:47:00.960 +07:00 [INF] User requested all watches
+2025-12-23 09:47:00.968 +07:00 [INF] Returned 19 watches
+2025-12-23 09:47:00.983 +07:00 [INF] Refresh token issued for user user@gmail.com with Id 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:47:01.001 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:47:17.777 +07:00 [INF] User requested all watches
+2025-12-23 09:47:17.781 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:47:17.785 +07:00 [INF] Returned 19 watches
+2025-12-23 09:47:44.939 +07:00 [INF] User requested all watches
+2025-12-23 09:47:44.943 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:47:44.945 +07:00 [INF] Returned 19 watches
+2025-12-23 09:50:52.004 +07:00 [INF] User requested all watches
+2025-12-23 09:50:52.010 +07:00 [INF] Returned 19 watches
+2025-12-23 09:50:52.035 +07:00 [INF] Refresh token issued for user user@gmail.com with Id 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:50:52.045 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:52:13.940 +07:00 [INF] User requested all watches
+2025-12-23 09:52:13.952 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:52:13.959 +07:00 [INF] Returned 19 watches
+2025-12-23 09:52:25.644 +07:00 [INF] User requested all watches
+2025-12-23 09:52:25.648 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:52:25.657 +07:00 [INF] Returned 19 watches
+2025-12-23 09:52:46.919 +07:00 [INF] User requested all watches
+2025-12-23 09:52:46.922 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:52:46.929 +07:00 [INF] Returned 19 watches
+2025-12-23 09:53:23.366 +07:00 [INF] User requested all watches
+2025-12-23 09:53:23.371 +07:00 [INF] Returned 19 watches
+2025-12-23 09:53:23.389 +07:00 [INF] Refresh token issued for user user@gmail.com with Id 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:53:23.397 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:53:34.123 +07:00 [INF] User requested all watches
+2025-12-23 09:53:34.126 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:53:34.130 +07:00 [INF] Returned 19 watches
+2025-12-23 09:53:53.492 +07:00 [INF] User requested all watches
+2025-12-23 09:53:53.495 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:53:53.498 +07:00 [INF] Returned 19 watches
+2025-12-23 09:53:58.057 +07:00 [INF] User requested all watches
+2025-12-23 09:53:58.060 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:53:58.065 +07:00 [INF] Returned 19 watches
+2025-12-23 09:54:14.344 +07:00 [INF] User requested all watches
+2025-12-23 09:54:14.347 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:54:14.362 +07:00 [INF] Returned 19 watches
+2025-12-23 09:54:29.451 +07:00 [INF] User requested all watches
+2025-12-23 09:54:29.461 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 09:54:29.465 +07:00 [INF] Returned 19 watches
+2025-12-23 09:54:33.929 +07:00 [INF] User user logged out
+2025-12-23 09:54:33.999 +07:00 [INF] User requested all watches
+2025-12-23 09:54:34.004 +07:00 [INF] Returned 19 watches
+2025-12-23 09:54:45.606 +07:00 [INF] User user logged in successfully
+2025-12-23 09:54:45.615 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 10:02:46.900 +07:00 [INF] User requested all watches
+2025-12-23 10:02:47.010 +07:00 [INF] Returned 19 watches
+2025-12-23 10:04:06.330 +07:00 [INF] User requested all watches
+2025-12-23 10:04:06.459 +07:00 [INF] Returned 19 watches
+2025-12-23 10:04:06.626 +07:00 [INF] Refresh token issued for user user@gmail.com with Id 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 10:04:06.720 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 10:04:08.309 +07:00 [INF] User user logged out
+2025-12-23 10:04:08.360 +07:00 [INF] User requested all watches
+2025-12-23 10:04:08.364 +07:00 [INF] Returned 19 watches
+2025-12-23 10:04:20.457 +07:00 [INF] User user logged in successfully
+2025-12-23 10:04:20.474 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 10:10:49.985 +07:00 [INF] User requested all watches
+2025-12-23 10:10:50.077 +07:00 [INF] Returned 19 watches
+2025-12-23 10:10:50.107 +07:00 [INF] Refresh token issued for user user@gmail.com with Id 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 10:10:50.133 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 10:12:13.425 +07:00 [INF] User requested all watches
+2025-12-23 10:12:13.438 +07:00 [INF] Returned cart for user 0e3a0d01-09cc-4d4c-9cf9-5adc33f4e3de
+2025-12-23 10:12:13.438 +07:00 [INF] Returned 19 watches

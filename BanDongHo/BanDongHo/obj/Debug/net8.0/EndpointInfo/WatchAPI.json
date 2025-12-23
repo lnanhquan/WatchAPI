@@ -114,25 +114,18 @@
         "tags": [
           "Auth"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RefreshTokenDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RefreshTokenDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RefreshTokenDTO"
-              }
-            }
+        "responses": {
+          "200": {
+            "description": "OK"
           }
-        },
+        }
+      }
+    },
+    "/api/Auth/clear-cookies": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -893,20 +886,6 @@
           "password": {
             "minLength": 1,
             "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "RefreshTokenDTO": {
-        "type": "object",
-        "properties": {
-          "accessToken": {
-            "type": "string",
-            "nullable": true
-          },
-          "refreshToken": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false

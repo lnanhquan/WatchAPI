@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using Serilog.Events;
@@ -26,7 +27,8 @@ public static class ServiceExtensions
             builder
                 .WithOrigins(allowedOrigins)
                 .AllowAnyMethod()
-                .AllowAnyHeader();
+                .AllowAnyHeader()
+                .AllowCredentials();
         }));
     }
 
@@ -85,9 +87,24 @@ public static class ServiceExtensions
                 IssuerSigningKey = new SymmetricSecurityKey(key),
                 ClockSkew = TimeSpan.Zero
             };
+            options.Events = new JwtBearerEvents
+            {
+                OnMessageReceived = context =>
+                {
+                    var cookieOptions = context.HttpContext
+                        .RequestServices
+                        .GetRequiredService<IOptions<AuthCookieOptions>>()
+                        .Value;
+                    var token = context.Request.Cookies[cookieOptions.AccessTokenName];
+                    if (!string.IsNullOrEmpty(token))
+                    {
+                        context.Token = token;
+                    }
+                    return Task.CompletedTask;
+                }
+            };
         });
         services.AddAuthorization();
-        services.AddControllers();
     }
 
     public static void ConfigureSwagger(this IServiceCollection services)

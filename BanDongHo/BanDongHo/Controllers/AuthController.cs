@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using System.IdentityModel.Tokens.Jwt;
@@ -11,6 +11,7 @@ using System.Text;
 using WatchAPI.Constants;
 using WatchAPI.DTOs;
 using WatchAPI.Models.Entities;
+using WatchAPI.Options;
 
 namespace WatchAPI.Controllers;
 
@@ -20,15 +21,22 @@ public class AuthController : ControllerBase
 {
     private readonly UserManager<User> _userManager;
     private readonly SignInManager<User> _signInManager;
-    private readonly IConfiguration _config;
     private readonly IMapper _mapper;
+    private readonly JwtOptions _jwtOptions;
+    private readonly AuthCookieOptions _cookieOptions;
 
-    public AuthController(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration config, IMapper mapper)
+    public AuthController(
+        UserManager<User> userManager,
+        SignInManager<User> signInManager,
+        IMapper mapper,
+        IOptions<JwtOptions> jwtOptions,
+        IOptions<AuthCookieOptions> cookieOptions)
     {
         _userManager = userManager;
         _signInManager = signInManager;
-        _config = config;
         _mapper = mapper;
+        _jwtOptions = jwtOptions.Value;
+        _cookieOptions = cookieOptions.Value;
     }
 
     private string GenerateRefreshToken()
@@ -47,29 +55,6 @@ public class AuthController : ControllerBase
         return Convert.ToBase64String(hash);
     }
 
-    private ClaimsPrincipal? GetPrincipalFromExpiredToken(string token)
-    {
-        var tokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateAudience = false,
-            ValidateIssuer = false,
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"])),
-            ValidateLifetime = false
-        };
-
-        var tokenHandler = new JwtSecurityTokenHandler();
-        var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
-        if (securityToken is JwtSecurityToken jwt && jwt.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
-        {
-            return principal;
-        }
-        else
-        {
-            return null;
-        }
-    }
-
     private (string accessToken, string refreshToken) GenerateTokens(User user, IList<string> roles)
     {
         var claims = new List<Claim>
@@ -81,15 +66,15 @@ public class AuthController : ControllerBase
         };
         claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
 
-        var key = Encoding.ASCII.GetBytes(_config["Jwt:Key"]);
+        var key = Encoding.ASCII.GetBytes(_jwtOptions.Key);
         var tokenHandler = new JwtSecurityTokenHandler();
 
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(claims),
-            Expires = DateTime.UtcNow.AddMinutes(double.Parse(_config["Jwt:ExpireMinutes"])),
-            Issuer = _config["Jwt:Issuer"],
-            Audience = _config["Jwt:Audience"],
+            Expires = DateTime.UtcNow.AddMinutes(_jwtOptions.ExpireMinutes),
+            Issuer = _jwtOptions.Issuer,
+            Audience = _jwtOptions.Audience,
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };
 
@@ -97,6 +82,32 @@ public class AuthController : ControllerBase
         var refreshToken = GenerateRefreshToken();
 
         return (accessToken, refreshToken);
+    }
+
+    private CookieOptions CreateAccessTokenCookie()
+    {
+        return new CookieOptions
+        {
+            HttpOnly = _cookieOptions.HttpOnly,
+            Secure = _cookieOptions.Secure,
+            SameSite = _cookieOptions.SameSite,
+            Expires = DateTime.UtcNow.AddMinutes(
+                _cookieOptions.AccessTokenExpireMinutes),
+            Path = _cookieOptions.Path
+        };
+    }
+
+    private CookieOptions CreateRefreshTokenCookie()
+    {
+        return new CookieOptions
+        {
+            HttpOnly = _cookieOptions.HttpOnly,
+            Secure = _cookieOptions.Secure,
+            SameSite = _cookieOptions.SameSite,
+            Expires = DateTime.UtcNow.AddDays(
+                _cookieOptions.RefreshTokenExpireDays),
+            Path = _cookieOptions.Path
+        };
     }
 
     [HttpPost("register")]
@@ -160,15 +171,25 @@ public class AuthController : ControllerBase
         var (accessToken, refreshToken) = GenerateTokens(user, roles);
 
         user.RefreshToken = HashToken(refreshToken);
-        user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(int.Parse(_config["Jwt:RefreshTokenExpiryDays"]));
+        user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(_jwtOptions.RefreshTokenExpiryDays);
         await _userManager.UpdateAsync(user);
+
+        Response.Cookies.Append(
+            _cookieOptions.AccessTokenName,
+            accessToken,
+            CreateAccessTokenCookie()
+        );
+
+        Response.Cookies.Append(
+            _cookieOptions.RefreshTokenName,
+            refreshToken,
+            CreateRefreshTokenCookie()
+        );
 
         Log.Information("User {Username} logged in successfully", user.UserName);
 
         var authResponse = _mapper.Map<AuthResponseDTO>(user);
         authResponse.Roles = roles;
-        authResponse.AccessToken = accessToken;
-        authResponse.RefreshToken = refreshToken;
 
         return Ok(authResponse);
     }
@@ -189,60 +210,102 @@ public class AuthController : ControllerBase
 
 
     [HttpPost("refresh-token")]
-    public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenDTO dto)
+    public async Task<IActionResult> RefreshToken()
     {
-        var principal = GetPrincipalFromExpiredToken(dto.AccessToken);
-        if (principal == null)
+        var refreshToken = Request.Cookies[_cookieOptions.RefreshTokenName];
+
+        if (string.IsNullOrEmpty(refreshToken))
         {
-            return BadRequest("Invalid access token");
+            return Unauthorized("Refresh token missing");
         }
 
-        var userId = principal.FindFirstValue(JwtRegisteredClaimNames.Sub) ?? principal.FindFirstValue(ClaimTypes.NameIdentifier);
-        var user = await _userManager.FindByIdAsync(userId);
+        var hashed = HashToken(refreshToken);
+        var user = _userManager.Users.FirstOrDefault(u => u.RefreshToken == hashed);
 
         if (user == null)
         {
             return Unauthorized("User not found");
         }
 
-        if (user.RefreshToken != HashToken(dto.RefreshToken))
-        {
-            return Unauthorized("Hash token is wrong");
-        }
-
         if (user.RefreshTokenExpiryTime <= DateTime.UtcNow)
         {
-            return Unauthorized("Refresh token is expired");
+            return Unauthorized(new { error = "RefreshTokenExpired" });
         }
 
         var roles = await _userManager.GetRolesAsync(user);
+
         var (newAccessToken, newRefreshToken) = GenerateTokens(user, roles);
 
         user.RefreshToken = HashToken(newRefreshToken);
-        user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(int.Parse(_config["Jwt:RefreshTokenExpiryDays"]));
+        user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(_jwtOptions.RefreshTokenExpiryDays);
         await _userManager.UpdateAsync(user);
+
+        Response.Cookies.Append(
+            _cookieOptions.AccessTokenName,
+            newAccessToken,
+            CreateAccessTokenCookie()
+        );
+
+        Response.Cookies.Append(
+            _cookieOptions.RefreshTokenName,
+            newRefreshToken,
+            CreateRefreshTokenCookie()
+        );
 
         Log.Information("Refresh token issued for user {Email} with Id {Id}", user.Email, user.Id);
 
-        return Ok(new
-        {
-            AccessToken = newAccessToken,
-            RefreshToken = newRefreshToken
-        });
+        return Ok();
     }
 
-    [Authorize]
+    [HttpGet("clear-cookies")]
+    public IActionResult ClearCookies()
+    {
+        foreach (var cookie in Request.Cookies.Keys)
+        {
+            Response.Cookies.Delete(cookie, new CookieOptions
+            {
+                Secure = true,
+                HttpOnly = true,
+                SameSite = SameSiteMode.None,
+                Path = "/Auth"
+            });
+        }
+
+        return Ok("Cleared.");
+    }
+
     [HttpPost("logout")]
     public async Task<IActionResult> Logout()
     {
         var user = await _userManager.GetUserAsync(User);
         if (user == null)
         {
-            return Unauthorized();
+            return Unauthorized("User not found");
         }
         user.RefreshToken = null;
         user.RefreshTokenExpiryTime = null;
+
         await _userManager.UpdateAsync(user);
+
+        Response.Cookies.Delete(
+            _cookieOptions.AccessTokenName,
+            new CookieOptions
+            {
+                HttpOnly = _cookieOptions.HttpOnly,
+                Secure = _cookieOptions.Secure,
+                SameSite = _cookieOptions.SameSite,
+                Path = _cookieOptions.Path
+            });
+
+        Response.Cookies.Delete(
+            _cookieOptions.RefreshTokenName,
+            new CookieOptions
+            {
+                HttpOnly = _cookieOptions.HttpOnly,
+                Secure = _cookieOptions.Secure,
+                SameSite = _cookieOptions.SameSite,
+                Path = _cookieOptions.Path
+            });
 
         Log.Information("User {Username} logged out", user.UserName);
 

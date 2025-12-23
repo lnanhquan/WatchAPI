@@ -1,9 +1,12 @@
 ﻿using WatchAPI.Extensions;
 using WatchAPI.Middlewares;
+using WatchAPI.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure Services
+builder.Services.Configure<AuthCookieOptions>(builder.Configuration.GetSection("AuthCookie"));
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("Jwt"));
 builder.Services.ConfigureCors(builder.Configuration);
 builder.Services.ConfigureDbAndIdentity(builder.Configuration);
 builder.Services.ConfigureRepositoriesAndServices();
